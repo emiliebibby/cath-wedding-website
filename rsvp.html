@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>RSVP — Catherine &amp; Charlie</title>
+<meta name="description" content="Reply to the wedding of Catherine and Charlie — Wednesday 4 August 2027, Curradine Barns." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper:#F4F6EE; --surface:#FBFCF6; --surface-2:#EAEFDF; --ink:#414D37; --muted:#6E7A61;
+    --line:#D7DEC7; --sage:#8DA271; --sage-deep:#5E7048; --blush:#D6A79E; --blush-soft:#EBD3CD;
+    --gold:#BFA36A; --leaf:var(--sage);
+    --shadow:0 2px 6px rgba(65,77,55,.05), 0 22px 48px -28px rgba(65,77,55,.28);
+    --maxw:1120px;
+    --script:"Great Vibes","Snell Roundhand",cursive;
+    --serif:"Cormorant Garamond","Iowan Old Style",Georgia,serif;
+    --sans:"Jost",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper:#222A1D; --surface:#2A3325; --surface-2:#313B2A; --ink:#EAEEDF; --muted:#A7B197;
+      --line:#3C4633; --sage:#A7BC85; --sage-deep:#C4D5A5; --blush:#D9AAA0; --blush-soft:#7C5F5A;
+      --gold:#CFB379; --leaf:#7C9060;
+      --shadow:0 2px 6px rgba(0,0,0,.28), 0 26px 52px -26px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="light"] {
+    --paper:#F4F6EE; --surface:#FBFCF6; --surface-2:#EAEFDF; --ink:#414D37; --muted:#6E7A61;
+    --line:#D7DEC7; --sage:#8DA271; --sage-deep:#5E7048; --blush:#D6A79E; --blush-soft:#EBD3CD;
+    --gold:#BFA36A; --leaf:var(--sage);
+    --shadow:0 2px 6px rgba(65,77,55,.05), 0 22px 48px -28px rgba(65,77,55,.28);
+  }
+  :root[data-theme="dark"] {
+    --paper:#222A1D; --surface:#2A3325; --surface-2:#313B2A; --ink:#EAEEDF; --muted:#A7B197;
+    --line:#3C4633; --sage:#A7BC85; --sage-deep:#C4D5A5; --blush:#D9AAA0; --blush-soft:#7C5F5A;
+    --gold:#CFB379; --leaf:#7C9060;
+    --shadow:0 2px 6px rgba(0,0,0,.28), 0 26px 52px -26px rgba(0,0,0,.6);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: var(--sans); font-weight: 300; font-size: 17px; line-height: 1.7;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    min-height: 100vh; display: flex; flex-direction: column;
+  }
+  a { color: inherit; }
+  h1 { font-family: var(--script); font-weight: 400; color: var(--sage-deep); font-size: clamp(3rem, 9vw, 5rem); line-height: 0.9; margin: 0; }
+  h1 .amp { color: var(--blush); }
+  .eyebrow { font-family: var(--sans); font-weight: 500; font-size: 0.72rem; letter-spacing: 0.34em; text-transform: uppercase; color: var(--sage); margin: 0; }
+
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(20px, 5vw, 44px); width: 100%; }
+
+  header.nav {
+    position: sticky; top: 0; z-index: 50;
+    background: color-mix(in srgb, var(--paper) 86%, transparent); backdrop-filter: blur(10px);
+    border-bottom: 1px solid transparent; transition: border-color .3s ease;
+  }
+  header.nav.scrolled { border-bottom-color: var(--line); }
+  header.nav .wrap { display: flex; align-items: center; gap: 20px; height: 68px; }
+  .mono { font-family: var(--script); font-size: 1.9rem; color: var(--sage-deep); text-decoration: none; line-height: 1; padding-top: 6px; }
+  .back { margin-left: auto; color: var(--muted); text-decoration: none; font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; }
+  .back:hover { color: var(--ink); }
+  .theme-toggle { flex: none; cursor: pointer; width: 38px; height: 38px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); display: inline-grid; place-items: center; font-size: 1rem; }
+  .theme-toggle:hover { border-color: var(--sage); }
+
+  main { flex: 1; padding: clamp(36px, 6vw, 72px) 0 clamp(56px, 8vw, 96px); }
+  .head { text-align: center; max-width: 620px; margin: 0 auto clamp(28px, 4vw, 40px); }
+  .head .eyebrow { margin-bottom: 14px; }
+  .head p { color: var(--muted); font-family: var(--serif); font-style: italic; font-size: 1.2rem; margin-top: 16px; }
+
+  .floral-divider { display: flex; justify-content: center; padding: 6px 0 22px; }
+  .floral-divider svg { width: min(300px, 66vw); height: auto; overflow: visible; }
+  .lf { fill: var(--leaf); fill-opacity: .38; stroke: var(--sage-deep); stroke-width: 1.1; stroke-linejoin: round; }
+  .vein { fill: none; stroke: var(--sage-deep); stroke-opacity: .5; stroke-width: .7; }
+  .stem { fill: none; stroke: var(--sage-deep); stroke-width: 1.3; stroke-linecap: round; }
+  .petal { fill: var(--blush); fill-opacity: .85; }
+  .pollen { fill: var(--gold); }
+
+  .panel { max-width: 620px; margin: 0 auto; background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: clamp(28px, 4vw, 46px); box-shadow: var(--shadow); }
+  .field { display: flex; flex-direction: column; gap: 7px; margin-top: 20px; }
+  .field:first-child { margin-top: 0; }
+  .field label { font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage); font-weight: 500; }
+  .field input, .field select, .field textarea { font: inherit; font-family: var(--sans); color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 13px 15px; }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: 2px solid var(--sage); outline-offset: 1px; border-color: var(--sage); }
+  .seg { display: flex; gap: 12px; }
+  .seg label { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; padding: 14px 10px; min-height: 52px; border: 1px solid var(--line); border-radius: 12px; cursor: pointer; color: var(--muted); font-family: var(--serif); font-style: italic; font-size: 1.05rem; background: var(--paper); transition: border-color .2s ease, background .2s ease, color .2s ease; }
+  .seg label:hover { border-color: var(--sage); }
+  .seg input { position: absolute; opacity: 0; pointer-events: none; }
+  .seg label:has(input:checked) { border-color: var(--sage); background: color-mix(in srgb, var(--sage) 14%, var(--paper)); color: var(--ink); }
+  .seg.count { gap: 8px; }
+  .seg.count label { font-style: normal; font-size: 1.15rem; padding: 14px 6px; }
+  .conditional { transition: opacity .3s ease; }
+  .conditional.hide { display: none; }
+
+  .combo { position: relative; }
+  .suggest { position: absolute; z-index: 30; left: 0; right: 0; top: calc(100% + 6px); margin: 0; padding: 6px; list-style: none; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow); max-height: 264px; overflow: auto; }
+  .suggest[hidden] { display: none; }
+  .suggest li { padding: 11px 12px; border-radius: 9px; cursor: pointer; display: flex; flex-direction: column; gap: 2px; }
+  .suggest li .h-label { font-family: var(--serif); font-size: 1.08rem; color: var(--ink); }
+  .suggest li .h-members { font-size: 0.8rem; color: var(--muted); }
+  .suggest li[aria-selected="true"], .suggest li:hover { background: color-mix(in srgb, var(--sage) 15%, var(--paper)); }
+  .found { font-family: var(--serif); font-style: italic; font-size: 0.92rem; color: var(--sage-deep); margin-top: 10px; }
+  .found[hidden] { display: none; }
+  .found.warn { color: var(--muted); }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; cursor: pointer; width: 100%; margin-top: 26px; font-family: var(--sans); font-weight: 400; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 15px 30px; border-radius: 999px; text-decoration: none; border: 1px solid var(--sage-deep); background: var(--sage-deep); color: #F7F9F1; transition: transform .15s ease, box-shadow .2s ease; }
+  :root[data-theme="dark"] .btn { color: #1c2416; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn { color: #1c2416; } }
+  .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+  .form-note { text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 16px; }
+  .form-note a { color: var(--sage-deep); }
+
+  .thanks { text-align: center; }
+  .thanks .mark { display: inline-block; margin: 0 auto 4px; }
+  .thanks h2 { font-family: var(--serif); font-weight: 500; font-size: 2rem; margin: 10px 0 0; }
+  .thanks p { color: var(--muted); margin-top: 12px; }
+
+  footer.site { background: var(--surface); border-top: 1px solid var(--line); text-align: center; padding: clamp(40px, 6vw, 64px) 0; }
+  footer.site .names { font-family: var(--script); font-size: clamp(2.4rem, 6vw, 3.4rem); color: var(--sage-deep); line-height: 1; }
+  footer.site .names .amp { color: var(--blush); }
+  footer.site .fine { color: var(--muted); font-family: var(--serif); font-style: italic; font-size: 1rem; margin-top: 18px; }
+
+  :focus-visible { outline: 2px solid var(--sage-deep); outline-offset: 2px; border-radius: 4px; }
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="mono" href="index.html">C&amp;C</a>
+    <a class="back" href="index.html">&larr; Back to the wedding</a>
+    <button class="theme-toggle" id="themeBtn" aria-label="Toggle light and dark theme" title="Toggle theme">◐</button>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="floral-divider"><svg viewBox="0 0 340 70" class="fd"></svg></div>
+    <div class="head">
+      <p class="eyebrow">Kindly Reply</p>
+      <h1>Catherine <span class="amp">&amp;</span> Charlie</h1>
+      <p>We would be so happy to have you at Curradine Barns on the fourth of August. Please reply by the first of June, 2027.</p>
+    </div>
+
+    <!--
+      ============================================================
+      TO COLLECT REAL REPLIES — pick one, then wire this form to it:
+      • Formspree:  set  action="https://formspree.io/f/XXXXXXXX"  method="POST"  on the <form> and delete the onsubmit handler.
+      • Google Forms: build a matching Form, or just link the "btn" straight to your Form's share URL.
+      • Tally / Typeform: same idea — either embed or link out.
+      Right now it's a friendly demo that shows a thank-you message.
+      ============================================================
+    -->
+    <form class="panel" id="rsvpForm" onsubmit="event.preventDefault(); rsvpDone();">
+      <input type="hidden" name="householdId" id="householdId" />
+      <div class="field">
+        <label for="name">Your name (as on your invitation)</label>
+        <div class="combo">
+          <input id="name" name="name" type="text" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="suggest" placeholder="Start typing your name&hellip;" required />
+          <ul class="suggest" id="suggest" role="listbox" aria-label="Matching invitations" hidden></ul>
+        </div>
+        <p class="found" id="found" hidden></p>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" required />
+      </div>
+      <div class="field">
+        <label>Will you be there?</label>
+        <div class="seg">
+          <label><input type="radio" name="attend" value="yes" checked onchange="toggleAttend()" /><span>Joyfully accepts</span></label>
+          <label><input type="radio" name="attend" value="no" onchange="toggleAttend()" /><span>Regretfully declines</span></label>
+        </div>
+      </div>
+
+      <div class="conditional" id="ifYes">
+        <div class="field">
+          <label>Which parts will you join?</label>
+          <div class="seg">
+            <label><input type="checkbox" name="parts" value="day" checked /><span>The whole day</span></label>
+            <label><input type="checkbox" name="parts" value="evening" /><span>Evening only</span></label>
+          </div>
+        </div>
+        <div class="field">
+          <label>Number in your party</label>
+          <div class="seg count">
+            <label><input type="radio" name="guests" value="1" checked /><span>1</span></label>
+            <label><input type="radio" name="guests" value="2" /><span>2</span></label>
+            <label><input type="radio" name="guests" value="3" /><span>3</span></label>
+            <label><input type="radio" name="guests" value="4" /><span>4</span></label>
+            <label><input type="radio" name="guests" value="5+" /><span>5+</span></label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="names">Names of everyone attending</label>
+          <input id="names" name="names" type="text" placeholder="So we can write the place cards" />
+        </div>
+        <div class="field">
+          <label for="diet">Dietary needs or allergies</label>
+          <input id="diet" name="diet" type="text" placeholder="Anything the kitchen should know" />
+        </div>
+        <div class="field">
+          <label for="song">A song you can't sit out</label>
+          <input id="song" name="song" type="text" placeholder="For the band's list" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="message">A note for Catherine &amp; Charlie</label>
+        <textarea id="message" name="message" rows="3" placeholder="Optional — say hello!"></textarea>
+      </div>
+
+      <button class="btn" type="submit">Send our reply</button>
+      <p class="form-note" id="rsvpNote">Demo form — connect it to <a href="https://formspree.io" target="_blank" rel="noopener">Formspree</a>, Google Forms or Tally to collect real replies.</p>
+    </form>
+
+    <div class="panel thanks" id="thanks" style="display:none;">
+      <svg class="mark" width="54" height="54" viewBox="-27 -27 54 54" aria-hidden="true">
+        <ellipse class="petal" cx="0" cy="-12" rx="6.6" ry="12"></ellipse>
+        <ellipse class="petal" cx="0" cy="-12" rx="6.6" ry="12" transform="rotate(72)"></ellipse>
+        <ellipse class="petal" cx="0" cy="-12" rx="6.6" ry="12" transform="rotate(144)"></ellipse>
+        <ellipse class="petal" cx="0" cy="-12" rx="6.6" ry="12" transform="rotate(216)"></ellipse>
+        <ellipse class="petal" cx="0" cy="-12" rx="6.6" ry="12" transform="rotate(288)"></ellipse>
+        <circle class="pollen" cx="0" cy="0" r="5"></circle>
+      </svg>
+      <h2 id="thanksTitle">Thank you!</h2>
+      <p id="thanksBody"></p>
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="names">Catherine <span class="amp">&amp;</span> Charlie</div>
+    <p class="fine">4 August 2027 &middot; Curradine Barns, Worcestershire</p>
+  </div>
+</footer>
+
+<script src="guest-list.js"></script>
+<script>
+  var SVGNS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs) { var e = document.createElementNS(SVGNS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); return e; }
+  function leaf(parent, x, y, angleDeg, len) {
+    var w = len * 0.30;
+    var g = el("g", { transform: "translate(" + x + " " + y + ") rotate(" + angleDeg + ")" });
+    g.appendChild(el("path", { class: "lf", d: "M0 0 C " + (len*0.32) + " " + (-w) + " " + (len*0.72) + " " + (-w) + " " + len + " 0 C " + (len*0.72) + " " + w + " " + (len*0.32) + " " + w + " 0 0 Z" }));
+    g.appendChild(el("path", { class: "vein", d: "M " + (len*0.08) + " 0 L " + (len*0.92) + " 0" }));
+    parent.appendChild(g);
+  }
+  function bloom(parent, x, y, r) {
+    var g = el("g", { transform: "translate(" + x + " " + y + ")" });
+    for (var i = 0; i < 5; i++) g.appendChild(el("ellipse", { class: "petal", cx: 0, cy: -r, rx: r*0.55, ry: r, transform: "rotate(" + (i*72) + ")" }));
+    g.appendChild(el("circle", { class: "pollen", cx: 0, cy: 0, r: r*0.4 }));
+    parent.appendChild(g);
+  }
+  function cubic(p0,p1,p2,p3,t){var u=1-t;return{x:u*u*u*p0.x+3*u*u*t*p1.x+3*u*t*t*p2.x+t*t*t*p3.x,y:u*u*u*p0.y+3*u*u*t*p1.y+3*u*t*t*p2.y+t*t*t*p3.y};}
+  function cubicTangent(p0,p1,p2,p3,t){var u=1-t;var dx=3*u*u*(p1.x-p0.x)+6*u*t*(p2.x-p1.x)+3*t*t*(p3.x-p2.x);var dy=3*u*u*(p1.y-p0.y)+6*u*t*(p2.y-p1.y)+3*t*t*(p3.y-p2.y);return Math.atan2(dy,dx)*180/Math.PI;}
+  function sprig(parent, ox, oy, length, baseLen) {
+    var p0={x:0,y:0}, p1={x:length*0.30,y:-length*0.16}, p2={x:length*0.66,y:-length*0.06}, p3={x:length,y:-length*0.12};
+    var g = el("g", { transform: "translate(" + ox + " " + oy + ")" });
+    g.appendChild(el("path", { class: "stem", d: "M " + p0.x + " " + p0.y + " C " + p1.x + " " + p1.y + " " + p2.x + " " + p2.y + " " + p3.x + " " + p3.y }));
+    var stops = [0.14,0.26,0.38,0.5,0.62,0.74,0.86];
+    for (var i = 0; i < stops.length; i++) {
+      var t = stops[i], pt = cubic(p0,p1,p2,p3,t), tan = cubicTangent(p0,p1,p2,p3,t), side = (i%2===0)?-1:1, ln = baseLen*(1-0.45*t);
+      leaf(g, pt.x, pt.y, tan + side*52, ln);
+    }
+    var tip = cubic(p0,p1,p2,p3,1);
+    leaf(g, tip.x, tip.y, cubicTangent(p0,p1,p2,p3,1), baseLen*0.5);
+    bloom(g, length*0.16, -length*0.02, baseLen*0.28);
+    bloom(g, length*0.44, -length*0.10, baseLen*0.22);
+    parent.appendChild(g);
+  }
+  (function buildDivider() {
+    var svg = document.querySelector(".floral-divider .fd");
+    var cx = 170, cy = 40;
+    var right = el("g", {}); svg.appendChild(right); sprig(right, cx+14, cy, 140, 22);
+    var left = el("g", { transform: "translate(" + (2*cx) + " 0) scale(-1 1)" }); svg.appendChild(left); sprig(left, cx+14, cy, 140, 22);
+    bloom(svg, cx, cy, 9);
+  })();
+
+  (function () {
+    var root = document.documentElement, btn = document.getElementById("themeBtn"), stored = null;
+    try { stored = localStorage.getItem("mt-theme"); } catch (e) {}
+    if (stored) root.setAttribute("data-theme", stored);
+    function isDark() { var t = root.getAttribute("data-theme"); return t ? t === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches; }
+    btn.addEventListener("click", function () { var next = isDark() ? "light" : "dark"; root.setAttribute("data-theme", next); try { localStorage.setItem("mt-theme", next); } catch (e) {} });
+  })();
+
+  (function () {
+    var nav = document.getElementById("nav");
+    function onScroll() { nav.classList.toggle("scrolled", window.scrollY > 8); }
+    window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+  })();
+
+  function toggleAttend() {
+    var yes = document.querySelector("input[name=attend]:checked").value === "yes";
+    document.getElementById("ifYes").classList.toggle("hide", !yes);
+  }
+
+  // ---- Guest-list lookup: match a typed name to an invitation and pre-fill ----
+  (function guestLookup() {
+    var GUESTS = window.GUEST_LIST || [];
+    var input = document.getElementById("name");
+    var box = document.getElementById("suggest");
+    var found = document.getElementById("found");
+    var form = document.getElementById("rsvpForm");
+    if (!input || !GUESTS.length) return;
+    var results = [], active = -1;
+
+    function norm(s) { return (s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").trim(); }
+    function search(q) {
+      var nq = norm(q);
+      if (nq.length < 2) return [];
+      var toks = nq.split(/\s+/);
+      return GUESTS.filter(function (h) {
+        var hay = norm(h.label + " " + h.members.join(" "));
+        return toks.every(function (t) { return hay.indexOf(t) >= 0; });
+      }).slice(0, 6);
+    }
+    function close() { box.hidden = true; input.setAttribute("aria-expanded", "false"); active = -1; }
+    function highlight() {
+      Array.prototype.forEach.call(box.children, function (li, i) {
+        li.setAttribute("aria-selected", i === active ? "true" : "false");
+        if (i === active) li.scrollIntoView({ block: "nearest" });
+      });
+    }
+    function render() {
+      box.innerHTML = "";
+      if (!results.length) { close(); return; }
+      results.forEach(function (h) {
+        var li = document.createElement("li");
+        li.setAttribute("role", "option");
+        var a = document.createElement("span"); a.className = "h-label"; a.textContent = h.label;
+        var b = document.createElement("span"); b.className = "h-members";
+        b.textContent = h.members.join(" · ") + (h.invited === "evening" ? "  —  evening" : "");
+        li.appendChild(a); li.appendChild(b);
+        li.addEventListener("mousedown", function (e) { e.preventDefault(); pick(h); });
+        box.appendChild(li);
+      });
+      box.hidden = false; input.setAttribute("aria-expanded", "true");
+    }
+    function pick(h) {
+      form.querySelector("#householdId").value = h.id;
+      form.querySelector("#names").value = h.members.join(", ");
+      var n = h.members.length, val = n >= 5 ? "5+" : String(n);
+      var r = form.querySelector('input[name=guests][value="' + val + '"]');
+      if (r) r.checked = true;
+      var day = form.querySelector('input[name=parts][value="day"]');
+      var eve = form.querySelector('input[name=parts][value="evening"]');
+      if (day && eve) { var evening = h.invited === "evening"; day.checked = !evening; eve.checked = evening; }
+      found.hidden = false; found.classList.remove("warn");
+      found.textContent = "Found you — " + h.label + " (" + (h.invited === "evening" ? "evening" : "whole day")
+        + ", party of " + n + "). Not you? Just keep typing.";
+      close();
+    }
+
+    input.addEventListener("input", function () {
+      results = search(input.value); active = -1; render();
+      if (!results.length && norm(input.value).length >= 3) {
+        found.hidden = false; found.classList.add("warn");
+        found.textContent = "Can't find your invitation? No trouble — just fill in your details below.";
+      } else if (results.length) { found.hidden = true; }
+    });
+    input.addEventListener("keydown", function (e) {
+      if (box.hidden) return;
+      if (e.key === "ArrowDown") { e.preventDefault(); active = Math.min(active + 1, results.length - 1); highlight(); }
+      else if (e.key === "ArrowUp") { e.preventDefault(); active = Math.max(active - 1, 0); highlight(); }
+      else if (e.key === "Enter" && active >= 0) { e.preventDefault(); pick(results[active]); }
+      else if (e.key === "Escape") { close(); }
+    });
+    input.addEventListener("blur", function () { setTimeout(close, 120); });
+  })();
+
+  function rsvpDone() {
+    var attend = document.querySelector("input[name=attend]:checked").value;
+    var name = document.getElementById("name").value.trim();
+    document.getElementById("rsvpForm").style.display = "none";
+    var t = document.getElementById("thanks");
+    t.style.display = "block";
+    document.getElementById("thanksTitle").textContent = attend === "yes" ? "We can't wait!" : "You'll be missed";
+    document.getElementById("thanksBody").textContent = attend === "yes"
+      ? (name ? "Thank you, " + name + " — we're so glad you'll be there. " : "Thank you — we're so glad you'll be there. ") + "(Demo: connect a real form to actually save this reply.)"
+      : "Thank you for letting us know — we'll raise a glass to you. (Demo: connect a real form to actually save this reply.)";
+    t.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+</script>
+</body>
+</html>

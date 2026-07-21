@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Catherine &amp; Charlie — 4 August 2027</title>
+<meta name="description" content="Join us as we celebrate the wedding of Catherine and Charlie — Wednesday 4 August 2027, Curradine Barns, Worcestershire." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  /* ---------- Tokens ---------- */
+  :root {
+    --paper:      #F4F6EE;
+    --surface:    #FBFCF6;
+    --surface-2:  #EAEFDF;
+    --ink:        #414D37;
+    --muted:      #6E7A61;
+    --line:       #D7DEC7;
+    --sage:       #8DA271;
+    --sage-deep:  #5E7048;
+    --blush:      #D6A79E;
+    --blush-soft: #EBD3CD;
+    --gold:       #BFA36A;
+    --shadow:     0 2px 6px rgba(65,77,55,.05), 0 22px 48px -28px rgba(65,77,55,.28);
+
+    --maxw: 1120px;
+    --script: "Great Vibes", "Snell Roundhand", cursive;
+    --serif:  "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+    --sans:   "Jost", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+
+    --leaf: var(--sage);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper:      #222A1D;
+      --surface:    #2A3325;
+      --surface-2:  #313B2A;
+      --ink:        #EAEEDF;
+      --muted:      #A7B197;
+      --line:       #3C4633;
+      --sage:       #A7BC85;
+      --sage-deep:  #C4D5A5;
+      --blush:      #D9AAA0;
+      --blush-soft: #7C5F5A;
+      --gold:       #CFB379;
+      --shadow:     0 2px 6px rgba(0,0,0,.28), 0 26px 52px -26px rgba(0,0,0,.6);
+      --leaf:       #7C9060;
+    }
+  }
+  :root[data-theme="light"] {
+    --paper:#F4F6EE; --surface:#FBFCF6; --surface-2:#EAEFDF; --ink:#414D37; --muted:#6E7A61;
+    --line:#D7DEC7; --sage:#8DA271; --sage-deep:#5E7048; --blush:#D6A79E; --blush-soft:#EBD3CD;
+    --gold:#BFA36A; --leaf:var(--sage);
+    --shadow:0 2px 6px rgba(65,77,55,.05), 0 22px 48px -28px rgba(65,77,55,.28);
+  }
+  :root[data-theme="dark"] {
+    --paper:#222A1D; --surface:#2A3325; --surface-2:#313B2A; --ink:#EAEEDF; --muted:#A7B197;
+    --line:#3C4633; --sage:#A7BC85; --sage-deep:#C4D5A5; --blush:#D9AAA0; --blush-soft:#7C5F5A;
+    --gold:#CFB379; --leaf:#7C9060;
+    --shadow:0 2px 6px rgba(0,0,0,.28), 0 26px 52px -26px rgba(0,0,0,.6);
+  }
+
+  /* ---------- Base ---------- */
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: var(--sans); font-weight: 300; font-size: 17px; line-height: 1.7;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+
+  h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(2rem, 4vw, 3.1rem); line-height: 1.08; letter-spacing: 0.005em; text-wrap: balance; margin: 0; }
+  h3 { font-family: var(--serif); font-weight: 600; font-size: 1.42rem; margin: 0; }
+  p { margin: 0; }
+
+  .script { font-family: var(--script); font-weight: 400; color: var(--sage-deep); line-height: 1; }
+
+  .eyebrow {
+    font-family: var(--sans); font-weight: 500; font-size: 0.72rem;
+    letter-spacing: 0.34em; text-transform: uppercase; color: var(--sage); margin: 0;
+  }
+
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(20px, 5vw, 44px); }
+  section { padding: clamp(56px, 8vw, 104px) 0; }
+
+  /* ---------- Floral divider ---------- */
+  .floral-divider { display: flex; justify-content: center; padding: 8px 0; }
+  .floral-divider svg { width: min(340px, 72vw); height: auto; overflow: visible; }
+  .lf   { fill: var(--leaf); fill-opacity: .38; stroke: var(--sage-deep); stroke-width: 1.1; stroke-linejoin: round; }
+  .vein { fill: none; stroke: var(--sage-deep); stroke-opacity: .5; stroke-width: .7; }
+  .stem { fill: none; stroke: var(--sage-deep); stroke-width: 1.3; stroke-linecap: round; }
+  .petal  { fill: var(--blush); fill-opacity: .85; }
+  .pollen { fill: var(--gold); }
+
+  /* ---------- Editable banner ---------- */
+  .note { background: var(--surface-2); border-bottom: 1px solid var(--line); font-size: 0.83rem; color: var(--muted); }
+  .note .wrap { display: flex; gap: 14px; align-items: center; padding: 11px clamp(20px,5vw,44px); }
+  .note strong { color: var(--ink); font-weight: 500; }
+  .note button {
+    margin-left: auto; flex: none; cursor: pointer; background: transparent; border: 1px solid var(--line);
+    color: var(--muted); border-radius: 999px; padding: 4px 13px; font: inherit; font-size: 0.78rem;
+  }
+  .note button:hover { color: var(--ink); border-color: var(--sage); }
+
+  /* ---------- Nav ---------- */
+  header.nav {
+    position: sticky; top: 0; z-index: 50;
+    background: color-mix(in srgb, var(--paper) 86%, transparent);
+    backdrop-filter: blur(10px); border-bottom: 1px solid transparent; transition: border-color .3s ease;
+  }
+  header.nav.scrolled { border-bottom-color: var(--line); }
+  header.nav .wrap { display: flex; align-items: center; gap: 20px; height: 68px; }
+  .mono { font-family: var(--script); font-size: 1.9rem; color: var(--sage-deep); text-decoration: none; line-height: 1; padding-top: 6px; }
+  nav.links { margin-left: auto; display: flex; gap: 28px; }
+  nav.links a {
+    text-decoration: none; color: var(--muted); font-size: 0.82rem; letter-spacing: 0.08em;
+    text-transform: uppercase; font-weight: 400; padding: 6px 0; position: relative;
+  }
+  nav.links a::after { content: ""; position: absolute; left: 0; right: 100%; bottom: 0; height: 1px; background: var(--sage); transition: right .25s ease; }
+  nav.links a:hover { color: var(--ink); }
+  nav.links a:hover::after { right: 0; }
+  @media (max-width: 820px) { nav.links { display: none; } }
+  .theme-toggle {
+    flex: none; cursor: pointer; width: 38px; height: 38px; border-radius: 999px;
+    border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+    display: inline-grid; place-items: center; font-size: 1rem;
+  }
+  .theme-toggle:hover { border-color: var(--sage); }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex; align-items: center; gap: 9px; cursor: pointer;
+    font-family: var(--sans); font-weight: 400; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 14px 30px; border-radius: 999px; text-decoration: none;
+    border: 1px solid var(--sage-deep); background: var(--sage-deep); color: #F7F9F1;
+    transition: transform .15s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+  }
+  :root[data-theme="dark"] .btn { color: #1c2416; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn { color: #1c2416; } }
+  .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+  .btn.ghost { background: transparent; color: var(--ink); border-color: var(--sage); }
+  .btn.ghost:hover { border-color: var(--sage-deep); background: color-mix(in srgb, var(--sage) 12%, transparent); }
+
+  /* ---------- Hero ---------- */
+  .hero { position: relative; overflow: hidden; text-align: center; padding-top: clamp(20px, 4vw, 48px); }
+  .hero-flourish { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+  .hero-flourish .corner { position: absolute; width: 300px; height: auto; opacity: .5; }
+  .hero-flourish .corner.bl { left: -40px; bottom: -30px; }
+  .hero-flourish .corner.br { right: -40px; bottom: -30px; transform: scaleX(-1); }
+  .hero .wrap { position: relative; z-index: 1; }
+  .arch { margin: 0 auto; width: min(560px, 88vw); }
+  .arch svg { width: 100%; height: auto; overflow: visible; }
+  .hero .kicker { letter-spacing: 0.4em; margin-top: 6px; }
+  .hero h1 {
+    font-family: var(--script); font-weight: 400; color: var(--sage-deep);
+    font-size: clamp(4rem, 15vw, 10rem); line-height: 0.98; margin: 0.34em 0 0.24em;
+    padding-top: 0.08em; text-wrap: balance;
+  }
+  .hero h1 .amp { color: var(--blush); }
+  .hero .sub { font-family: var(--serif); font-size: clamp(1.15rem, 2.6vw, 1.5rem); color: var(--muted); font-weight: 400; }
+  .hero .sub b { color: var(--ink); font-weight: 600; font-style: italic; }
+  .hero .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
+
+  .countdown { display: flex; gap: clamp(10px, 4vw, 40px); justify-content: center; align-items: baseline; margin-top: 54px; }
+  .countdown .unit { text-align: center; min-width: 56px; }
+  .countdown .num { font-family: var(--serif); font-weight: 500; font-size: clamp(2.1rem, 5.5vw, 3.4rem); line-height: 1; font-variant-numeric: tabular-nums; color: var(--ink); }
+  .countdown .lbl { font-size: 0.64rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--sage); margin-top: 10px; }
+  .countdown .dot { color: var(--blush); font-family: var(--serif); font-size: 1.6rem; align-self: center; }
+
+  /* ---------- Story ---------- */
+  .story .wrap { max-width: 720px; text-align: center; }
+  .story .lead { font-family: var(--serif); font-style: italic; font-size: clamp(1.5rem, 3.2vw, 2rem); color: var(--ink); line-height: 1.4; margin-top: 22px; font-weight: 400; }
+  .story p.body { color: var(--muted); font-size: 1.1rem; margin-top: 22px; }
+
+  /* ---------- Grid ---------- */
+  .center-head { text-align: center; margin-bottom: 46px; }
+  .center-head h2 { margin-top: 10px; }
+  .grid { display: grid; gap: 24px; }
+  .cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .cols-3 { grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 760px) { .cols-2, .cols-3 { grid-template-columns: 1fr; } }
+
+  .card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 220px 220px 20px 20px; padding: 48px 34px 34px;
+    box-shadow: var(--shadow); text-align: center;
+  }
+  .card .tag { color: var(--blush); }
+  .card h3 { margin-top: 8px; }
+  .card .meta { color: var(--muted); margin-top: 16px; font-size: 0.98rem; line-height: 1.9; }
+  .card .meta .k { font-family: var(--sans); font-weight: 500; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage); display: block; }
+
+  /* ---------- Schedule ---------- */
+  .timeline { max-width: 620px; margin: 0 auto; position: relative; }
+  .timeline::before { content: ""; position: absolute; left: 50%; top: 6px; bottom: 6px; width: 1px; background: linear-gradient(var(--line), var(--sage), var(--line)); transform: translateX(-0.5px); }
+  .t-row { display: grid; grid-template-columns: 1fr 24px 1fr; align-items: center; padding: 14px 0; }
+  .t-row > * { grid-row: 1; }
+  .t-row .time { font-family: var(--serif); font-style: italic; font-variant-numeric: tabular-nums; color: var(--blush); font-size: 1.15rem; }
+  .t-row .body h3 { font-size: 1.14rem; }
+  .t-row .body p { color: var(--muted); font-size: 0.94rem; margin-top: 4px; }
+  .t-row .knot { grid-column: 2; display: grid; place-items: center; }
+  .t-row .knot span { width: 9px; height: 9px; border-radius: 50%; background: var(--sage); box-shadow: 0 0 0 4px var(--paper); }
+  .t-row:nth-child(odd) .time { grid-column: 1; text-align: right; padding-right: 28px; }
+  .t-row:nth-child(odd) .body { grid-column: 3; text-align: left; padding-left: 28px; }
+  .t-row:nth-child(even) .time { grid-column: 3; text-align: left; padding-left: 28px; }
+  .t-row:nth-child(even) .body { grid-column: 1; text-align: right; padding-right: 28px; }
+  @media (max-width: 620px) {
+    .timeline::before { left: 10px; }
+    .t-row { grid-template-columns: 20px 1fr; gap: 4px 16px; }
+    .t-row > * { grid-row: auto; }
+    .t-row .knot { grid-column: 1; order: -1; align-self: start; padding-top: 8px; }
+    .t-row .time, .t-row:nth-child(odd) .time, .t-row:nth-child(even) .time { grid-column: 2; text-align: left; padding: 0; }
+    .t-row .body, .t-row:nth-child(odd) .body, .t-row:nth-child(even) .body { grid-column: 2; text-align: left; padding: 0; }
+  }
+
+  /* ---------- Travel ---------- */
+
+  /* ---------- RSVP ---------- */
+  .rsvp .wrap { max-width: 620px; }
+  .rsvp .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: clamp(28px, 4vw, 46px); box-shadow: var(--shadow); }
+  .field { display: flex; flex-direction: column; gap: 7px; margin-top: 20px; }
+  .field label { font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage); font-weight: 500; }
+  .field input, .field select, .field textarea {
+    font: inherit; font-family: var(--sans); color: var(--ink); background: var(--paper);
+    border: 1px solid var(--line); border-radius: 12px; padding: 13px 15px;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: 2px solid var(--sage); outline-offset: 1px; border-color: var(--sage); }
+  .seg { display: flex; gap: 12px; }
+  .seg label { flex: 1; text-align: center; padding: 13px; border: 1px solid var(--line); border-radius: 12px; cursor: pointer; color: var(--muted); font-family: var(--serif); font-style: italic; font-size: 1.05rem; background: var(--paper); }
+  .seg input { position: absolute; opacity: 0; pointer-events: none; }
+  .seg label:has(input:checked) { border-color: var(--sage); background: color-mix(in srgb, var(--sage) 14%, var(--paper)); color: var(--ink); }
+  .rsvp .btn { width: 100%; justify-content: center; margin-top: 26px; }
+  .form-note { text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 14px; }
+
+  /* ---------- Registry ---------- */
+  .registry .wrap { text-align: center; max-width: 680px; }
+  .registry p { color: var(--muted); margin-top: 20px; font-size: 1.1rem; }
+  .reg-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 32px; }
+
+  /* ---------- FAQ ---------- */
+  .faq .wrap { max-width: 760px; }
+  details.q { border-bottom: 1px solid var(--line); }
+  details.q summary { cursor: pointer; list-style: none; padding: 20px 0; display: flex; align-items: center; gap: 14px; font-family: var(--serif); font-size: 1.25rem; font-weight: 500; }
+  details.q summary::-webkit-details-marker { display: none; }
+  details.q summary .plus { margin-left: auto; color: var(--sage); transition: transform .25s ease; font-size: 1.4rem; line-height: 1; font-family: var(--sans); font-weight: 300; }
+  details.q[open] summary .plus { transform: rotate(45deg); }
+  details.q p { color: var(--muted); padding: 0 0 22px; font-size: 1rem; }
+
+  /* ---------- Gallery ---------- */
+  .gallery-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  @media (max-width: 760px) { .gallery-strip { grid-template-columns: repeat(2, 1fr); } }
+  .frame {
+    aspect-ratio: 3/4; border-radius: 200px 200px 14px 14px; overflow: hidden; position: relative;
+    background: linear-gradient(160deg, var(--surface-2), var(--surface));
+    border: 1px solid var(--line); display: grid; place-items: center; color: var(--sage);
+  }
+  .frame span { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: .8; }
+
+  /* ---------- Footer ---------- */
+  footer.site { background: var(--surface); border-top: 1px solid var(--line); text-align: center; padding: clamp(56px, 8vw, 92px) 0; }
+  footer.site .names { font-family: var(--script); font-size: clamp(3rem, 8vw, 4.6rem); color: var(--sage-deep); line-height: 1; }
+  footer.site .names .amp { color: var(--blush); }
+  footer.site .hash { color: var(--sage); margin-top: 18px; letter-spacing: 0.2em; font-size: 0.78rem; text-transform: uppercase; }
+  footer.site .fine { color: var(--muted); font-family: var(--serif); font-style: italic; font-size: 1rem; margin-top: 24px; }
+
+  /* ---------- Plan section ---------- */
+  .plan { background: var(--surface-2); border-top: 1px solid var(--line); }
+  .plan .wrap { max-width: 960px; }
+  .plan .head { text-align: center; margin-bottom: 46px; }
+  .plan .head p { color: var(--muted); margin-top: 14px; max-width: 60ch; margin-inline: auto; }
+  .plan h3.k { font-family: var(--sans); font-weight: 500; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage); margin-bottom: 18px; }
+  .checklist { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 30px; padding: 0; margin: 0; }
+  @media (max-width: 640px) { .checklist { grid-template-columns: 1fr; } }
+  .checklist li { list-style: none; display: flex; gap: 11px; align-items: flex-start; padding: 5px 0; color: var(--ink); font-size: 0.96rem; }
+  .checklist li::before { content: ""; width: 6px; height: 6px; margin-top: 9px; background: var(--blush); transform: rotate(45deg); flex: none; }
+  .checklist li i { color: var(--muted); font-style: normal; display: block; font-size: 0.82rem; }
+  .phases { display: grid; gap: 16px; }
+  .phase { display: grid; grid-template-columns: 46px 1fr; gap: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 24px; }
+  .phase .n { font-family: var(--script); font-size: 2.4rem; color: var(--sage); line-height: 1; }
+  .phase h4 { font-family: var(--serif); font-weight: 600; margin: 0 0 6px; font-size: 1.14rem; }
+  .phase p { color: var(--muted); font-size: 0.94rem; }
+  .phase .when { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); margin-bottom: 8px; }
+  .stack { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+  @media (max-width: 760px) { .stack { grid-template-columns: 1fr; } }
+  .opt { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 24px; }
+  .opt h4 { font-family: var(--serif); font-weight: 600; margin: 4px 0 0; font-size: 1.14rem; }
+  .opt .tier { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blush); }
+  .opt p { color: var(--muted); font-size: 0.9rem; margin-top: 10px; }
+  .opt .best { color: var(--ink); font-size: 0.86rem; margin-top: 12px; }
+  .opt .best b { color: var(--sage-deep); font-weight: 500; }
+  .block-gap { display: grid; gap: 56px; }
+
+  /* ---------- Reveal ---------- */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+  :focus-visible { outline: 2px solid var(--sage-deep); outline-offset: 2px; border-radius: 4px; }
+</style>
+</head>
+<body>
+
+<!-- Preview note: delete this whole block before going live -->
+<div class="note" id="editnote">
+  <div class="wrap">
+    <span><strong>Preview / mockup.</strong> Real: names, date &amp; venue. Still placeholder — the love story, timings, travel, hotels, registry, photos &amp; hashtag. Delete this bar before you publish.</span>
+    <button onclick="document.getElementById('editnote').remove()">Dismiss</button>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="mono" href="#top">C&amp;C</a>
+    <nav class="links">
+      <a href="#details">Details</a>
+      <a href="#schedule">The Day</a>
+      <a href="#activities">Games</a>
+      <a href="#travel">Travel</a>
+      <a href="#faq">FAQ</a>
+      <a href="rsvp.html">RSVP</a>
+    </nav>
+    <button class="theme-toggle" id="themeBtn" aria-label="Toggle light and dark theme" title="Toggle theme">◐</button>
+  </div>
+</header>
+
+<a id="top"></a>
+<section class="hero">
+  <div class="hero-flourish" aria-hidden="true">
+    <svg class="corner bl" id="cornerSvg" viewBox="0 0 300 240"></svg>
+    <svg class="corner br" viewBox="0 0 300 240"><use href="#cornerG" /></svg>
+  </div>
+  <div class="wrap reveal">
+    <div class="arch"><svg id="archSvg" viewBox="0 0 600 230" aria-hidden="true"></svg></div>
+    <p class="eyebrow kicker">Together with their families</p>
+    <h1>Catherine <span class="amp">&amp;</span> Charlie</h1>
+    <p class="sub">are getting married &middot; <b>Wednesday, the fourth of August, 2027</b><br>Curradine Barns &middot; Worcestershire, England</p>
+    <div class="cta-row">
+      <a class="btn" href="rsvp.html">RSVP</a>
+      <a class="btn ghost" href="#details">Wedding details</a>
+    </div>
+    <div class="countdown" id="countdown" aria-label="Countdown to the wedding">
+      <div class="unit"><div class="num" data-u="d">—</div><div class="lbl">Days</div></div>
+      <div class="dot">&middot;</div>
+      <div class="unit"><div class="num" data-u="h">—</div><div class="lbl">Hours</div></div>
+      <div class="dot">&middot;</div>
+      <div class="unit"><div class="num" data-u="m">—</div><div class="lbl">Minutes</div></div>
+      <div class="dot">&middot;</div>
+      <div class="unit"><div class="num" data-u="s">—</div><div class="lbl">Seconds</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="floral-divider reveal"><svg viewBox="0 0 340 70" class="fd"></svg></div>
+
+<section class="details" id="details">
+  <div class="wrap">
+    <div class="center-head reveal">
+      <p class="eyebrow">The Details</p>
+      <h2>Where &amp; when to be</h2>
+    </div>
+    <div class="grid cols-2">
+      <div class="card reveal">
+        <p class="eyebrow tag">Ceremony</p>
+        <h3>The Barn</h3>
+        <div class="meta">
+          <span class="k">When</span>Half past one, Wednesday 4 August 2027
+          <span class="k">Where</span>Curradine Barns, Worcestershire
+          <span class="k">Dress</span>Barn formal — heels sink in grass!
+        </div>
+      </div>
+      <div class="card reveal">
+        <p class="eyebrow tag">Reception</p>
+        <h3>The Courtyard &amp; Lawn</h3>
+        <div class="meta">
+          <span class="k">When</span>Two o'clock till late
+          <span class="k">Where</span>Just across the courtyard
+          <span class="k">Feasting</span>Wedding breakfast, dancing &amp; a very good cheese table
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="floral-divider reveal"><svg viewBox="0 0 340 70" class="fd"></svg></div>
+
+<section class="schedule" id="schedule">
+  <div class="wrap">
+    <div class="center-head reveal">
+      <p class="eyebrow">The Day</p>
+      <h2>How it unfolds</h2>
+    </div>
+    <div class="timeline reveal">
+      <div class="t-row"><div class="time">1:00</div><div class="knot"><span></span></div><div class="body"><h3>Arrival &amp; welcome drinks</h3><p>Find a seat in the barn — the earlier the better.</p></div></div>
+      <div class="t-row"><div class="time">1:30</div><div class="knot"><span></span></div><div class="body"><h3>The ceremony</h3><p>The part where we cry. Bring tissues, or borrow ours.</p></div></div>
+      <div class="t-row"><div class="time">2:00</div><div class="knot"><span></span></div><div class="body"><h3>Confetti, fizz &amp; lawn games</h3><p>Photos on the lawn while the mini golf and games get going.</p></div></div>
+      <div class="t-row"><div class="time">4:00</div><div class="knot"><span></span></div><div class="body"><h3>The wedding breakfast</h3><p>Long tables, short speeches (we promise).</p></div></div>
+      <div class="t-row"><div class="time">7:00</div><div class="knot"><span></span></div><div class="body"><h3>Evening guests &amp; cake</h3><p>More friends, more cake — the party doubles in size.</p></div></div>
+      <div class="t-row"><div class="time">8:00</div><div class="knot"><span></span></div><div class="body"><h3>First dance &amp; the band</h3><p>Then the floor is yours until the last song.</p></div></div>
+      <div class="t-row"><div class="time">12:00</div><div class="knot"><span></span></div><div class="body"><h3>Last dance &amp; farewells</h3><p>Sparklers, a slow song, and safe travels home.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="floral-divider reveal"><svg viewBox="0 0 340 70" class="fd"></svg></div>
+
+<section class="activities" id="activities">
+  <div class="wrap">
+    <div class="center-head reveal">
+      <p class="eyebrow">Between the Vows &amp; the Dancing</p>
+      <h2>Play &amp; wander</h2>
+      <p style="color:var(--muted); font-family:var(--serif); font-style:italic; font-size:1.15rem; margin-top:12px;">The afternoon is yours — grand plans, or a deckchair in the sun.</p>
+    </div>
+    <div class="grid cols-3">
+      <div class="card reveal"><h3>Garden mini golf</h3><p class="meta">Nine wonky holes across the lawn. The winner gets bragging rights and, possibly, a small trophy.</p></div>
+      <div class="card reveal"><h3>Lawn games</h3><p class="meta">Giant Jenga, croquet, welly-wanging and a fiercely contested tug-of-war. All abilities welcome.</p></div>
+      <div class="card reveal"><h3>Photo booth</h3><p class="meta">Props, silliness, and a keepsake print to pin on your fridge. Guestbook alongside — leave us a note.</p></div>
+    </div>
+    <p class="reveal" style="text-align:center; color:var(--muted); font-size:0.9rem; margin-top:24px;">More to come — tell me what else you're planning (fire pit? ice-cream van? dog?) and I'll add cards for each.</p>
+  </div>
+</section>
+
+<div class="floral-divider reveal"><svg viewBox="0 0 340 70" class="fd"></svg></div>
+
+<section class="travel" id="travel">
+  <div class="wrap">
+    <div class="center-head reveal">
+      <p class="eyebrow">Travel &amp; Stay</p>
+      <h2>Getting there &amp; resting up</h2>
+    </div>
+    <div class="grid cols-3">
+      <div class="card reveal"><h3>By car</h3><p class="meta">Free parking on-site. Curradine Barns is a few minutes from the M5 (Junction 6). Sat-nav postcode: <b>WR9 0AY</b> <i>(please double-check!)</i>.</p></div>
+      <div class="card reveal"><h3>By train</h3><p class="meta">Worcester Foregate Street is roughly a 20-minute taxi ride. Let us know if you'd like help arranging a lift.</p></div>
+      <div class="card reveal"><h3>Where to stay</h3><p class="meta"><i>Placeholder</i> — we'll list a couple of nearby inns &amp; hotels holding rooms for us. Send me the names and I'll drop them in.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="floral-divider reveal"><svg viewBox="0 0 340 70" class="fd"></svg></div>
+
+<section class="rsvp" id="rsvp">
+  <div class="wrap registry reveal">
+    <p class="eyebrow">Reply</p>
+    <h2>Will you join us?</h2>
+    <p style="color:var(--muted); font-family:var(--serif); font-style:italic; font-size:1.2rem; margin-top:16px;">We would be so happy to have you there. Kindly let us know by the first of June, 2027.</p>
+    <div class="reg-row">
+      <a class="btn" href="rsvp.html">Reply to our invitation</a>
+    </div>
+  </div>
+</section>
+
+<div class="floral-divider reveal"><svg viewBox="0 0 340 70" class="fd"></svg></div>
+
+<section class="registry">
+  <div class="wrap registry reveal">
+    <p class="eyebrow">Gifts</p>
+    <h2>With love, not obligation</h2>
+    <p>Your presence is the truest present. But for those who've asked — we're saving for a honeymoon in Portugal and slowly making a home. Anything at all is met with enormous gratitude.</p>
+    <div class="reg-row">
+      <a class="btn" href="#">Honeymoon fund</a>
+      <a class="btn ghost" href="#">Home registry</a>
+    </div>
+  </div>
+</section>
+
+<div class="floral-divider reveal"><svg viewBox="0 0 340 70" class="fd"></svg></div>
+
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="center-head reveal">
+      <p class="eyebrow">Good to Know</p>
+      <h2>Questions, answered</h2>
+    </div>
+    <div class="reveal">
+      <details class="q" open><summary>Can I bring a plus-one?<span class="plus">+</span></summary><p>Your invitation names everyone we've saved a seat for. If you spot a "+ guest", the extra chair is yours to fill.</p></details>
+      <details class="q"><summary>Are children welcome?<span class="plus">+</span></summary><p>We adore your little ones, but we've planned an adults-only celebration so everyone can let their hair down. Named children on your invite are of course included.</p></details>
+      <details class="q"><summary>What's the dress code?<span class="plus">+</span></summary><p>Garden formal — think summer suits and floaty dresses. The ceremony and drinks are on grass, so block heels or flats will thank you.</p></details>
+      <details class="q"><summary>Is it indoors or out?<span class="plus">+</span></summary><p>Both — the ceremony is in the walled garden, the reception in a glasshouse. There's cover if the British weather has other ideas.</p></details>
+      <details class="q"><summary>Where do I park or stay?<span class="plus">+</span></summary><p>Free on-site parking, plus two hotels holding rooms for us — see the <a href="#travel">Travel &amp; Stay</a> section above.</p></details>
+    </div>
+  </div>
+</section>
+
+<div class="floral-divider reveal"><svg viewBox="0 0 340 70" class="fd"></svg></div>
+
+<section class="gallery">
+  <div class="wrap">
+    <div class="center-head reveal">
+      <p class="eyebrow">Us</p>
+      <h2>A few of our favourites</h2>
+    </div>
+    <div class="gallery-strip reveal">
+      <div class="frame"><span>Your photo</span></div>
+      <div class="frame"><span>Your photo</span></div>
+      <div class="frame"><span>Your photo</span></div>
+      <div class="frame"><span>Your photo</span></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap reveal">
+    <div class="names">Catherine <span class="amp">&amp;</span> Charlie</div>
+    <div class="hash">#CatherineAndCharlie2027</div>
+    <p class="fine">4 August 2027 &middot; Curradine Barns, Worcestershire &middot; With love and gratitude</p>
+  </div>
+</footer>
+
+<!-- ============================================================= -->
+<!-- BUILD PLAN — for you, not the guests. Delete before publishing. -->
+<!-- ============================================================= -->
+<section class="plan" id="plan">
+  <div class="wrap block-gap">
+    <div class="head reveal">
+      <p class="eyebrow">For you — not the guests</p>
+      <h2>Everything to include &amp; how we get there</h2>
+      <p>A little gift for your friend — the full checklist of what a lovely one-page wedding site needs, a build roadmap, and how to put it online. Delete this whole section before going live.</p>
+    </div>
+
+    <div class="reveal">
+      <h3 class="k">1 · What to include</h3>
+      <ul class="checklist">
+        <li>Names, date &amp; place <i>The first thing a guest sees</i></li>
+        <li>Countdown or save-the-date <i>A little anticipation</i></li>
+        <li>Your story <i>How you met, the proposal</i></li>
+        <li>Ceremony &amp; reception details <i>Times, addresses, dress code</i></li>
+        <li>Schedule of the day <i>So no one misses the confetti</i></li>
+        <li>Travel &amp; parking <i>Directions, shuttle, taxis</i></li>
+        <li>Accommodation <i>Hotel blocks &amp; rates</i></li>
+        <li>RSVP form <i>The one thing that must work</i></li>
+        <li>Dietary &amp; song requests <i>Fold into the RSVP</i></li>
+        <li>Registry / honeymoon fund <i>Framed gently</i></li>
+        <li>FAQ <i>Plus-ones, kids, weather, dress</i></li>
+        <li>Photo gallery <i>A few favourites</i></li>
+        <li>Contact for questions <i>An email or point person</i></li>
+        <li>Wedding hashtag <i>For sharing photos after</i></li>
+      </ul>
+    </div>
+
+    <div class="reveal">
+      <h3 class="k">2 · How we get there</h3>
+      <div class="phases">
+        <div class="phase"><div class="n">1</div><div><div class="when">Gather · ~1 hour together</div><h4>Collect the real details</h4><p>Names, date, venue addresses, times, dress code, hotels, RSVP deadline, registry links, and 4–8 favourite photos. This mockup is the fill-in-the-blanks form — anything in a placeholder needs a real answer.</p></div></div>
+        <div class="phase"><div class="n">2</div><div><div class="when">Personalise · content</div><h4>Swap placeholders for their story</h4><p>Replace the text, dates and photos. Their sage-green palette already lives here — every colour is a variable at the very top (<code>--sage</code>, <code>--blush</code>…), so re-tinting is a one-line change.</p></div></div>
+        <div class="phase"><div class="n">3</div><div><div class="when">Wire up · the RSVP</div><h4>Make replies land somewhere</h4><p>Point the form at Google Forms, Formspree or Tally so responses drop into a spreadsheet. This is the only truly functional piece — everything else is presentation.</p></div></div>
+        <div class="phase"><div class="n">4</div><div><div class="when">Publish · go live</div><h4>Put it on the internet</h4><p>Drag the folder onto Netlify or push to GitHub Pages (both free). Optionally point a pretty domain like <code>catherineandcharlie.co.uk</code> at it.</p></div></div>
+        <div class="phase"><div class="n">5</div><div><div class="when">Polish · before sharing</div><h4>Test &amp; send</h4><p>Check it on a phone, click every link, send yourself a test RSVP, then share the link on the invitations. Delete this planning section first!</p></div></div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3 class="k">3 · Ways to put it online</h3>
+      <div class="stack">
+        <div class="opt"><div class="tier">Easiest · free</div><h4>Netlify Drop</h4><p>Drag the folder onto app.netlify.com/drop — live in seconds with a shareable link. No account needed to start.</p><p class="best"><b>Best for</b> getting it live today.</p></div>
+        <div class="opt"><div class="tier">Free · you're in git</div><h4>GitHub Pages</h4><p>This is already a repo. Push it, enable Pages in settings, and it's hosted at a github.io URL — updates on every commit.</p><p class="best"><b>Best for</b> tinkering over time.</p></div>
+        <div class="opt"><div class="tier">~£10/yr · polished</div><h4>Custom domain</h4><p>Buy a name (Namecheap, Google Domains) and point it at Netlify or Pages so guests get a memorable address.</p><p class="best"><b>Best for</b> the finishing touch.</p></div>
+      </div>
+    </div>
+
+    <div class="reveal" style="text-align:center; color:var(--muted); font-family:var(--serif); font-style:italic; font-size:1.05rem;">
+      One self-contained HTML file — no build tools, no dependencies. Fonts &amp; florals load in any browser online.
+    </div>
+  </div>
+</section>
+
+<script>
+  var SVGNS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs) {
+    var e = document.createElementNS(SVGNS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    return e;
+  }
+
+  // ---- A single leaf pointing along +x from its base at origin ----
+  function leaf(parent, x, y, angleDeg, len) {
+    var w = len * 0.30;
+    var g = el("g", { transform: "translate(" + x + " " + y + ") rotate(" + angleDeg + ")" });
+    g.appendChild(el("path", { class: "lf",
+      d: "M0 0 C " + (len*0.32) + " " + (-w) + " " + (len*0.72) + " " + (-w) + " " + len + " 0 "
+        + "C " + (len*0.72) + " " + w + " " + (len*0.32) + " " + w + " 0 0 Z" }));
+    g.appendChild(el("path", { class: "vein", d: "M " + (len*0.08) + " 0 L " + (len*0.92) + " 0" }));
+    parent.appendChild(g);
+  }
+
+  // ---- A small five-petal blossom ----
+  function bloom(parent, x, y, r) {
+    var g = el("g", { transform: "translate(" + x + " " + y + ")" });
+    for (var i = 0; i < 5; i++) {
+      g.appendChild(el("ellipse", { class: "petal", cx: 0, cy: -r, rx: r*0.55, ry: r, transform: "rotate(" + (i*72) + ")" }));
+    }
+    g.appendChild(el("circle", { class: "pollen", cx: 0, cy: 0, r: r*0.4 }));
+    parent.appendChild(g);
+  }
+
+  function cubic(p0, p1, p2, p3, t) {
+    var u = 1 - t;
+    return {
+      x: u*u*u*p0.x + 3*u*u*t*p1.x + 3*u*t*t*p2.x + t*t*t*p3.x,
+      y: u*u*u*p0.y + 3*u*u*t*p1.y + 3*u*t*t*p2.y + t*t*t*p3.y
+    };
+  }
+  function cubicTangent(p0, p1, p2, p3, t) {
+    var u = 1 - t;
+    var dx = 3*u*u*(p1.x-p0.x) + 6*u*t*(p2.x-p1.x) + 3*t*t*(p3.x-p2.x);
+    var dy = 3*u*u*(p1.y-p0.y) + 6*u*t*(p2.y-p1.y) + 3*t*t*(p3.y-p2.y);
+    return Math.atan2(dy, dx) * 180 / Math.PI;
+  }
+
+  // ---- A leafy stem growing along +x, base at (ox,oy) ----
+  function sprig(parent, ox, oy, length, baseLen) {
+    var p0 = { x: 0, y: 0 };
+    var p1 = { x: length*0.30, y: -length*0.16 };
+    var p2 = { x: length*0.66, y: -length*0.06 };
+    var p3 = { x: length, y: -length*0.12 };
+    var g = el("g", { transform: "translate(" + ox + " " + oy + ")" });
+    g.appendChild(el("path", { class: "stem",
+      d: "M " + p0.x + " " + p0.y + " C " + p1.x + " " + p1.y + " " + p2.x + " " + p2.y + " " + p3.x + " " + p3.y }));
+    var stops = [0.14, 0.26, 0.38, 0.5, 0.62, 0.74, 0.86];
+    for (var i = 0; i < stops.length; i++) {
+      var t = stops[i];
+      var pt = cubic(p0, p1, p2, p3, t);
+      var tan = cubicTangent(p0, p1, p2, p3, t);
+      var side = (i % 2 === 0) ? -1 : 1;
+      var ln = baseLen * (1 - 0.45 * t);
+      leaf(g, pt.x, pt.y, tan + side * 52, ln);
+    }
+    var tip = cubic(p0, p1, p2, p3, 1);
+    leaf(g, tip.x, tip.y, cubicTangent(p0, p1, p2, p3, 1), baseLen * 0.5);
+    bloom(g, length*0.16, -length*0.02, baseLen * 0.28);
+    bloom(g, length*0.44, -length*0.10, baseLen * 0.22);
+    parent.appendChild(g);
+  }
+
+  // ---- Floral divider: two mirrored sprigs meeting at a centre bloom ----
+  function buildDivider(svg) {
+    var cx = 170, cy = 40;
+    var right = el("g", {}); svg.appendChild(right); sprig(right, cx + 14, cy, 140, 22);
+    var left = el("g", { transform: "translate(" + (2*cx) + " 0) scale(-1 1)" }); svg.appendChild(left);
+    sprig(left, cx + 14, cy, 140, 22);
+    bloom(svg, cx, cy, 9);
+  }
+
+  // ---- Hero arch: leaves distributed along an elliptical crown ----
+  function buildArch(svg) {
+    var cx = 300, cy = 215, rx = 250, ry = 150;
+    var g = el("g", {}); svg.appendChild(g);
+    var N = 26;
+    for (var i = 0; i <= N; i++) {
+      var th = Math.PI + (Math.PI) * (i / N);      // PI -> 2PI, over the top
+      var x = cx + rx * Math.cos(th);
+      var y = cy + ry * Math.sin(th);
+      var tanTh = Math.atan2(ry * Math.cos(th), -rx * Math.sin(th)) * 180 / Math.PI;
+      var side = (i % 2 === 0) ? -1 : 1;
+      var edge = Math.sin((i / N) * Math.PI);       // fuller in the middle
+      var ln = 16 + 12 * edge;
+      leaf(g, x, y, tanTh + side * 58, ln);
+      if (i % 6 === 2) bloom(g, x, y, 6 + 3 * edge);
+    }
+    // blossom clusters resting at each end of the arch
+    bloom(g, cx - rx + 8, cy - 6, 11);
+    bloom(g, cx - rx - 2, cy + 14, 8);
+    bloom(g, cx + rx - 8, cy - 6, 11);
+    bloom(g, cx + rx + 2, cy + 14, 8);
+  }
+
+  // ---- Corner spray for the hero background ----
+  function buildCorner(svg) {
+    var g = el("g", { id: "cornerG" });
+    svg.appendChild(g);
+    sprig(g, 20, 210, 250, 30);
+    sprig(g, 20, 210, 180, 24);
+    var g2 = el("g", { transform: "rotate(-32 20 210)" });
+    sprig(g2, 20, 210, 210, 26);
+    g.appendChild(g2);
+  }
+
+  document.querySelectorAll(".floral-divider .fd").forEach(buildDivider);
+  buildArch(document.getElementById("archSvg"));
+  buildCorner(document.getElementById("cornerSvg"));
+
+  // ---- Theme toggle ----
+  (function () {
+    var root = document.documentElement, btn = document.getElementById("themeBtn"), stored = null;
+    try { stored = localStorage.getItem("mt-theme"); } catch (e) {}
+    if (stored) root.setAttribute("data-theme", stored);
+    function isDark() {
+      var t = root.getAttribute("data-theme");
+      if (t) return t === "dark";
+      return window.matchMedia("(prefers-color-scheme: dark)").matches;
+    }
+    btn.addEventListener("click", function () {
+      var next = isDark() ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      try { localStorage.setItem("mt-theme", next); } catch (e) {}
+    });
+  })();
+
+  // ---- Nav border on scroll ----
+  (function () {
+    var nav = document.getElementById("nav");
+    function onScroll() { nav.classList.toggle("scrolled", window.scrollY > 8); }
+    window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+  })();
+
+  // ---- Countdown ----
+  (function () {
+    var target = new Date("2027-08-04T13:30:00").getTime();
+    var cd = document.getElementById("countdown");
+    function pad(n) { return (n < 10 ? "0" : "") + n; }
+    function tick() {
+      var diff = Math.max(0, target - Date.now());
+      var s = Math.floor(diff / 1000);
+      var d = Math.floor(s / 86400); s -= d * 86400;
+      var h = Math.floor(s / 3600); s -= h * 3600;
+      var m = Math.floor(s / 60); s -= m * 60;
+      cd.querySelector("[data-u=d]").textContent = d;
+      cd.querySelector("[data-u=h]").textContent = pad(h);
+      cd.querySelector("[data-u=m]").textContent = pad(m);
+      cd.querySelector("[data-u=s]").textContent = pad(s);
+    }
+    tick(); setInterval(tick, 1000);
+  })();
+
+  // ---- Scroll reveal ----
+  (function () {
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var els = document.querySelectorAll(".reveal");
+    if (reduce || !("IntersectionObserver" in window)) { els.forEach(function (e) { e.classList.add("in"); }); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    els.forEach(function (e) { io.observe(e); });
+  })();
+</script>
+</body>
+</html>
