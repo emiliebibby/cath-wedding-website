@@ -7,25 +7,26 @@
 <meta name="description" content="Join us as we celebrate the wedding of Catherine and Charlie — Wednesday 4 August 2027, Curradine Barns, Worcestershire." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
 <style>
   /* ---------- Tokens ---------- */
   :root {
-    --paper:      #F4F6EE;
-    --surface:    #FBFCF6;
-    --surface-2:  #EAEFDF;
-    --ink:        #414D37;
-    --muted:      #6E7A61;
-    --line:       #D7DEC7;
-    --sage:       #8DA271;
-    --sage-deep:  #5E7048;
-    --blush:      #D6A79E;
+    --paper:      #FFFFFF;
+    --surface:    #FAF9F3;
+    --surface-2:  #F2F0E5;
+    --ink:        #3E3B2C;
+    --muted:      #7E8A62;
+    --line:       #E7E4D4;
+    --sage:       #89976B;
+    --sage-deep:  #5E6B45;
+    --blush:      #D8ADA4;
     --blush-soft: #EBD3CD;
-    --gold:       #BFA36A;
-    --shadow:     0 2px 6px rgba(65,77,55,.05), 0 22px 48px -28px rgba(65,77,55,.28);
+    --gold:       #6B6330;
+    --gold-soft:  #8A7E3E;
+    --shadow:     0 2px 6px rgba(90,84,50,.05), 0 22px 48px -30px rgba(90,84,50,.26);
 
     --maxw: 1120px;
-    --script: "Great Vibes", "Snell Roundhand", cursive;
+    --script: "Allura", "Snell Roundhand", cursive;
     --serif:  "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
     --sans:   "Jost", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
 
@@ -33,32 +34,23 @@
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --paper:      #222A1D;
-      --surface:    #2A3325;
-      --surface-2:  #313B2A;
-      --ink:        #EAEEDF;
-      --muted:      #A7B197;
-      --line:       #3C4633;
-      --sage:       #A7BC85;
-      --sage-deep:  #C4D5A5;
-      --blush:      #D9AAA0;
-      --blush-soft: #7C5F5A;
-      --gold:       #CFB379;
-      --shadow:     0 2px 6px rgba(0,0,0,.28), 0 26px 52px -26px rgba(0,0,0,.6);
-      --leaf:       #7C9060;
+      --paper:#1E241A; --surface:#262D1F; --surface-2:#2D3524; --ink:#ECEFE1; --muted:#AAB595;
+      --line:#39432E; --sage:#A7BC85; --sage-deep:#C4D5A5; --blush:#DBACA2; --blush-soft:#7C5F5A;
+      --gold:#CBB675; --gold-soft:#D8C589;
+      --shadow:0 2px 6px rgba(0,0,0,.3), 0 26px 52px -26px rgba(0,0,0,.62); --leaf:#7C9060;
     }
   }
   :root[data-theme="light"] {
-    --paper:#F4F6EE; --surface:#FBFCF6; --surface-2:#EAEFDF; --ink:#414D37; --muted:#6E7A61;
-    --line:#D7DEC7; --sage:#8DA271; --sage-deep:#5E7048; --blush:#D6A79E; --blush-soft:#EBD3CD;
-    --gold:#BFA36A; --leaf:var(--sage);
-    --shadow:0 2px 6px rgba(65,77,55,.05), 0 22px 48px -28px rgba(65,77,55,.28);
+    --paper:#FFFFFF; --surface:#FAF9F3; --surface-2:#F2F0E5; --ink:#3E3B2C; --muted:#7E8A62;
+    --line:#E7E4D4; --sage:#89976B; --sage-deep:#5E6B45; --blush:#D8ADA4; --blush-soft:#EBD3CD;
+    --gold:#6B6330; --gold-soft:#8A7E3E; --leaf:var(--sage);
+    --shadow:0 2px 6px rgba(90,84,50,.05), 0 22px 48px -30px rgba(90,84,50,.26);
   }
   :root[data-theme="dark"] {
-    --paper:#222A1D; --surface:#2A3325; --surface-2:#313B2A; --ink:#EAEEDF; --muted:#A7B197;
-    --line:#3C4633; --sage:#A7BC85; --sage-deep:#C4D5A5; --blush:#D9AAA0; --blush-soft:#7C5F5A;
-    --gold:#CFB379; --leaf:#7C9060;
-    --shadow:0 2px 6px rgba(0,0,0,.28), 0 26px 52px -26px rgba(0,0,0,.6);
+    --paper:#1E241A; --surface:#262D1F; --surface-2:#2D3524; --ink:#ECEFE1; --muted:#AAB595;
+    --line:#39432E; --sage:#A7BC85; --sage-deep:#C4D5A5; --blush:#DBACA2; --blush-soft:#7C5F5A;
+    --gold:#CBB675; --gold-soft:#D8C589; --leaf:#7C9060;
+    --shadow:0 2px 6px rgba(0,0,0,.3), 0 26px 52px -26px rgba(0,0,0,.62);
   }
 
   /* ---------- Base ---------- */
@@ -73,11 +65,11 @@
   img { max-width: 100%; display: block; }
   a { color: inherit; }
 
-  h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(2rem, 4vw, 3.1rem); line-height: 1.08; letter-spacing: 0.005em; text-wrap: balance; margin: 0; }
-  h3 { font-family: var(--serif); font-weight: 600; font-size: 1.42rem; margin: 0; }
+  h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(2rem, 4vw, 3.1rem); line-height: 1.08; letter-spacing: 0.02em; text-wrap: balance; margin: 0; color: var(--gold); }
+  h3 { font-family: var(--serif); font-weight: 600; font-size: 1.42rem; margin: 0; color: var(--gold); }
   p { margin: 0; }
 
-  .script { font-family: var(--script); font-weight: 400; color: var(--sage-deep); line-height: 1; }
+  .script { font-family: var(--script); font-weight: 400; color: var(--ink); line-height: 1; }
 
   .eyebrow {
     font-family: var(--sans); font-weight: 500; font-size: 0.72rem;
@@ -88,13 +80,16 @@
   section { padding: clamp(56px, 8vw, 104px) 0; }
 
   /* ---------- Floral divider ---------- */
-  .floral-divider { display: flex; justify-content: center; padding: 8px 0; }
-  .floral-divider svg { width: min(340px, 72vw); height: auto; overflow: visible; }
-  .lf   { fill: var(--leaf); fill-opacity: .38; stroke: var(--sage-deep); stroke-width: 1.1; stroke-linejoin: round; }
-  .vein { fill: none; stroke: var(--sage-deep); stroke-opacity: .5; stroke-width: .7; }
-  .stem { fill: none; stroke: var(--sage-deep); stroke-width: 1.3; stroke-linecap: round; }
-  .petal  { fill: var(--blush); fill-opacity: .85; }
-  .pollen { fill: var(--gold); }
+  .floral-divider { display: flex; justify-content: center; align-items: center; gap: 18px; padding: 10px 0; }
+  .floral-divider::before, .floral-divider::after {
+    content: ""; height: 1px; width: min(120px, 22vw);
+    background: linear-gradient(to right, transparent, var(--line));
+  }
+  .floral-divider::after { transform: scaleX(-1); }
+  .floral-divider .fd {
+    width: 40px; height: 54px; flex: none; overflow: visible;
+    background: center/contain no-repeat url("florals/daisy-b.png");
+  }
 
   /* ---------- Editable banner ---------- */
   .note { background: var(--surface-2); border-bottom: 1px solid var(--line); font-size: 0.83rem; color: var(--muted); }
@@ -114,7 +109,7 @@
   }
   header.nav.scrolled { border-bottom-color: var(--line); }
   header.nav .wrap { display: flex; align-items: center; gap: 20px; height: 68px; }
-  .mono { font-family: var(--script); font-size: 1.9rem; color: var(--sage-deep); text-decoration: none; line-height: 1; padding-top: 6px; }
+  .mono { font-family: var(--serif); font-weight: 600; font-size: 1.15rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); text-decoration: none; line-height: 1; }
   nav.links { margin-left: auto; display: flex; gap: 28px; }
   nav.links a {
     text-decoration: none; color: var(--muted); font-size: 0.82rem; letter-spacing: 0.08em;
@@ -146,23 +141,45 @@
   .btn.ghost:hover { border-color: var(--sage-deep); background: color-mix(in srgb, var(--sage) 12%, transparent); }
 
   /* ---------- Hero ---------- */
-  .hero { position: relative; overflow: hidden; text-align: center; padding-top: clamp(20px, 4vw, 48px); }
-  .hero-flourish { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
-  .hero-flourish .corner { position: absolute; width: 300px; height: auto; opacity: .5; }
-  .hero-flourish .corner.bl { left: -40px; bottom: -30px; }
-  .hero-flourish .corner.br { right: -40px; bottom: -30px; transform: scaleX(-1); }
-  .hero .wrap { position: relative; z-index: 1; }
-  .arch { margin: 0 auto; width: min(560px, 88vw); }
-  .arch svg { width: 100%; height: auto; overflow: visible; }
-  .hero .kicker { letter-spacing: 0.4em; margin-top: 6px; }
-  .hero h1 {
-    font-family: var(--script); font-weight: 400; color: var(--sage-deep);
-    font-size: clamp(4rem, 15vw, 10rem); line-height: 0.98; margin: 0.34em 0 0.24em;
-    padding-top: 0.08em; text-wrap: balance;
+  .hero { position: relative; overflow: hidden; text-align: center; padding: clamp(24px, 5vw, 60px) 0 clamp(40px, 6vw, 80px); }
+  .hero .wrap { position: relative; z-index: 2; }
+  /* wildflower framing — stems enter from the side edges at staggered heights, each growing up & inward */
+  .hero-fl { position: absolute; z-index: 1; pointer-events: none; user-select: none; height: auto; transform-origin: bottom center; }
+  /* LEFT — stem bases sit at the left edge (pushed off by ~half their width), fanning up-inward */
+  .hero-fl.l-verbena { left: -150px; bottom: 6%;  width: clamp(150px, 17vw, 265px); transform: rotate(50deg); }
+  .hero-fl.l-pod     { left: -84px;  bottom: 20%; width: clamp(84px, 10vw, 135px);  transform: rotate(56deg); }
+  .hero-fl.l-daisy1  { left: -104px; bottom: 34%; width: clamp(120px, 13vw, 185px); transform: rotate(44deg); }
+  .hero-fl.l-thistle { left: -46px;  bottom: 48%; width: clamp(44px, 5vw, 76px);    transform: rotate(34deg); }
+  .hero-fl.l-bud     { left: -48px;  bottom: 60%; width: clamp(46px, 5vw, 78px);    transform: rotate(40deg); }
+  .hero-fl.l-daisy2  { left: -86px;  bottom: 72%; width: clamp(98px, 11vw, 150px);  transform: rotate(30deg); }
+  /* RIGHT — mirror */
+  .hero-fl.r-verbena { right: -150px; bottom: 6%;  width: clamp(150px, 17vw, 265px); transform: rotate(-50deg); }
+  .hero-fl.r-pod     { right: -84px;  bottom: 20%; width: clamp(84px, 10vw, 135px);  transform: rotate(-56deg); }
+  .hero-fl.r-daisy1  { right: -104px; bottom: 34%; width: clamp(120px, 13vw, 185px); transform: rotate(-44deg); }
+  .hero-fl.r-thistle { right: -46px;  bottom: 48%; width: clamp(44px, 5vw, 76px);    transform: scaleX(-1) rotate(34deg); }
+  .hero-fl.r-bud     { right: -48px;  bottom: 60%; width: clamp(46px, 5vw, 78px);    transform: rotate(-40deg); }
+  .hero-fl.r-daisy2  { right: -86px;  bottom: 72%; width: clamp(98px, 11vw, 150px);  transform: scaleX(-1) rotate(30deg); }
+  @media (max-width: 820px) {
+    .hero-fl.l-pod, .hero-fl.l-bud, .hero-fl.l-thistle, .hero-fl.l-daisy2,
+    .hero-fl.r-pod, .hero-fl.r-bud, .hero-fl.r-thistle, .hero-fl.r-daisy2 { display: none; }
+    .hero-fl.l-verbena, .hero-fl.r-verbena { width: 100px; opacity: .5; }
+    .hero-fl.l-daisy1, .hero-fl.r-daisy1 { width: 116px; opacity: .82; bottom: 30%; }
   }
-  .hero h1 .amp { color: var(--blush); }
-  .hero .sub { font-family: var(--serif); font-size: clamp(1.15rem, 2.6vw, 1.5rem); color: var(--muted); font-weight: 400; }
-  .hero .sub b { color: var(--ink); font-weight: 600; font-style: italic; }
+  .hero-poppy { width: clamp(62px, 8vw, 92px); height: auto; margin: 0 auto 4px; display: block; }
+  .hero .monogram { font-family: var(--serif); font-weight: 600; font-size: clamp(1.5rem, 3vw, 2.1rem); letter-spacing: 0.28em; color: var(--gold); }
+  .hero .monogram .amp { font-family: var(--script); letter-spacing: 0; font-size: 1.2em; color: var(--blush); }
+  .hero .kicker { letter-spacing: 0.34em; margin-top: 26px; color: var(--sage); }
+  .hero h1 {
+    font-family: var(--serif); font-weight: 500; text-transform: uppercase; color: var(--gold);
+    font-size: clamp(2.4rem, 8vw, 5.4rem); line-height: 1.04; letter-spacing: 0.1em;
+    margin: 0.16em 0 0.2em; text-wrap: balance;
+  }
+  .hero h1 .amp {
+    display: block; font-family: var(--script); text-transform: none; letter-spacing: 0;
+    color: var(--ink); font-size: 0.42em; font-weight: 400; margin: 0.04em 0;
+  }
+  .hero .sub { font-family: var(--serif); font-size: clamp(1.05rem, 2.4vw, 1.4rem); color: var(--muted); font-weight: 400; letter-spacing: 0.02em; }
+  .hero .sub b { color: var(--ink); font-weight: 600; }
   .hero .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
 
   .countdown { display: flex; gap: clamp(10px, 4vw, 40px); justify-content: center; align-items: baseline; margin-top: 54px; }
@@ -262,8 +279,9 @@
 
   /* ---------- Footer ---------- */
   footer.site { background: var(--surface); border-top: 1px solid var(--line); text-align: center; padding: clamp(56px, 8vw, 92px) 0; }
-  footer.site .names { font-family: var(--script); font-size: clamp(3rem, 8vw, 4.6rem); color: var(--sage-deep); line-height: 1; }
-  footer.site .names .amp { color: var(--blush); }
+  footer.site .footer-fl { width: clamp(96px, 12vw, 150px); height: auto; margin: 0 auto 18px; display: block; }
+  footer.site .names { font-family: var(--serif); font-weight: 500; text-transform: uppercase; letter-spacing: 0.16em; font-size: clamp(1.6rem, 5vw, 2.6rem); color: var(--gold); line-height: 1.2; }
+  footer.site .names .amp { font-family: var(--script); text-transform: none; letter-spacing: 0; color: var(--blush); font-size: 1.15em; }
   footer.site .hash { color: var(--sage); margin-top: 18px; letter-spacing: 0.2em; font-size: 0.78rem; text-transform: uppercase; }
   footer.site .fine { color: var(--muted); font-family: var(--serif); font-style: italic; font-size: 1rem; margin-top: 24px; }
 
@@ -280,7 +298,7 @@
   .checklist li i { color: var(--muted); font-style: normal; display: block; font-size: 0.82rem; }
   .phases { display: grid; gap: 16px; }
   .phase { display: grid; grid-template-columns: 46px 1fr; gap: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 24px; }
-  .phase .n { font-family: var(--script); font-size: 2.4rem; color: var(--sage); line-height: 1; }
+  .phase .n { font-family: var(--serif); font-weight: 600; font-size: 2rem; color: var(--gold-soft); line-height: 1; }
   .phase h4 { font-family: var(--serif); font-weight: 600; margin: 0 0 6px; font-size: 1.14rem; }
   .phase p { color: var(--muted); font-size: 0.94rem; }
   .phase .when { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); margin-bottom: 8px; }
@@ -313,7 +331,7 @@
 
 <header class="nav" id="nav">
   <div class="wrap">
-    <a class="mono" href="#top">C&amp;C</a>
+    <a class="mono" href="#top">C &middot; C</a>
     <nav class="links">
       <a href="#details">Details</a>
       <a href="#schedule">The Day</a>
@@ -328,15 +346,26 @@
 
 <a id="top"></a>
 <section class="hero">
-  <div class="hero-flourish" aria-hidden="true">
-    <svg class="corner bl" id="cornerSvg" viewBox="0 0 300 240"></svg>
-    <svg class="corner br" viewBox="0 0 300 240"><use href="#cornerG" /></svg>
-  </div>
+  <!-- left spray — stems root at the outer edge, flowers grow up & inward -->
+  <img class="hero-fl l-verbena" src="florals/verbena-left.png" alt="" aria-hidden="true" />
+  <img class="hero-fl l-pod"     src="florals/pod-a.png" alt="" aria-hidden="true" />
+  <img class="hero-fl l-daisy1"  src="florals/daisy-a.png" alt="" aria-hidden="true" />
+  <img class="hero-fl l-daisy2"  src="florals/daisy-b.png" alt="" aria-hidden="true" />
+  <img class="hero-fl l-bud"     src="florals/bud-ochre-a.png" alt="" aria-hidden="true" />
+  <img class="hero-fl l-thistle" src="florals/thistle.png" alt="" aria-hidden="true" />
+  <!-- right spray -->
+  <img class="hero-fl r-verbena" src="florals/verbena-right.png" alt="" aria-hidden="true" />
+  <img class="hero-fl r-pod"     src="florals/pod-b.png" alt="" aria-hidden="true" />
+  <img class="hero-fl r-daisy1"  src="florals/daisy-c.png" alt="" aria-hidden="true" />
+  <img class="hero-fl r-daisy2"  src="florals/daisy-a.png" alt="" aria-hidden="true" />
+  <img class="hero-fl r-bud"     src="florals/bud-ochre-b.png" alt="" aria-hidden="true" />
+  <img class="hero-fl r-thistle" src="florals/thistle.png" alt="" aria-hidden="true" />
   <div class="wrap reveal">
-    <div class="arch"><svg id="archSvg" viewBox="0 0 600 230" aria-hidden="true"></svg></div>
+    <img class="hero-poppy" src="florals/poppy.png" alt="" aria-hidden="true" />
+    <div class="monogram">C <span class="amp">&amp;</span> C</div>
     <p class="eyebrow kicker">Together with their families</p>
-    <h1>Catherine <span class="amp">&amp;</span> Charlie</h1>
-    <p class="sub">are getting married &middot; <b>Wednesday, the fourth of August, 2027</b><br>Curradine Barns &middot; Worcestershire, England</p>
+    <h1>Catherine<span class="amp">and</span>Charlie</h1>
+    <p class="sub"><b>Wednesday, the fourth of August, 2027</b> &middot; half past one<br>Curradine Barns &middot; Worcestershire, England</p>
     <div class="cta-row">
       <a class="btn" href="rsvp.html">RSVP</a>
       <a class="btn ghost" href="#details">Wedding details</a>
@@ -431,7 +460,7 @@
       <h2>Getting there &amp; resting up</h2>
     </div>
     <div class="grid cols-3">
-      <div class="card reveal"><h3>By car</h3><p class="meta">Free parking on-site. Curradine Barns is a few minutes from the M5 (Junction 6). Sat-nav postcode: <b>WR9 0AY</b> <i>(please double-check!)</i>.</p></div>
+      <div class="card reveal"><h3>By car</h3><p class="meta">Free parking on-site. Curradine Barns is about 20 minutes from the M5 (Junctions 5, 6 &amp; 7), via the A449 and B4196. Sat-nav postcode: <b>WR6 6TS</b> &middot; what3words: <b>married.blackbird.shelters</b>.</p></div>
       <div class="card reveal"><h3>By train</h3><p class="meta">Worcester Foregate Street is roughly a 20-minute taxi ride. Let us know if you'd like help arranging a lift.</p></div>
       <div class="card reveal"><h3>Where to stay</h3><p class="meta"><i>Placeholder</i> — we'll list a couple of nearby inns &amp; hotels holding rooms for us. Send me the names and I'll drop them in.</p></div>
     </div>
@@ -502,6 +531,7 @@
 
 <footer class="site">
   <div class="wrap reveal">
+    <img class="footer-fl" src="florals/cluster.png" alt="" aria-hidden="true" />
     <div class="names">Catherine <span class="amp">&amp;</span> Charlie</div>
     <div class="hash">#CatherineAndCharlie2027</div>
     <p class="fine">4 August 2027 &middot; Curradine Barns, Worcestershire &middot; With love and gratitude</p>
@@ -676,9 +706,7 @@
     g.appendChild(g2);
   }
 
-  document.querySelectorAll(".floral-divider .fd").forEach(buildDivider);
-  buildArch(document.getElementById("archSvg"));
-  buildCorner(document.getElementById("cornerSvg"));
+  /* florals are now watercolour images (see florals/) — SVG drawing disabled */
 
   // ---- Theme toggle ----
   (function () {

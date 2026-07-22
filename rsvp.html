@@ -7,37 +7,37 @@
 <meta name="description" content="Reply to the wedding of Catherine and Charlie — Wednesday 4 August 2027, Curradine Barns." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --paper:#F4F6EE; --surface:#FBFCF6; --surface-2:#EAEFDF; --ink:#414D37; --muted:#6E7A61;
-    --line:#D7DEC7; --sage:#8DA271; --sage-deep:#5E7048; --blush:#D6A79E; --blush-soft:#EBD3CD;
-    --gold:#BFA36A; --leaf:var(--sage);
-    --shadow:0 2px 6px rgba(65,77,55,.05), 0 22px 48px -28px rgba(65,77,55,.28);
+    --paper:#FFFFFF; --surface:#FAF9F3; --surface-2:#F2F0E5; --ink:#3E3B2C; --muted:#7E8A62;
+    --line:#E7E4D4; --sage:#89976B; --sage-deep:#5E6B45; --blush:#D8ADA4; --blush-soft:#EBD3CD;
+    --gold:#6B6330; --gold-soft:#8A7E3E; --leaf:var(--sage);
+    --shadow:0 2px 6px rgba(90,84,50,.05), 0 22px 48px -30px rgba(90,84,50,.26);
     --maxw:1120px;
-    --script:"Great Vibes","Snell Roundhand",cursive;
+    --script:"Allura","Snell Roundhand",cursive;
     --serif:"Cormorant Garamond","Iowan Old Style",Georgia,serif;
     --sans:"Jost",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --paper:#222A1D; --surface:#2A3325; --surface-2:#313B2A; --ink:#EAEEDF; --muted:#A7B197;
-      --line:#3C4633; --sage:#A7BC85; --sage-deep:#C4D5A5; --blush:#D9AAA0; --blush-soft:#7C5F5A;
-      --gold:#CFB379; --leaf:#7C9060;
-      --shadow:0 2px 6px rgba(0,0,0,.28), 0 26px 52px -26px rgba(0,0,0,.6);
+      --paper:#1E241A; --surface:#262D1F; --surface-2:#2D3524; --ink:#ECEFE1; --muted:#AAB595;
+      --line:#39432E; --sage:#A7BC85; --sage-deep:#C4D5A5; --blush:#DBACA2; --blush-soft:#7C5F5A;
+      --gold:#CBB675; --gold-soft:#D8C589; --leaf:#7C9060;
+      --shadow:0 2px 6px rgba(0,0,0,.3), 0 26px 52px -26px rgba(0,0,0,.62);
     }
   }
   :root[data-theme="light"] {
-    --paper:#F4F6EE; --surface:#FBFCF6; --surface-2:#EAEFDF; --ink:#414D37; --muted:#6E7A61;
-    --line:#D7DEC7; --sage:#8DA271; --sage-deep:#5E7048; --blush:#D6A79E; --blush-soft:#EBD3CD;
-    --gold:#BFA36A; --leaf:var(--sage);
-    --shadow:0 2px 6px rgba(65,77,55,.05), 0 22px 48px -28px rgba(65,77,55,.28);
+    --paper:#FFFFFF; --surface:#FAF9F3; --surface-2:#F2F0E5; --ink:#3E3B2C; --muted:#7E8A62;
+    --line:#E7E4D4; --sage:#89976B; --sage-deep:#5E6B45; --blush:#D8ADA4; --blush-soft:#EBD3CD;
+    --gold:#6B6330; --gold-soft:#8A7E3E; --leaf:var(--sage);
+    --shadow:0 2px 6px rgba(90,84,50,.05), 0 22px 48px -30px rgba(90,84,50,.26);
   }
   :root[data-theme="dark"] {
-    --paper:#222A1D; --surface:#2A3325; --surface-2:#313B2A; --ink:#EAEEDF; --muted:#A7B197;
-    --line:#3C4633; --sage:#A7BC85; --sage-deep:#C4D5A5; --blush:#D9AAA0; --blush-soft:#7C5F5A;
-    --gold:#CFB379; --leaf:#7C9060;
-    --shadow:0 2px 6px rgba(0,0,0,.28), 0 26px 52px -26px rgba(0,0,0,.6);
+    --paper:#1E241A; --surface:#262D1F; --surface-2:#2D3524; --ink:#ECEFE1; --muted:#AAB595;
+    --line:#39432E; --sage:#A7BC85; --sage-deep:#C4D5A5; --blush:#DBACA2; --blush-soft:#7C5F5A;
+    --gold:#CBB675; --gold-soft:#D8C589; --leaf:#7C9060;
+    --shadow:0 2px 6px rgba(0,0,0,.3), 0 26px 52px -26px rgba(0,0,0,.62);
   }
 
   *, *::before, *::after { box-sizing: border-box; }
@@ -49,8 +49,8 @@
     min-height: 100vh; display: flex; flex-direction: column;
   }
   a { color: inherit; }
-  h1 { font-family: var(--script); font-weight: 400; color: var(--sage-deep); font-size: clamp(3rem, 9vw, 5rem); line-height: 0.9; margin: 0; }
-  h1 .amp { color: var(--blush); }
+  h1 { font-family: var(--serif); font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-size: clamp(2rem, 6vw, 3.4rem); line-height: 1.1; margin: 0; }
+  h1 .amp { font-family: var(--script); text-transform: none; letter-spacing: 0; color: var(--blush); font-size: 1.1em; }
   .eyebrow { font-family: var(--sans); font-weight: 500; font-size: 0.72rem; letter-spacing: 0.34em; text-transform: uppercase; color: var(--sage); margin: 0; }
 
   .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(20px, 5vw, 44px); width: 100%; }
@@ -62,7 +62,7 @@
   }
   header.nav.scrolled { border-bottom-color: var(--line); }
   header.nav .wrap { display: flex; align-items: center; gap: 20px; height: 68px; }
-  .mono { font-family: var(--script); font-size: 1.9rem; color: var(--sage-deep); text-decoration: none; line-height: 1; padding-top: 6px; }
+  .mono { font-family: var(--serif); font-weight: 600; font-size: 1.15rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); text-decoration: none; line-height: 1; }
   .back { margin-left: auto; color: var(--muted); text-decoration: none; font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; }
   .back:hover { color: var(--ink); }
   .theme-toggle { flex: none; cursor: pointer; width: 38px; height: 38px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); display: inline-grid; place-items: center; font-size: 1rem; }
@@ -117,12 +117,12 @@
 
   .thanks { text-align: center; }
   .thanks .mark { display: inline-block; margin: 0 auto 4px; }
-  .thanks h2 { font-family: var(--serif); font-weight: 500; font-size: 2rem; margin: 10px 0 0; }
+  .thanks h2 { font-family: var(--serif); font-weight: 500; font-size: 2rem; margin: 10px 0 0; color: var(--gold); }
   .thanks p { color: var(--muted); margin-top: 12px; }
 
   footer.site { background: var(--surface); border-top: 1px solid var(--line); text-align: center; padding: clamp(40px, 6vw, 64px) 0; }
-  footer.site .names { font-family: var(--script); font-size: clamp(2.4rem, 6vw, 3.4rem); color: var(--sage-deep); line-height: 1; }
-  footer.site .names .amp { color: var(--blush); }
+  footer.site .names { font-family: var(--serif); font-weight: 500; text-transform: uppercase; letter-spacing: 0.16em; font-size: clamp(1.5rem, 4.5vw, 2.4rem); color: var(--gold); line-height: 1.2; }
+  footer.site .names .amp { font-family: var(--script); text-transform: none; letter-spacing: 0; color: var(--blush); font-size: 1.15em; }
   footer.site .fine { color: var(--muted); font-family: var(--serif); font-style: italic; font-size: 1rem; margin-top: 18px; }
 
   :focus-visible { outline: 2px solid var(--sage-deep); outline-offset: 2px; border-radius: 4px; }
@@ -132,7 +132,7 @@
 
 <header class="nav" id="nav">
   <div class="wrap">
-    <a class="mono" href="index.html">C&amp;C</a>
+    <a class="mono" href="index.html">C &middot; C</a>
     <a class="back" href="index.html">&larr; Back to the wedding</a>
     <button class="theme-toggle" id="themeBtn" aria-label="Toggle light and dark theme" title="Toggle theme">◐</button>
   </div>
