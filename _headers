@@ -1,0 +1,6 @@
+/calendar/*
+  Content-Type: text/calendar; charset=utf-8
+  X-Robots-Tag: noindex
+
+/gallery/*
+  X-Robots-Tag: noindex

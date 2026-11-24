@@ -5,6 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Catherine &amp; Charlie — 4 August 2027</title>
 <meta name="description" content="Join us as we celebrate the wedding of Catherine and Charlie — Wednesday 4 August 2027, Curradine Barns, Worcestershire." />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Catherine &amp; Charlie" />
+<meta property="og:title" content="Catherine &amp; Charlie — 4 August 2027" />
+<meta property="og:description" content="Join us as we celebrate the wedding of Catherine and Charlie — Wednesday 4 August 2027, Curradine Barns, Worcestershire." />
+<meta property="og:url" content="https://catherineandcharlie.netlify.app/" />
+<meta property="og:image" content="https://catherineandcharlie.netlify.app/share.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="The C and C daffodil monogram with the names Catherine and Charlie, 4 August 2027, Curradine Barns, framed by watercolour daisies" />
+<meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -15,11 +29,13 @@
     --surface:    #FAF9F3;
     --surface-2:  #F2F0E5;
     --ink:        #3E3B2C;
-    --muted:      #7E8A62;
+    --muted:      #616B4C;
     --line:       #E7E4D4;
     --sage:       #89976B;
     --sage-deep:  #5E6B45;
     --blush:      #D8ADA4;
+    --sage-text:  #697451;   /* sage/blush deep enough to read as text on white and the sage band */
+    --blush-text: #BC7364;
     --blush-soft: #EBD3CD;
     --gold:       #6B6330;
     --gold-soft:  #8A7E3E;
@@ -31,24 +47,26 @@
     --sans:   "Jost", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
 
     --leaf: var(--sage);
+    /* soft sage band for alternating sections — derived from --sage/--paper so it adapts to each theme */
+    --band-sage: color-mix(in srgb, var(--sage) 22%, var(--paper));
   }
   @media (prefers-color-scheme: dark) {
     :root {
       --paper:#1E241A; --surface:#262D1F; --surface-2:#2D3524; --ink:#ECEFE1; --muted:#AAB595;
-      --line:#39432E; --sage:#A7BC85; --sage-deep:#C4D5A5; --blush:#DBACA2; --blush-soft:#7C5F5A;
+      --line:#39432E; --sage:#A7BC85; --sage-deep:#C4D5A5; --blush:#DBACA2; --blush-soft:#7C5F5A; --sage-text:#A7BC85; --blush-text:#DBACA2;
       --gold:#CBB675; --gold-soft:#D8C589;
       --shadow:0 2px 6px rgba(0,0,0,.3), 0 26px 52px -26px rgba(0,0,0,.62); --leaf:#7C9060;
     }
   }
   :root[data-theme="light"] {
-    --paper:#FFFFFF; --surface:#FAF9F3; --surface-2:#F2F0E5; --ink:#3E3B2C; --muted:#7E8A62;
-    --line:#E7E4D4; --sage:#89976B; --sage-deep:#5E6B45; --blush:#D8ADA4; --blush-soft:#EBD3CD;
+    --paper:#FFFFFF; --surface:#FAF9F3; --surface-2:#F2F0E5; --ink:#3E3B2C; --muted:#616B4C;
+    --line:#E7E4D4; --sage:#89976B; --sage-deep:#5E6B45; --blush:#D8ADA4; --blush-soft:#EBD3CD; --sage-text:#697451; --blush-text:#BC7364;
     --gold:#6B6330; --gold-soft:#8A7E3E; --leaf:var(--sage);
     --shadow:0 2px 6px rgba(90,84,50,.05), 0 22px 48px -30px rgba(90,84,50,.26);
   }
   :root[data-theme="dark"] {
     --paper:#1E241A; --surface:#262D1F; --surface-2:#2D3524; --ink:#ECEFE1; --muted:#AAB595;
-    --line:#39432E; --sage:#A7BC85; --sage-deep:#C4D5A5; --blush:#DBACA2; --blush-soft:#7C5F5A;
+    --line:#39432E; --sage:#A7BC85; --sage-deep:#C4D5A5; --blush:#DBACA2; --blush-soft:#7C5F5A; --sage-text:#A7BC85; --blush-text:#DBACA2;
     --gold:#CBB675; --gold-soft:#D8C589; --leaf:#7C9060;
     --shadow:0 2px 6px rgba(0,0,0,.3), 0 26px 52px -26px rgba(0,0,0,.62);
   }
@@ -73,33 +91,12 @@
 
   .eyebrow {
     font-family: var(--sans); font-weight: 500; font-size: 0.72rem;
-    letter-spacing: 0.34em; text-transform: uppercase; color: var(--sage); margin: 0;
+    letter-spacing: 0.34em; text-transform: uppercase; color: var(--sage-text); margin: 0;
   }
 
   .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(20px, 5vw, 44px); }
   section { padding: clamp(56px, 8vw, 104px) 0; }
-
-  /* ---------- Floral divider ---------- */
-  .floral-divider { display: flex; justify-content: center; align-items: center; gap: 18px; padding: 10px 0; }
-  .floral-divider::before, .floral-divider::after {
-    content: ""; height: 1px; width: min(120px, 22vw);
-    background: linear-gradient(to right, transparent, var(--line));
-  }
-  .floral-divider::after { transform: scaleX(-1); }
-  .floral-divider .fd {
-    width: 40px; height: 54px; flex: none; overflow: visible;
-    background: center/contain no-repeat url("florals/daisy-b.png");
-  }
-
-  /* ---------- Editable banner ---------- */
-  .note { background: var(--surface-2); border-bottom: 1px solid var(--line); font-size: 0.83rem; color: var(--muted); }
-  .note .wrap { display: flex; gap: 14px; align-items: center; padding: 11px clamp(20px,5vw,44px); }
-  .note strong { color: var(--ink); font-weight: 500; }
-  .note button {
-    margin-left: auto; flex: none; cursor: pointer; background: transparent; border: 1px solid var(--line);
-    color: var(--muted); border-radius: 999px; padding: 4px 13px; font: inherit; font-size: 0.78rem;
-  }
-  .note button:hover { color: var(--ink); border-color: var(--sage); }
+  section.band-sage { background: var(--band-sage); }
 
   /* ---------- Nav ---------- */
   header.nav {
@@ -109,7 +106,16 @@
   }
   header.nav.scrolled { border-bottom-color: var(--line); }
   header.nav .wrap { display: flex; align-items: center; gap: 20px; height: 68px; }
-  .mono { font-family: var(--serif); font-weight: 600; font-size: 1.15rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); text-decoration: none; line-height: 1; }
+  .brand { display: inline-flex; align-items: center; line-height: 0; text-decoration: none; }
+  .brand img { height: 52px; width: auto; display: block; }
+  /* the logo's C / C letters are dark olive, so dark mode swaps in a copy with gold letters */
+  .logo-dark { display: none !important; }
+  :root[data-theme="dark"] .logo-light { display: none !important; }
+  :root[data-theme="dark"] .logo-dark { display: block !important; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .logo-light { display: none !important; }
+    :root:not([data-theme="light"]) .logo-dark { display: block !important; }
+  }
   nav.links { margin-left: auto; display: flex; gap: 28px; }
   nav.links a {
     text-decoration: none; color: var(--muted); font-size: 0.82rem; letter-spacing: 0.08em;
@@ -118,7 +124,28 @@
   nav.links a::after { content: ""; position: absolute; left: 0; right: 100%; bottom: 0; height: 1px; background: var(--sage); transition: right .25s ease; }
   nav.links a:hover { color: var(--ink); }
   nav.links a:hover::after { right: 0; }
-  @media (max-width: 820px) { nav.links { display: none; } }
+  /* phones: the links fold into a menu that drops down under the header */
+  .menu-btn {
+    display: none; flex: none; cursor: pointer; width: 38px; height: 38px; border-radius: 999px; padding: 0;
+    border: 1px solid var(--line); background: var(--surface); color: var(--ink); place-items: center;
+  }
+  .menu-btn:hover { border-color: var(--sage); }
+  .menu-btn svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; }
+  .menu-btn .x, .menu-btn[aria-expanded="true"] .bars { display: none; }
+  .menu-btn[aria-expanded="true"] .x { display: inline; }
+  @media (max-width: 820px) {
+    header.nav .wrap { gap: 10px; }
+    .menu-btn { display: inline-grid; }
+    .theme-toggle { margin-left: auto; }
+    nav.links {
+      display: none; position: absolute; top: 100%; left: 0; right: 0; margin: 0;
+      flex-direction: column; gap: 0; padding: 6px 0 14px;
+      background: var(--paper); border-bottom: 1px solid var(--line); box-shadow: var(--shadow);
+    }
+    header.nav.open nav.links { display: flex; }
+    nav.links a { padding: 13px 20px; text-align: center; font-size: 0.86rem; }
+    nav.links a::after { display: none; }
+  }
   .theme-toggle {
     flex: none; cursor: pointer; width: 38px; height: 38px; border-radius: 999px;
     border: 1px solid var(--line); background: var(--surface); color: var(--ink);
@@ -134,8 +161,8 @@
     border: 1px solid var(--sage-deep); background: var(--sage-deep); color: #F7F9F1;
     transition: transform .15s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
   }
-  :root[data-theme="dark"] .btn { color: #1c2416; }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn { color: #1c2416; } }
+  :root[data-theme="dark"] .btn:not(.ghost) { color: #1c2416; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn:not(.ghost) { color: #1c2416; } }
   .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
   .btn.ghost { background: transparent; color: var(--ink); border-color: var(--sage); }
   .btn.ghost:hover { border-color: var(--sage-deep); background: color-mix(in srgb, var(--sage) 12%, transparent); }
@@ -143,32 +170,41 @@
   /* ---------- Hero ---------- */
   .hero { position: relative; overflow: hidden; text-align: center; padding: clamp(24px, 5vw, 60px) 0 clamp(40px, 6vw, 80px); }
   .hero .wrap { position: relative; z-index: 2; }
-  /* wildflower framing — stems enter from the side edges at staggered heights, each growing up & inward */
+  /* wildflower framing — stems root at the bottom edge (the sage line) in the outer corners, growing up & gently inward */
   .hero-fl { position: absolute; z-index: 1; pointer-events: none; user-select: none; height: auto; transform-origin: bottom center; }
-  /* LEFT — stem bases sit at the left edge (pushed off by ~half their width), fanning up-inward */
-  .hero-fl.l-verbena { left: -150px; bottom: 6%;  width: clamp(150px, 17vw, 265px); transform: rotate(50deg); }
-  .hero-fl.l-pod     { left: -84px;  bottom: 20%; width: clamp(84px, 10vw, 135px);  transform: rotate(56deg); }
-  .hero-fl.l-daisy1  { left: -104px; bottom: 34%; width: clamp(120px, 13vw, 185px); transform: rotate(44deg); }
-  .hero-fl.l-thistle { left: -46px;  bottom: 48%; width: clamp(44px, 5vw, 76px);    transform: rotate(34deg); }
-  .hero-fl.l-bud     { left: -48px;  bottom: 60%; width: clamp(46px, 5vw, 78px);    transform: rotate(40deg); }
-  .hero-fl.l-daisy2  { left: -86px;  bottom: 72%; width: clamp(98px, 11vw, 150px);  transform: rotate(30deg); }
+  /* LEFT — stems enter from the left edge at staggered heights; the lowest roots straight off the sage line */
+  .hero-fl.l-verbena { left: -150px; bottom: 0;   width: clamp(150px, 17vw, 265px); transform: rotate(50deg); }
+  .hero-fl.l-pod     { left: -100px; bottom: 8%;  width: clamp(84px, 10vw, 135px);  transform-origin: 71% bottom; transform: rotate(56deg); }
+  .hero-fl.l-daisy1  { left: -104px; bottom: 23%; width: clamp(120px, 13vw, 185px); transform: rotate(44deg); }
+  .hero-fl.l-thistle { left: -46px;  bottom: 35%; width: clamp(44px, 5vw, 76px);    transform: rotate(34deg); }
+  .hero-fl.l-bud     { left: -48px;  bottom: 45%; width: clamp(46px, 5vw, 78px);    transform: rotate(40deg); }
+  .hero-fl.l-daisy2  { left: -106px; bottom: 55%; width: clamp(98px, 11vw, 150px);  transform-origin: 69% bottom; transform: rotate(30deg); }
   /* RIGHT — mirror */
-  .hero-fl.r-verbena { right: -150px; bottom: 6%;  width: clamp(150px, 17vw, 265px); transform: rotate(-50deg); }
-  .hero-fl.r-pod     { right: -84px;  bottom: 20%; width: clamp(84px, 10vw, 135px);  transform: rotate(-56deg); }
-  .hero-fl.r-daisy1  { right: -104px; bottom: 34%; width: clamp(120px, 13vw, 185px); transform: rotate(-44deg); }
-  .hero-fl.r-thistle { right: -46px;  bottom: 48%; width: clamp(44px, 5vw, 76px);    transform: scaleX(-1) rotate(34deg); }
-  .hero-fl.r-bud     { right: -48px;  bottom: 60%; width: clamp(46px, 5vw, 78px);    transform: rotate(-40deg); }
-  .hero-fl.r-daisy2  { right: -86px;  bottom: 72%; width: clamp(98px, 11vw, 150px);  transform: scaleX(-1) rotate(30deg); }
+  .hero-fl.r-verbena { right: -150px; bottom: 0;   width: clamp(150px, 17vw, 265px); transform: rotate(-50deg); }
+  .hero-fl.r-pod     { right: -84px;  bottom: 8%;  width: clamp(84px, 10vw, 135px);  transform: rotate(-56deg); }
+  .hero-fl.r-daisy1  { right: -122px; bottom: 23%; width: clamp(120px, 13vw, 185px); transform-origin: 31% bottom; transform: rotate(-44deg); }
+  .hero-fl.r-thistle { right: -46px;  bottom: 35%; width: clamp(44px, 5vw, 76px);    transform: scaleX(-1) rotate(34deg); }
+  .hero-fl.r-bud     { right: -48px;  bottom: 45%; width: clamp(46px, 5vw, 78px);    transform: rotate(-40deg); }
+  .hero-fl.r-daisy2  { right: -86px;  bottom: 55%; width: clamp(98px, 11vw, 150px);  transform: scaleX(-1) rotate(30deg); }
+  /* phones: the text runs edge to edge, so the flowers move below it: a low verbena and a small daisy
+     in each corner. Each pivots on its stem base (--ox, measured from the PNG), pinned just off the side
+     edge so the stem grows out of the side. Same arrangement as the RSVP page. */
   @media (max-width: 820px) {
+    .hero { padding-bottom: 172px; }
     .hero-fl.l-pod, .hero-fl.l-bud, .hero-fl.l-thistle, .hero-fl.l-daisy2,
     .hero-fl.r-pod, .hero-fl.r-bud, .hero-fl.r-thistle, .hero-fl.r-daisy2 { display: none; }
-    .hero-fl.l-verbena, .hero-fl.r-verbena { width: 100px; opacity: .5; }
-    .hero-fl.l-daisy1, .hero-fl.r-daisy1 { width: 116px; opacity: .82; bottom: 30%; }
+    .hero-fl.l-verbena { --ox: .68; } .hero-fl.r-verbena { --ox: .32; }
+    .hero-fl.l-daisy1  { --ox: .31; } .hero-fl.r-daisy1  { --ox: .31; }
+    .hero-fl.l-verbena, .hero-fl.r-verbena { --w: clamp(60px, 18vw, 92px); --b: 0px; --r: 77deg; opacity: .7; }
+    .hero-fl.l-daisy1, .hero-fl.r-daisy1   { --w: clamp(52px, 15vw, 64px); --b: 54px; --r: 60deg; opacity: 1; }
+    .hero-fl.l-verbena, .hero-fl.r-verbena, .hero-fl.l-daisy1, .hero-fl.r-daisy1 {
+      width: var(--w); bottom: var(--b); transform-origin: calc(var(--ox) * 100%) 99%;
+    }
+    .hero-fl.l-verbena, .hero-fl.l-daisy1 { left: calc(var(--w) * var(--ox) * -1 - 6px); right: auto; transform: rotate(var(--r)); }
+    .hero-fl.r-verbena, .hero-fl.r-daisy1 { right: calc(var(--w) * (var(--ox) - 1) - 6px); left: auto; transform: rotate(calc(var(--r) * -1)); }
   }
-  .hero-poppy { width: clamp(62px, 8vw, 92px); height: auto; margin: 0 auto 4px; display: block; }
-  .hero .monogram { font-family: var(--serif); font-weight: 600; font-size: clamp(1.5rem, 3vw, 2.1rem); letter-spacing: 0.28em; color: var(--gold); }
-  .hero .monogram .amp { font-family: var(--script); letter-spacing: 0; font-size: 1.2em; color: var(--blush); }
-  .hero .kicker { letter-spacing: 0.34em; margin-top: 26px; color: var(--sage); }
+  .hero-logo { width: clamp(130px, 15vw, 180px); height: auto; margin: 0 auto; display: block; }
+  .hero .kicker { letter-spacing: 0.34em; margin-top: 26px; color: var(--sage-text); }
   .hero h1 {
     font-family: var(--serif); font-weight: 500; text-transform: uppercase; color: var(--gold);
     font-size: clamp(2.4rem, 8vw, 5.4rem); line-height: 1.04; letter-spacing: 0.1em;
@@ -180,13 +216,18 @@
   }
   .hero .sub { font-family: var(--serif); font-size: clamp(1.05rem, 2.4vw, 1.4rem); color: var(--muted); font-weight: 400; letter-spacing: 0.02em; }
   .hero .sub b { color: var(--ink); font-weight: 600; }
+  .nw { white-space: nowrap; }
+  @media (max-width: 560px) {
+    .hero .sub .sep, .hero .sub br { display: none; }
+    .hero .sub .ln { display: block; }
+  }
   .hero .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
 
   .countdown { display: flex; gap: clamp(10px, 4vw, 40px); justify-content: center; align-items: baseline; margin-top: 54px; }
   .countdown .unit { text-align: center; min-width: 56px; }
   .countdown .num { font-family: var(--serif); font-weight: 500; font-size: clamp(2.1rem, 5.5vw, 3.4rem); line-height: 1; font-variant-numeric: tabular-nums; color: var(--ink); }
-  .countdown .lbl { font-size: 0.64rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--sage); margin-top: 10px; }
-  .countdown .dot { color: var(--blush); font-family: var(--serif); font-size: 1.6rem; align-self: center; }
+  .countdown .lbl { font-size: 0.64rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--sage-text); margin-top: 10px; }
+  .countdown .dot { color: var(--blush-text); font-family: var(--serif); font-size: 1.6rem; align-self: center; }
 
   /* ---------- Story ---------- */
   .story .wrap { max-width: 720px; text-align: center; }
@@ -200,47 +241,114 @@
   .cols-2 { grid-template-columns: repeat(2, 1fr); }
   .cols-3 { grid-template-columns: repeat(3, 1fr); }
   @media (max-width: 760px) { .cols-2, .cols-3 { grid-template-columns: 1fr; } }
+  .solo { max-width: 360px; margin: 0 auto; }
 
   .card {
     background: var(--surface); border: 1px solid var(--line);
     border-radius: 220px 220px 20px 20px; padding: 48px 34px 34px;
     box-shadow: var(--shadow); text-align: center;
   }
-  .card .tag { color: var(--blush); }
+  .card .tag { color: var(--blush-text); }
   .card h3 { margin-top: 8px; }
   .card .meta { color: var(--muted); margin-top: 16px; font-size: 0.98rem; line-height: 1.9; }
-  .card .meta .k { font-family: var(--sans); font-weight: 500; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage); display: block; }
+  .card .meta .k { font-family: var(--sans); font-weight: 500; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage-text); display: block; }
 
   /* ---------- Schedule ---------- */
   .timeline { max-width: 620px; margin: 0 auto; position: relative; }
   .timeline::before { content: ""; position: absolute; left: 50%; top: 6px; bottom: 6px; width: 1px; background: linear-gradient(var(--line), var(--sage), var(--line)); transform: translateX(-0.5px); }
-  .t-row { display: grid; grid-template-columns: 1fr 24px 1fr; align-items: center; padding: 14px 0; }
+  .t-row { display: grid; grid-template-columns: 1fr 56px 1fr; align-items: center; padding: 10px 0; }
   .t-row > * { grid-row: 1; }
-  .t-row .time { font-family: var(--serif); font-style: italic; font-variant-numeric: tabular-nums; color: var(--blush); font-size: 1.15rem; }
+  .t-row .time { font-family: var(--serif); font-style: italic; font-variant-numeric: tabular-nums; color: var(--blush-text); font-size: 1.15rem; }
   .t-row .body h3 { font-size: 1.14rem; }
   .t-row .body p { color: var(--muted); font-size: 0.94rem; margin-top: 4px; }
   .t-row .knot { grid-column: 2; display: grid; place-items: center; }
-  .t-row .knot span { width: 9px; height: 9px; border-radius: 50%; background: var(--sage); box-shadow: 0 0 0 4px var(--paper); }
+  /* icon medallions on the line, after the invite's order of the day */
+  .t-row .ico { width: 48px; height: 48px; border-radius: 50%; background: var(--paper); border: 1px solid var(--line); display: grid; place-items: center; color: var(--sage-deep); }
+  .t-row .ico svg { width: 26px; height: 26px; fill: currentColor; }
+  .ico .cut { fill: var(--paper); }
+  .ico .sep { stroke: var(--paper); stroke-width: 1.3; }
+  .ico .ln { fill: none; stroke: currentColor; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; }
+  .ico .cutln { fill: none; stroke: var(--paper); stroke-width: 1.1; stroke-linecap: round; }
   .t-row:nth-child(odd) .time { grid-column: 1; text-align: right; padding-right: 28px; }
   .t-row:nth-child(odd) .body { grid-column: 3; text-align: left; padding-left: 28px; }
   .t-row:nth-child(even) .time { grid-column: 3; text-align: left; padding-left: 28px; }
   .t-row:nth-child(even) .body { grid-column: 1; text-align: right; padding-right: 28px; }
   @media (max-width: 620px) {
-    .timeline::before { left: 10px; }
-    .t-row { grid-template-columns: 20px 1fr; gap: 4px 16px; }
-    .t-row > * { grid-row: auto; }
-    .t-row .knot { grid-column: 1; order: -1; align-self: start; padding-top: 8px; }
-    .t-row .time, .t-row:nth-child(odd) .time, .t-row:nth-child(even) .time { grid-column: 2; text-align: left; padding: 0; }
-    .t-row .body, .t-row:nth-child(odd) .body, .t-row:nth-child(even) .body { grid-column: 2; text-align: left; padding: 0; }
+    .timeline::before { left: 22px; }
+    .t-row { grid-template-columns: 44px 1fr; gap: 0 16px; }
+    .t-row .knot { grid-column: 1; grid-row: 1 / span 2; align-self: center; }
+    .t-row .ico { width: 44px; height: 44px; }
+    .t-row .time, .t-row:nth-child(odd) .time, .t-row:nth-child(even) .time { grid-column: 2; grid-row: 1; text-align: left; padding: 0; }
+    .t-row .body, .t-row:nth-child(odd) .body, .t-row:nth-child(even) .body { grid-column: 2; grid-row: 2; text-align: left; padding: 0; }
   }
 
+  /* ---------- Add to calendar ---------- */
+  .cal { text-align: center; margin-top: 40px; }
+  .cal-menu summary { list-style: none; }
+  .cal-menu summary::-webkit-details-marker { display: none; }
+  .cal-pop {
+    margin: 18px auto 0; max-width: 420px; display: grid; gap: 20px;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 24px; box-shadow: var(--shadow);
+  }
+  .cal-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 10px; }
+  .cal-links a {
+    font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; color: var(--ink);
+    border: 1px solid var(--sage); border-radius: 999px; padding: 9px 18px;
+  }
+  .cal-links a:hover { background: color-mix(in srgb, var(--sage) 12%, transparent); border-color: var(--sage-deep); }
+
   /* ---------- Travel ---------- */
+  /* illustrated map, redrawn from the back of the printed invite (not to scale) */
+  .map {
+    max-width: 620px; margin: 44px auto 0; padding: clamp(10px, 3vw, 26px);
+    background: var(--surface); border: 1px solid var(--line); border-radius: 24px; box-shadow: var(--shadow);
+    --road: color-mix(in srgb, var(--sage) 42%, var(--paper));
+  }
+  .map svg { width: 100%; height: auto; display: block; }
+  .map .road { fill: none; stroke: var(--road); stroke-width: 9; stroke-linecap: round; }
+  .map .road-dash { fill: none; stroke: var(--paper); stroke-width: 1.4; stroke-dasharray: 6 6; }
+  .map .lane { fill: none; stroke: var(--road); stroke-width: 5; stroke-linecap: round; }
+  .map .river { fill: none; stroke: color-mix(in srgb, #8FA9B6 60%, var(--paper)); stroke-width: 5; stroke-linecap: round; }
+  .map .wood { fill: color-mix(in srgb, var(--sage) 22%, var(--paper)); stroke: color-mix(in srgb, var(--sage) 55%, var(--paper)); stroke-width: 1.2; }
+  .map .dot, .map .church { fill: var(--sage-deep); }
+  .map .pin { fill: var(--blush); }
+  .map .hole { fill: var(--paper); }
+  .map .badge rect { fill: var(--paper); stroke: color-mix(in srgb, var(--sage) 60%, var(--paper)); stroke-width: 1.2; }
+  .map .m5 rect { fill: var(--sage-deep); }
+  .map .m5 text { fill: var(--paper); font-weight: 500; }
+  .map .arrow { fill: none; stroke: var(--sage-deep); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .map .compass circle { fill: var(--paper); stroke: var(--line); stroke-width: 1.2; }
+  .map .needle-n { fill: var(--blush); }
+  .map .needle-s { fill: var(--sage); }
+  .map text { font-family: var(--sans); fill: var(--ink); }
+  .map .t-town { font-size: 14px; font-weight: 500; letter-spacing: 0.12em; }
+  .map .t-sub { font-size: 12px; fill: var(--muted); letter-spacing: 0.04em; }
+  .map .t-dir { font-size: 12px; fill: var(--muted); letter-spacing: 0.14em; }
+  .map .t-badge { font-size: 12px; letter-spacing: 0.04em; }
+  .map .t-venue { font-family: var(--serif); font-size: 24px; font-weight: 500; letter-spacing: 0.06em; fill: var(--gold); }
+  .map .t-venue-sub { font-size: 11px; letter-spacing: 0.12em; fill: var(--muted); }
+  .map .t-wood { font-size: 13px; fill: var(--muted); }
+  .map .t-italic { font-family: var(--serif); font-style: italic; font-size: 16px; fill: var(--muted); }
+  .map .t-lane { font-size: 12px; fill: var(--muted); letter-spacing: 0.04em; }
+  /* phones: let the map run edge to edge and enlarge its labels so they stay readable */
+  @media (max-width: 620px) {
+    .map { margin: 36px calc(-1 * clamp(20px, 5vw, 44px)) 0; padding: 10px 6px; border-radius: 0; border-left: 0; border-right: 0; }
+    .map .t-town { font-size: 17px; letter-spacing: 0.08em; }
+    .map .t-sub { font-size: 14px; letter-spacing: 0; }
+    .map .t-dir { font-size: 14px; letter-spacing: 0.08em; }
+    .map .t-badge { font-size: 14px; letter-spacing: 0; }
+    .map .t-venue { font-size: 27px; letter-spacing: 0.04em; }
+    .map .t-venue-sub { font-size: 13px; letter-spacing: 0.06em; }
+    .map .t-wood { font-size: 15px; }
+    .map .t-lane { font-size: 13px; letter-spacing: 0; }
+    .map .t-italic { font-size: 18px; }
+  }
 
   /* ---------- RSVP ---------- */
   .rsvp .wrap { max-width: 620px; }
   .rsvp .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: clamp(28px, 4vw, 46px); box-shadow: var(--shadow); }
   .field { display: flex; flex-direction: column; gap: 7px; margin-top: 20px; }
-  .field label { font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage); font-weight: 500; }
+  .field label { font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage-text); font-weight: 500; }
   .field input, .field select, .field textarea {
     font: inherit; font-family: var(--sans); color: var(--ink); background: var(--paper);
     border: 1px solid var(--line); border-radius: 12px; padding: 13px 15px;
@@ -263,7 +371,7 @@
   details.q { border-bottom: 1px solid var(--line); }
   details.q summary { cursor: pointer; list-style: none; padding: 20px 0; display: flex; align-items: center; gap: 14px; font-family: var(--serif); font-size: 1.25rem; font-weight: 500; }
   details.q summary::-webkit-details-marker { display: none; }
-  details.q summary .plus { margin-left: auto; color: var(--sage); transition: transform .25s ease; font-size: 1.4rem; line-height: 1; font-family: var(--sans); font-weight: 300; }
+  details.q summary .plus { margin-left: auto; color: var(--sage-text); transition: transform .25s ease; font-size: 1.4rem; line-height: 1; font-family: var(--sans); font-weight: 300; }
   details.q[open] summary .plus { transform: rotate(45deg); }
   details.q p { color: var(--muted); padding: 0 0 22px; font-size: 1rem; }
 
@@ -272,45 +380,18 @@
   @media (max-width: 760px) { .gallery-strip { grid-template-columns: repeat(2, 1fr); } }
   .frame {
     aspect-ratio: 3/4; border-radius: 200px 200px 14px 14px; overflow: hidden; position: relative;
-    background: linear-gradient(160deg, var(--surface-2), var(--surface));
-    border: 1px solid var(--line); display: grid; place-items: center; color: var(--sage);
+    background: var(--surface-2); border: 1px solid var(--line);
   }
-  .frame span { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: .8; }
+  /* soft black and white so the phone photos read as one set */
+  .frame img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(1) sepia(.12) contrast(1.04) brightness(1.04); }
 
   /* ---------- Footer ---------- */
   footer.site { background: var(--surface); border-top: 1px solid var(--line); text-align: center; padding: clamp(56px, 8vw, 92px) 0; }
   footer.site .footer-fl { width: clamp(96px, 12vw, 150px); height: auto; margin: 0 auto 18px; display: block; }
   footer.site .names { font-family: var(--serif); font-weight: 500; text-transform: uppercase; letter-spacing: 0.16em; font-size: clamp(1.6rem, 5vw, 2.6rem); color: var(--gold); line-height: 1.2; }
-  footer.site .names .amp { font-family: var(--script); text-transform: none; letter-spacing: 0; color: var(--blush); font-size: 1.15em; }
-  footer.site .hash { color: var(--sage); margin-top: 18px; letter-spacing: 0.2em; font-size: 0.78rem; text-transform: uppercase; }
+  footer.site .names .amp { font-family: var(--script); text-transform: none; letter-spacing: 0; color: var(--blush-text); font-size: 1.15em; }
+  footer.site .hash { color: var(--sage-text); margin-top: 18px; letter-spacing: 0.2em; font-size: 0.78rem; text-transform: uppercase; }
   footer.site .fine { color: var(--muted); font-family: var(--serif); font-style: italic; font-size: 1rem; margin-top: 24px; }
-
-  /* ---------- Plan section ---------- */
-  .plan { background: var(--surface-2); border-top: 1px solid var(--line); }
-  .plan .wrap { max-width: 960px; }
-  .plan .head { text-align: center; margin-bottom: 46px; }
-  .plan .head p { color: var(--muted); margin-top: 14px; max-width: 60ch; margin-inline: auto; }
-  .plan h3.k { font-family: var(--sans); font-weight: 500; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage); margin-bottom: 18px; }
-  .checklist { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 30px; padding: 0; margin: 0; }
-  @media (max-width: 640px) { .checklist { grid-template-columns: 1fr; } }
-  .checklist li { list-style: none; display: flex; gap: 11px; align-items: flex-start; padding: 5px 0; color: var(--ink); font-size: 0.96rem; }
-  .checklist li::before { content: ""; width: 6px; height: 6px; margin-top: 9px; background: var(--blush); transform: rotate(45deg); flex: none; }
-  .checklist li i { color: var(--muted); font-style: normal; display: block; font-size: 0.82rem; }
-  .phases { display: grid; gap: 16px; }
-  .phase { display: grid; grid-template-columns: 46px 1fr; gap: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 24px; }
-  .phase .n { font-family: var(--serif); font-weight: 600; font-size: 2rem; color: var(--gold-soft); line-height: 1; }
-  .phase h4 { font-family: var(--serif); font-weight: 600; margin: 0 0 6px; font-size: 1.14rem; }
-  .phase p { color: var(--muted); font-size: 0.94rem; }
-  .phase .when { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); margin-bottom: 8px; }
-  .stack { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
-  @media (max-width: 760px) { .stack { grid-template-columns: 1fr; } }
-  .opt { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 24px; }
-  .opt h4 { font-family: var(--serif); font-weight: 600; margin: 4px 0 0; font-size: 1.14rem; }
-  .opt .tier { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blush); }
-  .opt p { color: var(--muted); font-size: 0.9rem; margin-top: 10px; }
-  .opt .best { color: var(--ink); font-size: 0.86rem; margin-top: 12px; }
-  .opt .best b { color: var(--sage-deep); font-weight: 500; }
-  .block-gap { display: grid; gap: 56px; }
 
   /* ---------- Reveal ---------- */
   .reveal { opacity: 0; transform: translateY(20px); transition: opacity .8s ease, transform .8s ease; }
@@ -321,18 +402,10 @@
 </head>
 <body>
 
-<!-- Preview note: delete this whole block before going live -->
-<div class="note" id="editnote">
-  <div class="wrap">
-    <span><strong>Preview / mockup.</strong> Real: names, date &amp; venue. Still placeholder — the love story, timings, travel, hotels, registry, photos &amp; hashtag. Delete this bar before you publish.</span>
-    <button onclick="document.getElementById('editnote').remove()">Dismiss</button>
-  </div>
-</div>
-
 <header class="nav" id="nav">
   <div class="wrap">
-    <a class="mono" href="#top">C &middot; C</a>
-    <nav class="links">
+    <a class="brand" href="#top"><img class="logo-light" src="c-logo.png" alt="Catherine &amp; Charlie" /><img class="logo-dark" src="c-logo-dark.png" alt="Catherine &amp; Charlie" /></a>
+    <nav class="links" id="siteNav" aria-label="Main">
       <a href="#details">Details</a>
       <a href="#schedule">The Day</a>
       <a href="#activities">Games</a>
@@ -341,6 +414,7 @@
       <a href="rsvp.html">RSVP</a>
     </nav>
     <button class="theme-toggle" id="themeBtn" aria-label="Toggle light and dark theme" title="Toggle theme">◐</button>
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="bars" d="M4 7h16M4 12h16M4 17h16"/><path class="x" d="M6 6l12 12M18 6L6 18"/></svg></button>
   </div>
 </header>
 
@@ -361,11 +435,11 @@
   <img class="hero-fl r-bud"     src="florals/bud-ochre-b.png" alt="" aria-hidden="true" />
   <img class="hero-fl r-thistle" src="florals/thistle.png" alt="" aria-hidden="true" />
   <div class="wrap reveal">
-    <img class="hero-poppy" src="florals/poppy.png" alt="" aria-hidden="true" />
-    <div class="monogram">C <span class="amp">&amp;</span> C</div>
-    <p class="eyebrow kicker">Together with their families</p>
+    <img class="hero-logo logo-light" src="c-logo.png" alt="Catherine &amp; Charlie" />
+    <img class="hero-logo logo-dark" src="c-logo-dark.png" alt="Catherine &amp; Charlie" />
+    <p class="eyebrow kicker">Kindly join us <span class="nw">for the wedding of</span></p>
     <h1>Catherine<span class="amp">and</span>Charlie</h1>
-    <p class="sub"><b>Wednesday, the fourth of August, 2027</b> &middot; half past one<br>Curradine Barns &middot; Worcestershire, England</p>
+    <p class="sub"><b class="ln">Wednesday, the fourth of August, 2027</b><span class="sep"> &middot; </span><span class="ln">half past one</span><br><span class="nw">Curradine Barns</span> &middot; <span class="nw">Worcestershire, England</span></p>
     <div class="cta-row">
       <a class="btn" href="rsvp.html">RSVP</a>
       <a class="btn ghost" href="#details">Wedding details</a>
@@ -382,38 +456,61 @@
   </div>
 </section>
 
-<div class="floral-divider reveal"><svg viewBox="0 0 340 70" class="fd"></svg></div>
 
-<section class="details" id="details">
+<section class="details band-sage" id="details">
   <div class="wrap">
     <div class="center-head reveal">
       <p class="eyebrow">The Details</p>
       <h2>Where &amp; when to be</h2>
     </div>
-    <div class="grid cols-2">
+    <div class="grid cols-3">
       <div class="card reveal">
         <p class="eyebrow tag">Ceremony</p>
-        <h3>The Barn</h3>
+        <h3>On the lawn</h3>
         <div class="meta">
           <span class="k">When</span>Half past one, Wednesday 4 August 2027
-          <span class="k">Where</span>Curradine Barns, Worcestershire
-          <span class="k">Dress</span>Barn formal — heels sink in grass!
+          <span class="k">Where</span>Curradine Barns, Church Lane, Shrawley, Worcester WR6 6TS
         </div>
       </div>
       <div class="card reveal">
         <p class="eyebrow tag">Reception</p>
-        <h3>The Courtyard &amp; Lawn</h3>
+        <h3>To follow</h3>
         <div class="meta">
-          <span class="k">When</span>Two o'clock till late
-          <span class="k">Where</span>Just across the courtyard
-          <span class="k">Feasting</span>Wedding breakfast, dancing &amp; a very good cheese table
+          <span class="k">When</span>From two o'clock until midnight
+          <span class="k">Food</span>Wedding breakfast at four, pizza at half past eight
+          <span class="k">Evening guests</span>From quarter to seven
         </div>
       </div>
+      <div class="card reveal">
+        <p class="eyebrow tag">Dress code</p>
+        <h3>Cocktail / smart</h3>
+        <div class="meta">The ceremony will be held on a grassy lawn (weather dependent), so please choose your footwear accordingly.</div>
+      </div>
+    </div>
+    <div class="cal reveal">
+      <details class="cal-menu">
+        <summary class="btn ghost">Add to calendar</summary>
+        <div class="cal-pop">
+          <div>
+            <p class="eyebrow">Day guests &middot; <span class="nw">from 1:30 pm</span></p>
+            <div class="cal-links">
+              <a href="calendar/wedding-day.ics">Apple / Outlook</a>
+              <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Catherine+%26+Charlie%27s+wedding&amp;dates=20270804T123000Z/20270804T230000Z&amp;location=Curradine+Barns%2C+Church+Lane%2C+Shrawley%2C+Worcester+WR6+6TS&amp;details=Ceremony+at+1%3A30+pm.+Order+of+the+day+and+details%3A+https%3A%2F%2Fcatherineandcharlie.netlify.app%2F" target="_blank" rel="noopener">Google Calendar</a>
+            </div>
+          </div>
+          <div>
+            <p class="eyebrow">Evening guests &middot; <span class="nw">from 6:45 pm</span></p>
+            <div class="cal-links">
+              <a href="calendar/wedding-evening.ics">Apple / Outlook</a>
+              <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Catherine+%26+Charlie%27s+evening+celebration&amp;dates=20270804T174500Z/20270804T230000Z&amp;location=Curradine+Barns%2C+Church+Lane%2C+Shrawley%2C+Worcester+WR6+6TS&amp;details=Evening+celebration+from+6%3A45+pm.+Details%3A+https%3A%2F%2Fcatherineandcharlie.netlify.app%2F" target="_blank" rel="noopener">Google Calendar</a>
+            </div>
+          </div>
+        </div>
+      </details>
     </div>
   </div>
 </section>
 
-<div class="floral-divider reveal"><svg viewBox="0 0 340 70" class="fd"></svg></div>
 
 <section class="schedule" id="schedule">
   <div class="wrap">
@@ -422,36 +519,30 @@
       <h2>How it unfolds</h2>
     </div>
     <div class="timeline reveal">
-      <div class="t-row"><div class="time">1:00</div><div class="knot"><span></span></div><div class="body"><h3>Arrival &amp; welcome drinks</h3><p>Find a seat in the barn — the earlier the better.</p></div></div>
-      <div class="t-row"><div class="time">1:30</div><div class="knot"><span></span></div><div class="body"><h3>The ceremony</h3><p>The part where we cry. Bring tissues, or borrow ours.</p></div></div>
-      <div class="t-row"><div class="time">2:00</div><div class="knot"><span></span></div><div class="body"><h3>Confetti, fizz &amp; lawn games</h3><p>Photos on the lawn while the mini golf and games get going.</p></div></div>
-      <div class="t-row"><div class="time">4:00</div><div class="knot"><span></span></div><div class="body"><h3>The wedding breakfast</h3><p>Long tables, short speeches (we promise).</p></div></div>
-      <div class="t-row"><div class="time">7:00</div><div class="knot"><span></span></div><div class="body"><h3>Evening guests &amp; cake</h3><p>More friends, more cake — the party doubles in size.</p></div></div>
-      <div class="t-row"><div class="time">8:00</div><div class="knot"><span></span></div><div class="body"><h3>First dance &amp; the band</h3><p>Then the floor is yours until the last song.</p></div></div>
-      <div class="t-row"><div class="time">12:00</div><div class="knot"><span></span></div><div class="body"><h3>Last dance &amp; farewells</h3><p>Sparklers, a slow song, and safe travels home.</p></div></div>
+      <div class="t-row"><div class="time">1:30 pm</div><div class="knot"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M11.3 0.8H12.7V2H14.2V3.3H12.7V4.7L16 8.6V12L21.5 15.4V22.8H2.5V15.4L8 12V8.6L11.3 4.7V3.3H9.8V2H11.3Z M10.4 22.8V19.4A1.6 1.6 0 0 1 13.6 19.4V22.8Z M10.8 10.2a1.2 1.2 0 1 0 2.4 0a1.2 1.2 0 1 0 -2.4 0Z M4.6 17h2v2.6h-2Z M17.4 17h2v2.6h-2Z"/></svg></span></div><div class="body"><h3>Ceremony</h3><p>On the grassy lawn, weather permitting.</p></div></div>
+      <div class="t-row"><div class="time">2:00 pm</div><div class="knot"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0.8 20.6a6.2 2.3 0 1 0 12.4 0a6.2 2.3 0 1 0 -12.4 0Z M8.4 20.7a1.3 .55 0 1 0 2.6 0a1.3 .55 0 1 0 -2.6 0Z"/><rect x="5.6" y="4" width="1.1" height="16.4"/><path d="M6.7 4L12 6.3L6.7 8.6Z"/><path d="M13.6 9.4H23L18.3 14.6Z"/><rect x="17.75" y="14.2" width="1.1" height="6"/><rect x="15.6" y="20" width="5.4" height="1.1" rx=".55"/><path class="ln" d="M16.4 7.2L19.6 11.4"/><circle cx="16.3" cy="7.1" r="1"/></svg></span></div><div class="body"><h3>Mini golf &amp; cocktail hour</h3><p>Outside, with a cocktail in one hand and a putter in the other.</p></div></div>
+      <div class="t-row"><div class="time">4:00 pm</div><div class="knot"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="6.3" r="1.4"/><path d="M3.2 17A8.8 8.8 0 0 1 20.8 17Z"/><rect x="1.5" y="17.8" width="21" height="1.9" rx=".95"/><path class="cutln" d="M6.6 14.2A6 6 0 0 1 9.4 10.2"/></svg></span></div><div class="body"><h3>Wedding breakfast</h3><p>Time to sit down and eat together.</p></div></div>
+      <div class="t-row"><div class="time">6:45 pm</div><div class="knot"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="5" cy="10.2" r="2.4"/><path d="M0.6 20v-1.6a4.4 4.4 0 0 1 8.8 0V20Z"/><circle cx="19" cy="10.2" r="2.4"/><path d="M14.6 20v-1.6a4.4 4.4 0 0 1 8.8 0V20Z"/><circle class="sep" cx="12" cy="8.4" r="3"/><path class="sep" d="M6.2 21.4v-2.2a5.8 5.8 0 0 1 11.6 0v2.2Z"/></svg></span></div><div class="body"><h3>Evening guests arrive</h3><p>More friends join us for the party.</p></div></div>
+      <div class="t-row"><div class="time">7:30 pm</div><div class="knot"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="8" cy="4.2" r="2"/><circle cx="15.8" cy="5" r="1.8"/><path d="M6 6.9Q8 6.3 10 6.9L9.9 13.4L11.2 22.6H9.6L8.1 15.6L6.6 22.6H5L6.2 13.4Z"/><path d="M14.3 7.6Q15.7 7.1 17.1 7.6L16.5 11.8L20.8 21.6Q16.2 22.7 11.6 21.6L15 11.8Z"/><path class="ln" d="M9.6 7.6Q10.6 4.4 12 3.9Q13.6 4.6 14.6 7.9"/><path class="ln" d="M9.8 9L15.2 10.8"/></svg></span></div><div class="body"><h3>First dance</h3><p>Then the dance floor is yours.</p></div></div>
+      <div class="t-row"><div class="time">8:30 pm</div><div class="knot"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2.8 5.4Q12 1.2 21.2 5.4L12 22.6Z"/><path class="cutln" d="M4.3 7.6Q12 4.2 19.7 7.6"/><circle class="cut" cx="9.6" cy="10.6" r="1.5"/><circle class="cut" cx="14.4" cy="11.4" r="1.4"/><circle class="cut" cx="11.8" cy="15.8" r="1.3"/></svg></span></div><div class="body"><h3>Pizza service</h3><p>Late-night pizza to keep you dancing.</p></div></div>
+      <div class="t-row"><div class="time">Midnight</div><div class="knot"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle class="ln" cx="6.2" cy="18.8" r="3.3"/><circle cx="6.2" cy="18.8" r=".9"/><circle class="ln" cx="17.8" cy="18.8" r="3.3"/><circle cx="17.8" cy="18.8" r=".9"/><path d="M4.2 14.6C3.6 9.2 7.4 6.6 12 6.6C16.6 6.6 20.4 9.2 19.8 14.6Z"/><rect x="2.6" y="14.4" width="18.8" height="1.4" rx=".7"/><path class="cut" d="M9.4 12.6V10.4a2.6 2.6 0 0 1 5.2 0V12.6Z"/><circle cx="12" cy="4.6" r="1.1"/></svg></span></div><div class="body"><h3>Farewell</h3><p>Time to say goodnight, and safe travels home.</p></div></div>
     </div>
   </div>
 </section>
 
-<div class="floral-divider reveal"><svg viewBox="0 0 340 70" class="fd"></svg></div>
 
-<section class="activities" id="activities">
+<section class="activities band-sage" id="activities">
   <div class="wrap">
     <div class="center-head reveal">
       <p class="eyebrow">Between the Vows &amp; the Dancing</p>
-      <h2>Play &amp; wander</h2>
-      <p style="color:var(--muted); font-family:var(--serif); font-style:italic; font-size:1.15rem; margin-top:12px;">The afternoon is yours — grand plans, or a deckchair in the sun.</p>
+      <h2>Time to play</h2>
     </div>
-    <div class="grid cols-3">
-      <div class="card reveal"><h3>Garden mini golf</h3><p class="meta">Nine wonky holes across the lawn. The winner gets bragging rights and, possibly, a small trophy.</p></div>
-      <div class="card reveal"><h3>Lawn games</h3><p class="meta">Giant Jenga, croquet, welly-wanging and a fiercely contested tug-of-war. All abilities welcome.</p></div>
-      <div class="card reveal"><h3>Photo booth</h3><p class="meta">Props, silliness, and a keepsake print to pin on your fridge. Guestbook alongside — leave us a note.</p></div>
+    <div class="grid solo">
+      <div class="card reveal"><h3>Mini golf &amp; cocktail hour</h3><p class="meta">From two o'clock, straight after the ceremony, the mini golf is set up outside. A cocktail in one hand, a putter in the other: the winner gets bragging rights.</p></div>
     </div>
-    <p class="reveal" style="text-align:center; color:var(--muted); font-size:0.9rem; margin-top:24px;">More to come — tell me what else you're planning (fire pit? ice-cream van? dog?) and I'll add cards for each.</p>
   </div>
 </section>
 
-<div class="floral-divider reveal"><svg viewBox="0 0 340 70" class="fd"></svg></div>
 
 <section class="travel" id="travel">
   <div class="wrap">
@@ -460,59 +551,107 @@
       <h2>Getting there &amp; resting up</h2>
     </div>
     <div class="grid cols-3">
-      <div class="card reveal"><h3>By car</h3><p class="meta">Free parking on-site. Curradine Barns is about 20 minutes from the M5 (Junctions 5, 6 &amp; 7), via the A449 and B4196. Sat-nav postcode: <b>WR6 6TS</b> &middot; what3words: <b>married.blackbird.shelters</b>.</p></div>
-      <div class="card reveal"><h3>By train</h3><p class="meta">Worcester Foregate Street is roughly a 20-minute taxi ride. Let us know if you'd like help arranging a lift.</p></div>
-      <div class="card reveal"><h3>Where to stay</h3><p class="meta"><i>Placeholder</i> — we'll list a couple of nearby inns &amp; hotels holding rooms for us. Send me the names and I'll drop them in.</p></div>
+      <div class="card reveal"><h3>By car</h3><p class="meta">Curradine Barns, Church Lane, Shrawley, Worcester <b>WR6 6TS</b>. About 20 minutes from the M5 (Junctions 5, 6 &amp; 7), via the A449 and B4196. Parking is free on-site: pull into the main car park and walk through the courtyard to the entrance.</p></div>
+      <div class="card reveal"><h3>By train</h3><p class="meta">Worcester Foregate Street is the nearest mainline station, a short taxi ride away.</p></div>
+      <div class="card reveal"><h3>Staying nearby</h3><p class="meta"><b>The Holt Fleet</b><br>Holt Heath, Worcester WR6 6NL<br><br><b>The Wharf Inn</b><br>Holt Fleet, Worcester WR6 6NN</p></div>
+    </div>
+    <div class="map reveal">
+      <svg viewBox="0 0 550 552" role="img" aria-labelledby="mapTitle">
+        <title id="mapTitle">Map, not to scale: Curradine Barns is on Church Lane, off the B4196 between Stourport and Worcester. Ombersley and the A449 are to the west, the River Severn and the M5 (junctions 5, 6 and 7, about 20 minutes) to the east, and Worcester's rail station to the south.</title>
+        <!-- river -->
+        <path class="river" d="M480 -10c7 12-7 26 0 38c7 12-7 26 0 38c7 12-7 26 0 38c7 12-7 26 0 38c7 12-7 26 0 38c7 12-7 26 0 38c7 12-7 26 0 38c7 12-7 26 0 38c7 12-7 26 0 38c7 12-7 26 0 38c7 12-7 26 0 38c7 12-7 26 0 38c7 12-7 26 0 38c7 12-7 26 0 38c7 12-7 26 0 38"/>
+        <text class="t-italic" transform="translate(452 64) rotate(90)">River Severn</text>
+        <!-- Shrawley Wood -->
+        <path class="wood" d="M322 244C320 214 352 200 380 206C408 212 418 236 412 262C406 288 376 296 350 290C328 285 323 268 322 244Z"/>
+        <text class="t-wood" x="367" y="245" text-anchor="middle">Shrawley</text>
+        <text class="t-wood" x="367" y="262" text-anchor="middle">Wood</text>
+        <!-- roads -->
+        <path class="road" d="M50 -10C54 140 70 300 178 478"/>
+        <path class="road-dash" d="M50 -10C54 140 70 300 178 478"/>
+        <path class="road" d="M288 -10C294 120 278 260 292 360S320 500 330 536"/>
+        <path class="road-dash" d="M288 -10C294 120 278 260 292 360S320 500 330 536"/>
+        <path class="road" d="M178 478Q236 452 304 435"/>
+        <path class="lane" d="M189 127H286"/>
+        <!-- direction labels -->
+        <path class="dot" d="M64 31l4.5-8l4.5 8Z"/><text class="t-dir" x="78" y="31">KIDDERMINSTER</text>
+        <path class="dot" d="M300 31l4.5-8l4.5 8Z"/><text class="t-dir" x="314" y="31">STOURPORT</text>
+        <!-- road numbers -->
+        <g class="badge"><rect x="38" y="140" width="48" height="21" rx="5"/><text class="t-badge" x="62" y="155" text-anchor="middle">A449</text></g>
+        <g class="badge"><rect x="297" y="308" width="56" height="21" rx="5"/><text class="t-badge" x="325" y="323" text-anchor="middle">B4196</text></g>
+        <!-- church by Church Lane -->
+        <path class="church" d="M303.5 108.5h1.4v2h1.8v1.3h-1.8v1.6l3.6 3.2v10.4h-10V116.6l3.6-3.2v-1.6h-1.8v-1.3h1.8Z"/>
+        <text class="t-lane" x="206" y="120">Church Lane</text>
+        <!-- venue pin -->
+        <path class="pin" d="M189 127C184 119 178 113 178 103A11 11 0 1 1 200 103C200 113 194 119 189 127Z"/>
+        <circle class="hole" cx="189" cy="103" r="4"/>
+        <text class="t-venue" x="185" y="163" text-anchor="middle">CURRADINE</text>
+        <text class="t-venue" x="185" y="189" text-anchor="middle">BARNS</text>
+        <text class="t-venue-sub" x="185" y="209" text-anchor="middle">CHURCH LANE &#183; WR6 6TS</text>
+        <!-- towns -->
+        <circle class="dot" cx="178" cy="478" r="4.5"/>
+        <text class="t-town" x="178" y="502" text-anchor="middle">OMBERSLEY</text>
+        <text class="t-sub" x="178" y="518" text-anchor="middle">A449 &#183; M5 &#183; 5 min</text>
+        <circle class="dot" cx="330" cy="531" r="4.5"/>
+        <text class="t-town" x="344" y="527">WORCESTER</text>
+        <text class="t-sub" x="344" y="543">south &#183; rail station</text>
+        <!-- M5 -->
+        <g class="m5"><rect x="503" y="452" width="40" height="23" rx="5"/><text class="t-badge" x="523" y="468" text-anchor="middle">M5</text></g>
+        <path class="arrow" d="M526 482L537 493M530 493H537V486"/>
+        <text class="t-sub" x="544" y="512" text-anchor="end">J5-6-7</text>
+        <text class="t-sub" x="544" y="527" text-anchor="end">20 min</text>
+        <!-- compass -->
+        <g class="compass"><circle cx="512" cy="58" r="16"/></g>
+        <path class="needle-n" d="M512 45L516 58H508Z"/><path class="needle-s" d="M512 71L516 58H508Z"/>
+        <text class="t-sub" x="512" y="36" text-anchor="middle">N</text>
+        <text class="t-italic" x="20" y="544">Not to scale</text>
+      </svg>
+    </div>
+    <div class="reg-row reveal">
+      <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Curradine+Barns%2C+Church+Lane%2C+Shrawley%2C+Worcester+WR6+6TS" target="_blank" rel="noopener">Directions in Google Maps</a>
     </div>
   </div>
 </section>
 
-<div class="floral-divider reveal"><svg viewBox="0 0 340 70" class="fd"></svg></div>
 
-<section class="rsvp" id="rsvp">
+<section class="rsvp band-sage" id="rsvp">
   <div class="wrap registry reveal">
     <p class="eyebrow">Reply</p>
     <h2>Will you join us?</h2>
-    <p style="color:var(--muted); font-family:var(--serif); font-style:italic; font-size:1.2rem; margin-top:16px;">We would be so happy to have you there. Kindly let us know by the first of June, 2027.</p>
+    <p style="color:var(--muted); font-family:var(--serif); font-style:italic; font-size:1.2rem; margin-top:16px;">We would be so happy to have you there. Kindly let us know by the thirty-first of January, 2027.</p>
     <div class="reg-row">
       <a class="btn" href="rsvp.html">Reply to our invitation</a>
     </div>
   </div>
 </section>
 
-<div class="floral-divider reveal"><svg viewBox="0 0 340 70" class="fd"></svg></div>
 
 <section class="registry">
   <div class="wrap registry reveal">
     <p class="eyebrow">Gifts</p>
     <h2>With love, not obligation</h2>
-    <p>Your presence is the truest present. But for those who've asked — we're saving for a honeymoon in Portugal and slowly making a home. Anything at all is met with enormous gratitude.</p>
-    <div class="reg-row">
-      <a class="btn" href="#">Honeymoon fund</a>
-      <a class="btn ghost" href="#">Home registry</a>
-    </div>
+    <p>We're lucky enough to have a home full of everything we need. If you'd like to give a gift to help us on our way, a contribution to our future plans would truly make our day.</p>
   </div>
 </section>
 
-<div class="floral-divider reveal"><svg viewBox="0 0 340 70" class="fd"></svg></div>
 
-<section class="faq" id="faq">
+<section class="faq band-sage" id="faq">
   <div class="wrap">
     <div class="center-head reveal">
       <p class="eyebrow">Good to Know</p>
       <h2>Questions, answered</h2>
     </div>
     <div class="reveal">
-      <details class="q" open><summary>Can I bring a plus-one?<span class="plus">+</span></summary><p>Your invitation names everyone we've saved a seat for. If you spot a "+ guest", the extra chair is yours to fill.</p></details>
+      <details class="q" open><summary>Can I bring a plus-one?<span class="plus">+</span></summary><p>Everyone who's invited is named on the envelope of your invitation, so we're not able to offer plus-ones.</p></details>
       <details class="q"><summary>Are children welcome?<span class="plus">+</span></summary><p>We adore your little ones, but we've planned an adults-only celebration so everyone can let their hair down. Named children on your invite are of course included.</p></details>
-      <details class="q"><summary>What's the dress code?<span class="plus">+</span></summary><p>Garden formal — think summer suits and floaty dresses. The ceremony and drinks are on grass, so block heels or flats will thank you.</p></details>
-      <details class="q"><summary>Is it indoors or out?<span class="plus">+</span></summary><p>Both — the ceremony is in the walled garden, the reception in a glasshouse. There's cover if the British weather has other ideas.</p></details>
-      <details class="q"><summary>Where do I park or stay?<span class="plus">+</span></summary><p>Free on-site parking, plus two hotels holding rooms for us — see the <a href="#travel">Travel &amp; Stay</a> section above.</p></details>
+      <details class="q"><summary>When do I need to reply by?<span class="plus">+</span></summary><p>Please reply by the thirty-first of January, 2027. Scan the QR code on your invitation, or use the <a href="rsvp.html">RSVP page</a>.</p></details>
+      <details class="q"><summary>I'm an evening guest. When should I arrive?<span class="plus">+</span></summary><p>Evening guests are invited from quarter to seven, in time for the first dance at half past seven.</p></details>
+      <details class="q"><summary>What's the dress code?<span class="plus">+</span></summary><p>Cocktail / smart. The ceremony will be held on a grassy lawn (weather dependent), so please choose your footwear accordingly.</p></details>
+      <details class="q"><summary>Is it indoors or out?<span class="plus">+</span></summary><p>The ceremony will be held on a grassy lawn (weather dependent), and the mini golf is outside too.</p></details>
+      <details class="q"><summary>Where do I park or stay?<span class="plus">+</span></summary><p>Parking is free on-site. The Holt Fleet and The Wharf Inn are nearby; see the <a href="#travel">Travel &amp; Stay</a> section above.</p></details>
     </div>
   </div>
 </section>
 
-<div class="floral-divider reveal"><svg viewBox="0 0 340 70" class="fd"></svg></div>
 
 <section class="gallery">
   <div class="wrap">
@@ -521,10 +660,10 @@
       <h2>A few of our favourites</h2>
     </div>
     <div class="gallery-strip reveal">
-      <div class="frame"><span>Your photo</span></div>
-      <div class="frame"><span>Your photo</span></div>
-      <div class="frame"><span>Your photo</span></div>
-      <div class="frame"><span>Your photo</span></div>
+      <div class="frame"><img src="gallery/us-1.jpg" width="600" height="800" loading="lazy" decoding="async" alt="Catherine and Charlie, a close-up selfie with the ring on show" /></div>
+      <div class="frame"><img src="gallery/us-2.jpg" width="600" height="800" loading="lazy" decoding="async" alt="Catherine and Charlie by the sea at sunset" /></div>
+      <div class="frame"><img src="gallery/us-3.jpg" width="600" height="800" loading="lazy" decoding="async" alt="Catherine and Charlie dressed up, standing in a garden" /></div>
+      <div class="frame"><img src="gallery/us-4.jpg" width="600" height="800" loading="lazy" decoding="async" alt="Catherine and Charlie on a balcony in the evening" /></div>
     </div>
   </div>
 </section>
@@ -537,63 +676,6 @@
     <p class="fine">4 August 2027 &middot; Curradine Barns, Worcestershire &middot; With love and gratitude</p>
   </div>
 </footer>
-
-<!-- ============================================================= -->
-<!-- BUILD PLAN — for you, not the guests. Delete before publishing. -->
-<!-- ============================================================= -->
-<section class="plan" id="plan">
-  <div class="wrap block-gap">
-    <div class="head reveal">
-      <p class="eyebrow">For you — not the guests</p>
-      <h2>Everything to include &amp; how we get there</h2>
-      <p>A little gift for your friend — the full checklist of what a lovely one-page wedding site needs, a build roadmap, and how to put it online. Delete this whole section before going live.</p>
-    </div>
-
-    <div class="reveal">
-      <h3 class="k">1 · What to include</h3>
-      <ul class="checklist">
-        <li>Names, date &amp; place <i>The first thing a guest sees</i></li>
-        <li>Countdown or save-the-date <i>A little anticipation</i></li>
-        <li>Your story <i>How you met, the proposal</i></li>
-        <li>Ceremony &amp; reception details <i>Times, addresses, dress code</i></li>
-        <li>Schedule of the day <i>So no one misses the confetti</i></li>
-        <li>Travel &amp; parking <i>Directions, shuttle, taxis</i></li>
-        <li>Accommodation <i>Hotel blocks &amp; rates</i></li>
-        <li>RSVP form <i>The one thing that must work</i></li>
-        <li>Dietary &amp; song requests <i>Fold into the RSVP</i></li>
-        <li>Registry / honeymoon fund <i>Framed gently</i></li>
-        <li>FAQ <i>Plus-ones, kids, weather, dress</i></li>
-        <li>Photo gallery <i>A few favourites</i></li>
-        <li>Contact for questions <i>An email or point person</i></li>
-        <li>Wedding hashtag <i>For sharing photos after</i></li>
-      </ul>
-    </div>
-
-    <div class="reveal">
-      <h3 class="k">2 · How we get there</h3>
-      <div class="phases">
-        <div class="phase"><div class="n">1</div><div><div class="when">Gather · ~1 hour together</div><h4>Collect the real details</h4><p>Names, date, venue addresses, times, dress code, hotels, RSVP deadline, registry links, and 4–8 favourite photos. This mockup is the fill-in-the-blanks form — anything in a placeholder needs a real answer.</p></div></div>
-        <div class="phase"><div class="n">2</div><div><div class="when">Personalise · content</div><h4>Swap placeholders for their story</h4><p>Replace the text, dates and photos. Their sage-green palette already lives here — every colour is a variable at the very top (<code>--sage</code>, <code>--blush</code>…), so re-tinting is a one-line change.</p></div></div>
-        <div class="phase"><div class="n">3</div><div><div class="when">Wire up · the RSVP</div><h4>Make replies land somewhere</h4><p>Point the form at Google Forms, Formspree or Tally so responses drop into a spreadsheet. This is the only truly functional piece — everything else is presentation.</p></div></div>
-        <div class="phase"><div class="n">4</div><div><div class="when">Publish · go live</div><h4>Put it on the internet</h4><p>Drag the folder onto Netlify or push to GitHub Pages (both free). Optionally point a pretty domain like <code>catherineandcharlie.co.uk</code> at it.</p></div></div>
-        <div class="phase"><div class="n">5</div><div><div class="when">Polish · before sharing</div><h4>Test &amp; send</h4><p>Check it on a phone, click every link, send yourself a test RSVP, then share the link on the invitations. Delete this planning section first!</p></div></div>
-      </div>
-    </div>
-
-    <div class="reveal">
-      <h3 class="k">3 · Ways to put it online</h3>
-      <div class="stack">
-        <div class="opt"><div class="tier">Easiest · free</div><h4>Netlify Drop</h4><p>Drag the folder onto app.netlify.com/drop — live in seconds with a shareable link. No account needed to start.</p><p class="best"><b>Best for</b> getting it live today.</p></div>
-        <div class="opt"><div class="tier">Free · you're in git</div><h4>GitHub Pages</h4><p>This is already a repo. Push it, enable Pages in settings, and it's hosted at a github.io URL — updates on every commit.</p><p class="best"><b>Best for</b> tinkering over time.</p></div>
-        <div class="opt"><div class="tier">~£10/yr · polished</div><h4>Custom domain</h4><p>Buy a name (Namecheap, Google Domains) and point it at Netlify or Pages so guests get a memorable address.</p><p class="best"><b>Best for</b> the finishing touch.</p></div>
-      </div>
-    </div>
-
-    <div class="reveal" style="text-align:center; color:var(--muted); font-family:var(--serif); font-style:italic; font-size:1.05rem;">
-      One self-contained HTML file — no build tools, no dependencies. Fonts &amp; florals load in any browser online.
-    </div>
-  </div>
-</section>
 
 <script>
   var SVGNS = "http://www.w3.org/2000/svg";
@@ -734,7 +816,7 @@
 
   // ---- Countdown ----
   (function () {
-    var target = new Date("2027-08-04T13:30:00").getTime();
+    var target = new Date("2027-08-04T13:30:00+01:00").getTime();
     var cd = document.getElementById("countdown");
     function pad(n) { return (n < 10 ? "0" : "") + n; }
     function tick() {
@@ -760,6 +842,21 @@
       entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
     }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
     els.forEach(function (e) { io.observe(e); });
+  })();
+</script>
+<script>
+  // ---- Phone menu ----
+  (function () {
+    var nav = document.getElementById("nav"), btn = document.getElementById("menuBtn"), links = document.getElementById("siteNav");
+    function set(open) {
+      nav.classList.toggle("open", open);
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    }
+    btn.addEventListener("click", function () { set(!nav.classList.contains("open")); });
+    links.addEventListener("click", function (e) { if (e.target.closest("a")) set(false); });
+    document.addEventListener("click", function (e) { if (!nav.contains(e.target)) set(false); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && nav.classList.contains("open")) { set(false); btn.focus(); } });
   })();
 </script>
 </body>

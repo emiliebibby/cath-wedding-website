@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Catherine and Charlie//Wedding//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:wedding-day-20270804@catherineandcharlie.netlify.app
+DTSTAMP:20261124T113343Z
+DTSTART:20270804T123000Z
+DTEND:20270804T230000Z
+SUMMARY:Catherine & Charlie's wedding
+LOCATION:Curradine Barns\, Church Lane\, Shrawley\, Worcester WR6 6TS
+DESCRIPTION:Ceremony at 1:30 pm. Order of the day and details: https://cath
+ erineandcharlie.netlify.app/
+URL:https://catherineandcharlie.netlify.app/
+END:VEVENT
+END:VCALENDAR

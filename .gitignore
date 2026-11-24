@@ -1,0 +1,30 @@
+# Netlify publishes everything committed here, so only the site's own files are committed.
+# These stay on this computer only:
+
+# full-size photo originals from Cath & Charlie (they carry phone location data) - the site uses the cleaned copies in gallery/
+photos/
+
+# invite design files, inspiration screenshots and the old map image
+C&C Invite Floral/
+C&C Invite Floral.png
+IMG_*.PNG
+IMG_*.JPG
+IMG_*.jpg
+IMG_*.jpeg
+Screenshot*.png
+curradine-map.png
+
+# personal to-do page and its script (not part of the wedding site)
+todo.html
+todo-google-apps-script.gs
+
+# clutter
+test
+.DS_Store
+
+# guest list exports: never publish guest names
+*.csv
+*.tsv
+*.xlsx
+*.xls
+*.ods

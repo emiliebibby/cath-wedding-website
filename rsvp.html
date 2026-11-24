@@ -5,126 +5,290 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>RSVP — Catherine &amp; Charlie</title>
 <meta name="description" content="Reply to the wedding of Catherine and Charlie — Wednesday 4 August 2027, Curradine Barns." />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Catherine &amp; Charlie" />
+<meta property="og:title" content="RSVP — Catherine &amp; Charlie" />
+<meta property="og:description" content="Kindly reply by 31 January 2027 to the wedding of Catherine and Charlie — Wednesday 4 August 2027, Curradine Barns." />
+<meta property="og:url" content="https://catherineandcharlie.netlify.app/rsvp" />
+<meta property="og:image" content="https://catherineandcharlie.netlify.app/share.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="The C and C daffodil monogram with the names Catherine and Charlie, 4 August 2027, Curradine Barns, framed by watercolour daisies" />
+<meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
 <style>
+  /* ---------- Tokens (same as index.html) ---------- */
   :root {
-    --paper:#FFFFFF; --surface:#FAF9F3; --surface-2:#F2F0E5; --ink:#3E3B2C; --muted:#7E8A62;
-    --line:#E7E4D4; --sage:#89976B; --sage-deep:#5E6B45; --blush:#D8ADA4; --blush-soft:#EBD3CD;
-    --gold:#6B6330; --gold-soft:#8A7E3E; --leaf:var(--sage);
-    --shadow:0 2px 6px rgba(90,84,50,.05), 0 22px 48px -30px rgba(90,84,50,.26);
-    --maxw:1120px;
-    --script:"Allura","Snell Roundhand",cursive;
-    --serif:"Cormorant Garamond","Iowan Old Style",Georgia,serif;
-    --sans:"Jost",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+    --paper:      #FFFFFF;
+    --surface:    #FAF9F3;
+    --surface-2:  #F2F0E5;
+    --ink:        #3E3B2C;
+    --muted:      #616B4C;
+    --line:       #E7E4D4;
+    --sage:       #89976B;
+    --sage-deep:  #5E6B45;
+    --blush:      #D8ADA4;
+    --sage-text:  #697451;   /* sage/blush deep enough to read as text on white and the sage band */
+    --blush-text: #BC7364;
+    --blush-soft: #EBD3CD;
+    --gold:       #6B6330;
+    --gold-soft:  #8A7E3E;
+    --shadow:     0 2px 6px rgba(90,84,50,.05), 0 22px 48px -30px rgba(90,84,50,.26);
+
+    --maxw: 1120px;
+    --script: "Allura", "Snell Roundhand", cursive;
+    --serif:  "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+    --sans:   "Jost", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+
+    --leaf: var(--sage);
+    --band-sage: color-mix(in srgb, var(--sage) 22%, var(--paper));
   }
   @media (prefers-color-scheme: dark) {
     :root {
       --paper:#1E241A; --surface:#262D1F; --surface-2:#2D3524; --ink:#ECEFE1; --muted:#AAB595;
-      --line:#39432E; --sage:#A7BC85; --sage-deep:#C4D5A5; --blush:#DBACA2; --blush-soft:#7C5F5A;
-      --gold:#CBB675; --gold-soft:#D8C589; --leaf:#7C9060;
-      --shadow:0 2px 6px rgba(0,0,0,.3), 0 26px 52px -26px rgba(0,0,0,.62);
+      --line:#39432E; --sage:#A7BC85; --sage-deep:#C4D5A5; --blush:#DBACA2; --blush-soft:#7C5F5A; --sage-text:#A7BC85; --blush-text:#DBACA2;
+      --gold:#CBB675; --gold-soft:#D8C589;
+      --shadow:0 2px 6px rgba(0,0,0,.3), 0 26px 52px -26px rgba(0,0,0,.62); --leaf:#7C9060;
     }
   }
   :root[data-theme="light"] {
-    --paper:#FFFFFF; --surface:#FAF9F3; --surface-2:#F2F0E5; --ink:#3E3B2C; --muted:#7E8A62;
-    --line:#E7E4D4; --sage:#89976B; --sage-deep:#5E6B45; --blush:#D8ADA4; --blush-soft:#EBD3CD;
+    --paper:#FFFFFF; --surface:#FAF9F3; --surface-2:#F2F0E5; --ink:#3E3B2C; --muted:#616B4C;
+    --line:#E7E4D4; --sage:#89976B; --sage-deep:#5E6B45; --blush:#D8ADA4; --blush-soft:#EBD3CD; --sage-text:#697451; --blush-text:#BC7364;
     --gold:#6B6330; --gold-soft:#8A7E3E; --leaf:var(--sage);
     --shadow:0 2px 6px rgba(90,84,50,.05), 0 22px 48px -30px rgba(90,84,50,.26);
   }
   :root[data-theme="dark"] {
     --paper:#1E241A; --surface:#262D1F; --surface-2:#2D3524; --ink:#ECEFE1; --muted:#AAB595;
-    --line:#39432E; --sage:#A7BC85; --sage-deep:#C4D5A5; --blush:#DBACA2; --blush-soft:#7C5F5A;
+    --line:#39432E; --sage:#A7BC85; --sage-deep:#C4D5A5; --blush:#DBACA2; --blush-soft:#7C5F5A; --sage-text:#A7BC85; --blush-text:#DBACA2;
     --gold:#CBB675; --gold-soft:#D8C589; --leaf:#7C9060;
     --shadow:0 2px 6px rgba(0,0,0,.3), 0 26px 52px -26px rgba(0,0,0,.62);
   }
 
+  /* ---------- Base ---------- */
   *, *::before, *::after { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   body {
     margin: 0; background: var(--paper); color: var(--ink);
     font-family: var(--sans); font-weight: 300; font-size: 17px; line-height: 1.7;
     -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
     min-height: 100vh; display: flex; flex-direction: column;
   }
+  img { max-width: 100%; display: block; }
   a { color: inherit; }
-  h1 { font-family: var(--serif); font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-size: clamp(2rem, 6vw, 3.4rem); line-height: 1.1; margin: 0; }
-  h1 .amp { font-family: var(--script); text-transform: none; letter-spacing: 0; color: var(--blush); font-size: 1.1em; }
-  .eyebrow { font-family: var(--sans); font-weight: 500; font-size: 0.72rem; letter-spacing: 0.34em; text-transform: uppercase; color: var(--sage); margin: 0; }
-
+  h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(2rem, 4vw, 3.1rem); line-height: 1.08; letter-spacing: 0.02em; text-wrap: balance; margin: 0; color: var(--gold); }
+  p { margin: 0; }
+  .eyebrow {
+    font-family: var(--sans); font-weight: 500; font-size: 0.72rem;
+    letter-spacing: 0.34em; text-transform: uppercase; color: var(--sage-text); margin: 0;
+  }
   .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(20px, 5vw, 44px); width: 100%; }
+  main { flex: 1; }
 
+  /* ---------- Nav (same as index.html) ---------- */
   header.nav {
     position: sticky; top: 0; z-index: 50;
-    background: color-mix(in srgb, var(--paper) 86%, transparent); backdrop-filter: blur(10px);
-    border-bottom: 1px solid transparent; transition: border-color .3s ease;
+    background: color-mix(in srgb, var(--paper) 86%, transparent);
+    backdrop-filter: blur(10px); border-bottom: 1px solid transparent; transition: border-color .3s ease;
   }
   header.nav.scrolled { border-bottom-color: var(--line); }
   header.nav .wrap { display: flex; align-items: center; gap: 20px; height: 68px; }
-  .mono { font-family: var(--serif); font-weight: 600; font-size: 1.15rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); text-decoration: none; line-height: 1; }
-  .back { margin-left: auto; color: var(--muted); text-decoration: none; font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; }
-  .back:hover { color: var(--ink); }
-  .theme-toggle { flex: none; cursor: pointer; width: 38px; height: 38px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); display: inline-grid; place-items: center; font-size: 1rem; }
+  .brand { display: inline-flex; align-items: center; line-height: 0; text-decoration: none; }
+  .brand img { height: 52px; width: auto; display: block; }
+  /* the logo's C / C letters are dark olive, so dark mode swaps in a copy with gold letters */
+  .logo-dark { display: none !important; }
+  :root[data-theme="dark"] .logo-light { display: none !important; }
+  :root[data-theme="dark"] .logo-dark { display: block !important; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .logo-light { display: none !important; }
+    :root:not([data-theme="light"]) .logo-dark { display: block !important; }
+  }
+  nav.links { margin-left: auto; display: flex; gap: 28px; }
+  nav.links a {
+    text-decoration: none; color: var(--muted); font-size: 0.82rem; letter-spacing: 0.08em;
+    text-transform: uppercase; font-weight: 400; padding: 6px 0; position: relative;
+  }
+  nav.links a::after { content: ""; position: absolute; left: 0; right: 100%; bottom: 0; height: 1px; background: var(--sage); transition: right .25s ease; }
+  nav.links a:hover, nav.links a[aria-current="page"] { color: var(--ink); }
+  nav.links a:hover::after, nav.links a[aria-current="page"]::after { right: 0; }
+  .theme-toggle {
+    flex: none; cursor: pointer; width: 38px; height: 38px; border-radius: 999px;
+    border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+    display: inline-grid; place-items: center; font-size: 1rem;
+  }
   .theme-toggle:hover { border-color: var(--sage); }
+  /* phones: the links fold into a menu that drops down under the header */
+  .menu-btn {
+    display: none; flex: none; cursor: pointer; width: 38px; height: 38px; border-radius: 999px; padding: 0;
+    border: 1px solid var(--line); background: var(--surface); color: var(--ink); place-items: center;
+  }
+  .menu-btn:hover { border-color: var(--sage); }
+  .menu-btn svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; }
+  .menu-btn .x, .menu-btn[aria-expanded="true"] .bars { display: none; }
+  .menu-btn[aria-expanded="true"] .x { display: inline; }
+  @media (max-width: 820px) {
+    header.nav .wrap { gap: 10px; }
+    .menu-btn { display: inline-grid; }
+    .theme-toggle { margin-left: auto; }
+    nav.links {
+      display: none; position: absolute; top: 100%; left: 0; right: 0; margin: 0;
+      flex-direction: column; gap: 0; padding: 6px 0 14px;
+      background: var(--paper); border-bottom: 1px solid var(--line); box-shadow: var(--shadow);
+    }
+    header.nav.open nav.links { display: flex; }
+    nav.links a { padding: 13px 20px; text-align: center; font-size: 0.86rem; }
+    nav.links a::after { display: none; }
+  }
 
-  main { flex: 1; padding: clamp(36px, 6vw, 72px) 0 clamp(56px, 8vw, 96px); }
-  .head { text-align: center; max-width: 620px; margin: 0 auto clamp(28px, 4vw, 40px); }
-  .head .eyebrow { margin-bottom: 14px; }
-  .head p { color: var(--muted); font-family: var(--serif); font-style: italic; font-size: 1.2rem; margin-top: 16px; }
+  /* ---------- Hero ---------- */
+  .hero { position: relative; overflow: hidden; text-align: center; padding: clamp(44px, 6vw, 76px) 0 clamp(56px, 8vw, 104px); }
+  .hero .wrap { position: relative; z-index: 2; }
+  /* Wildflowers growing out of each side edge, fanning up and inward. The lowest lie
+     flattest and the higher ones stand more upright, so no two stems cross. Each flower
+     sets its size (--w), the height of its root (--b) and its lean (--r). Each image
+     also says where its stem starts across the picture (--ox, set on the <img>, e.g.
+     .31 = 31% from the left): the flower pivots on that point, which is pinned just
+     off-screen, so every stem visibly grows out of the side. */
+  .hero-fl {
+    position: absolute; z-index: 1; pointer-events: none; user-select: none;
+    width: var(--w); height: auto; bottom: var(--b);
+    transform-origin: calc(var(--ox) * 100%) 99%;
+  }
+  .hero-fl.l { left:  calc(var(--w) * var(--ox) * -1 - 6px);   transform: rotate(var(--r)); }
+  .hero-fl.r { right: calc(var(--w) * (var(--ox) - 1) - 6px);  transform: rotate(calc(var(--r) * -1)); }
+  .hero-fl.verbena { --w: clamp(120px, 14vw, 220px); --b: 0px; --r: 64deg; }
+  .hero-fl.daisy   { --w: clamp(96px, 9.5vw, 134px); --b: 27%; --r: 42deg; }
+  .hero-fl.top     { --w: clamp(38px, 4vw, 56px);    --b: 47%; --r: 28deg; }
+  /* small laptops: the date line runs wide, so keep the verbena low */
+  @media (max-width: 1023px) {
+    .hero-fl.verbena { --w: 96px; --r: 72deg; }
+  }
+  /* phones: keep the text clear; low flowers along the bottom, below the text */
+  @media (max-width: 820px) {
+    .hero { padding-bottom: 146px; }
+    .hero-fl.top { display: none; }
+    .hero-fl.verbena { --w: clamp(60px, 18vw, 92px); --r: 77deg; opacity: .7; }
+    .hero-fl.daisy   { --w: clamp(52px, 15vw, 64px); --b: 54px; --r: 60deg; }
+  }
+  @media (max-width: 560px) {
+    .hero .sub .sep { display: none; }
+    .hero .sub .ln { display: block; }
+  }
+  .hero h1 {
+    font-family: var(--serif); font-weight: 500; text-transform: uppercase; color: var(--gold);
+    font-size: clamp(2.2rem, 6.4vw, 4.2rem); line-height: 1.04; letter-spacing: 0.1em;
+    margin: 0.3em 0 0.32em; text-wrap: balance;
+  }
+  .hero h1 .amp {
+    display: block; font-family: var(--script); text-transform: none; letter-spacing: 0;
+    color: var(--ink); font-size: 0.42em; font-weight: 400; margin: 0.04em 0;
+  }
+  .hero .sub { font-family: var(--serif); font-size: clamp(1.05rem, 2.4vw, 1.3rem); color: var(--muted); font-weight: 400; letter-spacing: 0.02em; }
+  .hero .sub b { color: var(--ink); font-weight: 600; }
+  .hero .by { font-style: italic; margin-top: 4px; }
 
-  .floral-divider { display: flex; justify-content: center; padding: 6px 0 22px; }
-  .floral-divider svg { width: min(300px, 66vw); height: auto; overflow: visible; }
-  .lf { fill: var(--leaf); fill-opacity: .38; stroke: var(--sage-deep); stroke-width: 1.1; stroke-linejoin: round; }
-  .vein { fill: none; stroke: var(--sage-deep); stroke-opacity: .5; stroke-width: .7; }
-  .stem { fill: none; stroke: var(--sage-deep); stroke-width: 1.3; stroke-linecap: round; }
-  .petal { fill: var(--blush); fill-opacity: .85; }
-  .pollen { fill: var(--gold); }
+  /* ---------- Reply form ---------- */
+  section.reply { background: var(--band-sage); padding: clamp(56px, 8vw, 96px) 0; }
+  /* arch-topped, like the cards and photo frames on the main page */
+  .panel {
+    max-width: 620px; margin: 0 auto; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 260px 260px 24px 24px; box-shadow: var(--shadow);
+    padding: clamp(64px, 9vw, 92px) clamp(24px, 5vw, 50px) clamp(30px, 4vw, 46px);
+  }
+  .panel-head { text-align: center; margin-bottom: 12px; }
+  .panel-head h2 { margin-top: 10px; font-size: clamp(1.9rem, 4.4vw, 2.6rem); }
 
-  .panel { max-width: 620px; margin: 0 auto; background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: clamp(28px, 4vw, 46px); box-shadow: var(--shadow); }
-  .field { display: flex; flex-direction: column; gap: 7px; margin-top: 20px; }
-  .field:first-child { margin-top: 0; }
-  .field label { font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage); font-weight: 500; }
-  .field input, .field select, .field textarea { font: inherit; font-family: var(--sans); color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 13px 15px; }
+  .field { display: flex; flex-direction: column; gap: 7px; margin-top: 22px; }
+  .field label { font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage-text); font-weight: 500; }
+  .field input, .field select, .field textarea {
+    font: inherit; font-family: var(--sans); color: var(--ink); background: var(--paper);
+    border: 1px solid var(--line); border-radius: 12px; padding: 13px 15px;
+  }
+  .field input:not([type=radio]):not([type=checkbox]), .field textarea { width: 100%; }
   .field input:focus, .field select:focus, .field textarea:focus { outline: 2px solid var(--sage); outline-offset: 1px; border-color: var(--sage); }
   .seg { display: flex; gap: 12px; }
-  .seg label { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; padding: 14px 10px; min-height: 52px; border: 1px solid var(--line); border-radius: 12px; cursor: pointer; color: var(--muted); font-family: var(--serif); font-style: italic; font-size: 1.05rem; background: var(--paper); transition: border-color .2s ease, background .2s ease, color .2s ease; }
-  .seg label:hover { border-color: var(--sage); }
-  .seg input { position: absolute; opacity: 0; pointer-events: none; }
-  .seg label:has(input:checked) { border-color: var(--sage); background: color-mix(in srgb, var(--sage) 14%, var(--paper)); color: var(--ink); }
+  .field .seg label {
+    position: relative; flex: 1; display: flex; align-items: center; justify-content: center; text-align: center;
+    padding: 12px 10px; min-height: 52px; border: 1px solid var(--line); border-radius: 12px; cursor: pointer;
+    color: var(--muted); background: var(--paper);
+    font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1.12rem;
+    text-transform: none; letter-spacing: 0.01em; line-height: 1.25;
+    transition: border-color .2s ease, background .2s ease, color .2s ease;
+  }
+  .field .seg label:hover { border-color: var(--sage); }
+  .seg input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; pointer-events: none; }
+  .field .seg label:has(input:checked) { border-color: var(--sage); background: color-mix(in srgb, var(--sage) 14%, var(--paper)); color: var(--ink); }
+  .field .seg label:has(input:focus-visible) { outline: 2px solid var(--sage-deep); outline-offset: 2px; }
   .seg.count { gap: 8px; }
-  .seg.count label { font-style: normal; font-size: 1.15rem; padding: 14px 6px; }
-  .conditional { transition: opacity .3s ease; }
+  .field .seg.count label { font-style: normal; font-size: 1.2rem; padding: 12px 6px; font-variant-numeric: lining-nums; }
   .conditional.hide { display: none; }
 
-  .combo { position: relative; }
-  .suggest { position: absolute; z-index: 30; left: 0; right: 0; top: calc(100% + 6px); margin: 0; padding: 6px; list-style: none; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow); max-height: 264px; overflow: auto; }
-  .suggest[hidden] { display: none; }
-  .suggest li { padding: 11px 12px; border-radius: 9px; cursor: pointer; display: flex; flex-direction: column; gap: 2px; }
-  .suggest li .h-label { font-family: var(--serif); font-size: 1.08rem; color: var(--ink); }
-  .suggest li .h-members { font-size: 0.8rem; color: var(--muted); }
-  .suggest li[aria-selected="true"], .suggest li:hover { background: color-mix(in srgb, var(--sage) 15%, var(--paper)); }
-  .found { font-family: var(--serif); font-style: italic; font-size: 0.92rem; color: var(--sage-deep); margin-top: 10px; }
+  .find-row { display: flex; gap: 10px; }
+  .find-row input { flex: 1; min-width: 0; }
+  .btn-find {
+    flex: none; cursor: pointer; font-family: var(--sans); font-weight: 400; font-size: 0.74rem; letter-spacing: 0.12em;
+    text-transform: uppercase; padding: 0 18px; border-radius: 12px; color: var(--ink);
+    border: 1px solid var(--sage); background: color-mix(in srgb, var(--sage) 12%, var(--paper));
+  }
+  .btn-find:hover { border-color: var(--sage-deep); }
+  .btn-find[disabled] { opacity: .65; cursor: progress; }
+  @media (max-width: 480px) { .find-row { flex-direction: column; } .btn-find { padding: 13px 18px; } }
+  .field[hidden] { display: none; }
+  .who { display: flex; flex-direction: column; gap: 8px; }
+  .field .who label {
+    display: flex; align-items: center; gap: 12px; padding: 12px 14px; cursor: pointer;
+    border: 1px solid var(--line); border-radius: 12px; background: var(--paper); color: var(--muted);
+    font-family: var(--serif); font-size: 1.12rem; font-weight: 500; text-transform: none; letter-spacing: 0.01em;
+    transition: border-color .2s ease, background .2s ease, color .2s ease;
+  }
+  .field .who label:hover { border-color: var(--sage); }
+  .field .who label:has(input:checked) { border-color: var(--sage); background: color-mix(in srgb, var(--sage) 14%, var(--paper)); color: var(--ink); }
+  .field .who input { width: 20px; height: 20px; margin: 0; padding: 0; flex: none; accent-color: var(--sage-deep); }
+  .found { font-family: var(--serif); font-style: italic; font-size: 0.98rem; color: var(--sage-deep); margin-top: 4px; }
   .found[hidden] { display: none; }
   .found.warn { color: var(--muted); }
 
-  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; cursor: pointer; width: 100%; margin-top: 26px; font-family: var(--sans); font-weight: 400; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 15px 30px; border-radius: 999px; text-decoration: none; border: 1px solid var(--sage-deep); background: var(--sage-deep); color: #F7F9F1; transition: transform .15s ease, box-shadow .2s ease; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 9px; cursor: pointer; width: 100%; margin-top: 30px;
+    font-family: var(--sans); font-weight: 400; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 15px 30px; border-radius: 999px; text-decoration: none;
+    border: 1px solid var(--sage-deep); background: var(--sage-deep); color: #F7F9F1;
+    transition: transform .15s ease, box-shadow .2s ease;
+  }
   :root[data-theme="dark"] .btn { color: #1c2416; }
   @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn { color: #1c2416; } }
   .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+  .btn[disabled] { opacity: .65; cursor: progress; transform: none; box-shadow: none; }
+  .field .hint { margin: 0; font-size: 0.9rem; line-height: 1.5; color: var(--muted); }
   .form-note { text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 16px; }
   .form-note a { color: var(--sage-deep); }
+  .form-note.error { color: var(--ink); background: color-mix(in srgb, var(--blush) 22%, var(--paper)); border: 1px solid var(--blush); border-radius: 12px; padding: 10px 14px; }
+  /* Spam trap: hidden from people, but bots fill it in */
+  .hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 
   .thanks { text-align: center; }
-  .thanks .mark { display: inline-block; margin: 0 auto 4px; }
-  .thanks h2 { font-family: var(--serif); font-weight: 500; font-size: 2rem; margin: 10px 0 0; color: var(--gold); }
-  .thanks p { color: var(--muted); margin-top: 12px; }
+  .thanks .mark { width: auto; height: 132px; margin: -18px auto 8px; }
+  .thanks h2 { margin-top: 10px; }
+  .thanks p:not(.eyebrow) { color: var(--muted); font-family: var(--serif); font-style: italic; font-size: 1.2rem; margin-top: 14px; }
 
-  footer.site { background: var(--surface); border-top: 1px solid var(--line); text-align: center; padding: clamp(40px, 6vw, 64px) 0; }
-  footer.site .names { font-family: var(--serif); font-weight: 500; text-transform: uppercase; letter-spacing: 0.16em; font-size: clamp(1.5rem, 4.5vw, 2.4rem); color: var(--gold); line-height: 1.2; }
-  footer.site .names .amp { font-family: var(--script); text-transform: none; letter-spacing: 0; color: var(--blush); font-size: 1.15em; }
-  footer.site .fine { color: var(--muted); font-family: var(--serif); font-style: italic; font-size: 1rem; margin-top: 18px; }
+  /* ---------- Footer (same as index.html) ---------- */
+  footer.site { background: var(--surface); border-top: 1px solid var(--line); text-align: center; padding: clamp(56px, 8vw, 92px) 0; }
+  footer.site .footer-fl { width: clamp(96px, 12vw, 150px); height: auto; margin: 0 auto 18px; display: block; }
+  footer.site .names { font-family: var(--serif); font-weight: 500; text-transform: uppercase; letter-spacing: 0.16em; font-size: clamp(1.6rem, 5vw, 2.6rem); color: var(--gold); line-height: 1.2; }
+  footer.site .names .amp { font-family: var(--script); text-transform: none; letter-spacing: 0; color: var(--blush-text); font-size: 1.15em; }
+  footer.site .hash { color: var(--sage-text); margin-top: 18px; letter-spacing: 0.2em; font-size: 0.78rem; text-transform: uppercase; }
+  footer.site .fine { color: var(--muted); font-family: var(--serif); font-style: italic; font-size: 1rem; margin-top: 24px; }
 
+  /* ---------- Reveal ---------- */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
   :focus-visible { outline: 2px solid var(--sage-deep); outline-offset: 2px; border-radius: 4px; }
 </style>
 </head>
@@ -132,39 +296,61 @@
 
 <header class="nav" id="nav">
   <div class="wrap">
-    <a class="mono" href="index.html">C &middot; C</a>
-    <a class="back" href="index.html">&larr; Back to the wedding</a>
+    <a class="brand" href="index.html"><img class="logo-light" src="c-logo.png" alt="Catherine &amp; Charlie, back to the wedding page" /><img class="logo-dark" src="c-logo-dark.png" alt="Catherine &amp; Charlie, back to the wedding page" /></a>
+    <nav class="links" id="siteNav" aria-label="Main">
+      <a href="index.html#details">Details</a>
+      <a href="index.html#schedule">The Day</a>
+      <a href="index.html#activities">Games</a>
+      <a href="index.html#travel">Travel</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="rsvp.html" aria-current="page">RSVP</a>
+    </nav>
     <button class="theme-toggle" id="themeBtn" aria-label="Toggle light and dark theme" title="Toggle theme">◐</button>
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="bars" d="M4 7h16M4 12h16M4 17h16"/><path class="x" d="M6 6l12 12M18 6L6 18"/></svg></button>
   </div>
 </header>
 
 <main>
-  <div class="wrap">
-    <div class="floral-divider"><svg viewBox="0 0 340 70" class="fd"></svg></div>
-    <div class="head">
-      <p class="eyebrow">Kindly Reply</p>
-      <h1>Catherine <span class="amp">&amp;</span> Charlie</h1>
-      <p>We would be so happy to have you at Curradine Barns on the fourth of August. Please reply by the first of June, 2027.</p>
-    </div>
+<section class="hero">
+  <!-- --ox: where each stem starts across its image (measured from the PNGs) -->
+  <img class="hero-fl l verbena" style="--ox:.68" src="florals/verbena-left.png" alt="" aria-hidden="true" />
+  <img class="hero-fl l daisy"   style="--ox:.31" src="florals/daisy-a.png" alt="" aria-hidden="true" />
+  <img class="hero-fl l top"     style="--ox:.20" src="florals/thistle.png" alt="" aria-hidden="true" />
+  <img class="hero-fl r verbena" style="--ox:.32" src="florals/verbena-right.png" alt="" aria-hidden="true" />
+  <img class="hero-fl r daisy"   style="--ox:.31" src="florals/daisy-c.png" alt="" aria-hidden="true" />
+  <img class="hero-fl r top"     style="--ox:.32" src="florals/bud-ochre-b.png" alt="" aria-hidden="true" />
+  <div class="wrap reveal">
+    <p class="eyebrow">Kindly reply</p>
+    <h1>Catherine<span class="amp">and</span>Charlie</h1>
+    <p class="sub"><b class="ln">Wednesday, the fourth of August, 2027</b><span class="sep"> &middot; </span><span class="ln">Curradine Barns</span></p>
+    <p class="sub by">Please reply by the thirty-first of January, 2027</p>
+  </div>
+</section>
 
+<section class="reply">
+  <div class="wrap">
     <!--
-      ============================================================
-      TO COLLECT REAL REPLIES — pick one, then wire this form to it:
-      • Formspree:  set  action="https://formspree.io/f/XXXXXXXX"  method="POST"  on the <form> and delete the onsubmit handler.
-      • Google Forms: build a matching Form, or just link the "btn" straight to your Form's share URL.
-      • Tally / Typeform: same idea — either embed or link out.
-      Right now it's a friendly demo that shows a thank-you message.
-      ============================================================
+      Replies are saved to a Google Sheet. Setup steps are at the top of
+      rsvp-google-apps-script.gs; the URL goes in RSVP_API in the script below.
     -->
-    <form class="panel" id="rsvpForm" onsubmit="event.preventDefault(); rsvpDone();">
+    <form class="panel reveal" id="rsvpForm">
+      <div class="panel-head">
+        <p class="eyebrow">Your reply</p>
+        <h2>Will you join us?</h2>
+      </div>
       <input type="hidden" name="householdId" id="householdId" />
+      <div class="hp" aria-hidden="true">
+        <label for="website">Leave this empty</label>
+        <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+      </div>
       <div class="field">
-        <label for="name">Your name (as on your invitation)</label>
-        <div class="combo">
-          <input id="name" name="name" type="text" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="suggest" placeholder="Start typing your name&hellip;" required />
-          <ul class="suggest" id="suggest" role="listbox" aria-label="Matching invitations" hidden></ul>
+        <label for="name">Your full name</label>
+        <p class="hint" id="nameHint">As written on your invitation envelope.</p>
+        <div class="find-row">
+          <input id="name" name="name" type="text" autocomplete="name" placeholder="First and last name" aria-describedby="nameHint" required />
+          <button class="btn-find" type="button" id="findBtn">Find my invitation</button>
         </div>
-        <p class="found" id="found" hidden></p>
+        <p class="found" id="found" role="status" hidden></p>
       </div>
       <div class="field">
         <label for="email">Email</label>
@@ -179,15 +365,21 @@
       </div>
 
       <div class="conditional" id="ifYes">
-        <div class="field">
+        <div class="field" id="whoField" hidden>
+          <label>Who's coming?</label>
+          <p class="hint">Everyone named on your invitation is listed here.</p>
+          <div class="who" id="who"></div>
+        </div>
+        <div class="field" id="partsField">
           <label>Which parts will you join?</label>
           <div class="seg">
             <label><input type="checkbox" name="parts" value="day" checked /><span>The whole day</span></label>
             <label><input type="checkbox" name="parts" value="evening" /><span>Evening only</span></label>
           </div>
         </div>
-        <div class="field">
+        <div class="field" id="partyField">
           <label>Number in your party</label>
+          <p class="hint">Please only count the guests named on your invitation. Sadly we can't accommodate any additional guests.</p>
           <div class="seg count">
             <label><input type="radio" name="guests" value="1" checked /><span>1</span></label>
             <label><input type="radio" name="guests" value="2" /><span>2</span></label>
@@ -196,9 +388,9 @@
             <label><input type="radio" name="guests" value="5+" /><span>5+</span></label>
           </div>
         </div>
-        <div class="field">
+        <div class="field" id="namesField">
           <label for="names">Names of everyone attending</label>
-          <input id="names" name="names" type="text" placeholder="So we can write the place cards" />
+          <input id="names" name="names" type="text" placeholder="Everyone in your party" />
         </div>
         <div class="field">
           <label for="diet">Dietary needs or allergies</label>
@@ -206,7 +398,7 @@
         </div>
         <div class="field">
           <label for="song">A song you can't sit out</label>
-          <input id="song" name="song" type="text" placeholder="For the band's list" />
+          <input id="song" name="song" type="text" placeholder="We'll try to get it played" />
         </div>
       </div>
 
@@ -216,72 +408,32 @@
       </div>
 
       <button class="btn" type="submit">Send our reply</button>
-      <p class="form-note" id="rsvpNote">Demo form — connect it to <a href="https://formspree.io" target="_blank" rel="noopener">Formspree</a>, Google Forms or Tally to collect real replies.</p>
+      <p class="form-note" id="rsvpNote">Your reply goes straight to Catherine &amp; Charlie &mdash; nowhere else.</p>
     </form>
 
     <div class="panel thanks" id="thanks" style="display:none;">
-      <svg class="mark" width="54" height="54" viewBox="-27 -27 54 54" aria-hidden="true">
-        <ellipse class="petal" cx="0" cy="-12" rx="6.6" ry="12"></ellipse>
-        <ellipse class="petal" cx="0" cy="-12" rx="6.6" ry="12" transform="rotate(72)"></ellipse>
-        <ellipse class="petal" cx="0" cy="-12" rx="6.6" ry="12" transform="rotate(144)"></ellipse>
-        <ellipse class="petal" cx="0" cy="-12" rx="6.6" ry="12" transform="rotate(216)"></ellipse>
-        <ellipse class="petal" cx="0" cy="-12" rx="6.6" ry="12" transform="rotate(288)"></ellipse>
-        <circle class="pollen" cx="0" cy="0" r="5"></circle>
-      </svg>
+      <img class="mark" src="florals/daisy-b.png" alt="" aria-hidden="true" />
+      <p class="eyebrow">Reply received</p>
       <h2 id="thanksTitle">Thank you!</h2>
       <p id="thanksBody"></p>
     </div>
   </div>
+</section>
 </main>
 
 <footer class="site">
-  <div class="wrap">
+  <div class="wrap reveal">
+    <img class="footer-fl" src="florals/cluster.png" alt="" aria-hidden="true" />
     <div class="names">Catherine <span class="amp">&amp;</span> Charlie</div>
-    <p class="fine">4 August 2027 &middot; Curradine Barns, Worcestershire</p>
+    <div class="hash">#CatherineAndCharlie2027</div>
+    <p class="fine">4 August 2027 &middot; Curradine Barns, Worcestershire &middot; With love and gratitude</p>
   </div>
 </footer>
 
-<script src="guest-list.js"></script>
 <script>
-  var SVGNS = "http://www.w3.org/2000/svg";
-  function el(tag, attrs) { var e = document.createElementNS(SVGNS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); return e; }
-  function leaf(parent, x, y, angleDeg, len) {
-    var w = len * 0.30;
-    var g = el("g", { transform: "translate(" + x + " " + y + ") rotate(" + angleDeg + ")" });
-    g.appendChild(el("path", { class: "lf", d: "M0 0 C " + (len*0.32) + " " + (-w) + " " + (len*0.72) + " " + (-w) + " " + len + " 0 C " + (len*0.72) + " " + w + " " + (len*0.32) + " " + w + " 0 0 Z" }));
-    g.appendChild(el("path", { class: "vein", d: "M " + (len*0.08) + " 0 L " + (len*0.92) + " 0" }));
-    parent.appendChild(g);
-  }
-  function bloom(parent, x, y, r) {
-    var g = el("g", { transform: "translate(" + x + " " + y + ")" });
-    for (var i = 0; i < 5; i++) g.appendChild(el("ellipse", { class: "petal", cx: 0, cy: -r, rx: r*0.55, ry: r, transform: "rotate(" + (i*72) + ")" }));
-    g.appendChild(el("circle", { class: "pollen", cx: 0, cy: 0, r: r*0.4 }));
-    parent.appendChild(g);
-  }
-  function cubic(p0,p1,p2,p3,t){var u=1-t;return{x:u*u*u*p0.x+3*u*u*t*p1.x+3*u*t*t*p2.x+t*t*t*p3.x,y:u*u*u*p0.y+3*u*u*t*p1.y+3*u*t*t*p2.y+t*t*t*p3.y};}
-  function cubicTangent(p0,p1,p2,p3,t){var u=1-t;var dx=3*u*u*(p1.x-p0.x)+6*u*t*(p2.x-p1.x)+3*t*t*(p3.x-p2.x);var dy=3*u*u*(p1.y-p0.y)+6*u*t*(p2.y-p1.y)+3*t*t*(p3.y-p2.y);return Math.atan2(dy,dx)*180/Math.PI;}
-  function sprig(parent, ox, oy, length, baseLen) {
-    var p0={x:0,y:0}, p1={x:length*0.30,y:-length*0.16}, p2={x:length*0.66,y:-length*0.06}, p3={x:length,y:-length*0.12};
-    var g = el("g", { transform: "translate(" + ox + " " + oy + ")" });
-    g.appendChild(el("path", { class: "stem", d: "M " + p0.x + " " + p0.y + " C " + p1.x + " " + p1.y + " " + p2.x + " " + p2.y + " " + p3.x + " " + p3.y }));
-    var stops = [0.14,0.26,0.38,0.5,0.62,0.74,0.86];
-    for (var i = 0; i < stops.length; i++) {
-      var t = stops[i], pt = cubic(p0,p1,p2,p3,t), tan = cubicTangent(p0,p1,p2,p3,t), side = (i%2===0)?-1:1, ln = baseLen*(1-0.45*t);
-      leaf(g, pt.x, pt.y, tan + side*52, ln);
-    }
-    var tip = cubic(p0,p1,p2,p3,1);
-    leaf(g, tip.x, tip.y, cubicTangent(p0,p1,p2,p3,1), baseLen*0.5);
-    bloom(g, length*0.16, -length*0.02, baseLen*0.28);
-    bloom(g, length*0.44, -length*0.10, baseLen*0.22);
-    parent.appendChild(g);
-  }
-  (function buildDivider() {
-    var svg = document.querySelector(".floral-divider .fd");
-    var cx = 170, cy = 40;
-    var right = el("g", {}); svg.appendChild(right); sprig(right, cx+14, cy, 140, 22);
-    var left = el("g", { transform: "translate(" + (2*cx) + " 0) scale(-1 1)" }); svg.appendChild(left); sprig(left, cx+14, cy, 140, 22);
-    bloom(svg, cx, cy, 9);
-  })();
+  // The Apps Script web-app URL: finds invitations and saves replies.
+  // Setup steps: see rsvp-google-apps-script.gs.
+  var RSVP_API = "https://script.google.com/macros/s/AKfycbz2Vo9zk7tl0lS8AMlX5xxs_gsF_aO7-ZmaOOpvcIzT1tqPmPfB9g2tdGoLPlP697loEQ/exec";
 
   (function () {
     var root = document.documentElement, btn = document.getElementById("themeBtn"), stored = null;
@@ -302,78 +454,159 @@
     document.getElementById("ifYes").classList.toggle("hide", !yes);
   }
 
-  // ---- Guest-list lookup: match a typed name to an invitation and pre-fill ----
-  (function guestLookup() {
-    var GUESTS = window.GUEST_LIST || [];
+  // ---- Find the guest's invitation ----
+  // The typed name is checked against the Guests tab in the Google Sheet, and only the
+  // matching invitation comes back, so the guest list itself is never on the website.
+  var invite = null;   // the matched invitation: { id, label, members, invited }
+
+  (function inviteLookup() {
     var input = document.getElementById("name");
-    var box = document.getElementById("suggest");
+    var btn = document.getElementById("findBtn");
     var found = document.getElementById("found");
-    var form = document.getElementById("rsvpForm");
-    if (!input || !GUESTS.length) return;
-    var results = [], active = -1;
+    var hid = document.getElementById("householdId");
+    var who = document.getElementById("who");
+    var day = document.querySelector('input[name=parts][value="day"]');
+    var eve = document.querySelector('input[name=parts][value="evening"]');
+    var btnDefault = btn.textContent, checked = "", busy = false;
 
-    function norm(s) { return (s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").trim(); }
-    function search(q) {
-      var nq = norm(q);
-      if (nq.length < 2) return [];
-      var toks = nq.split(/\s+/);
-      return GUESTS.filter(function (h) {
-        var hay = norm(h.label + " " + h.members.join(" "));
-        return toks.every(function (t) { return hay.indexOf(t) >= 0; });
-      }).slice(0, 6);
-    }
-    function close() { box.hidden = true; input.setAttribute("aria-expanded", "false"); active = -1; }
-    function highlight() {
-      Array.prototype.forEach.call(box.children, function (li, i) {
-        li.setAttribute("aria-selected", i === active ? "true" : "false");
-        if (i === active) li.scrollIntoView({ block: "nearest" });
+    function show(id, on) { document.getElementById(id).hidden = !on; }
+    function say(msg, warn) { found.hidden = !msg; found.textContent = msg || ""; found.classList.toggle("warn", !!warn); }
+    function words(s) { return s.trim().split(/\s+/).filter(Boolean).length; }
+
+    // Found: one tick box per person instead of the party-size and names fields.
+    function setInvite(inv) {
+      invite = inv || null;
+      hid.value = invite ? invite.id : "";
+      who.innerHTML = "";
+      show("whoField", !!invite);
+      show("partyField", !invite);
+      show("namesField", !invite);
+      show("partsField", !(invite && invite.invited === "evening"));   // evening invitations: evening only
+      if (!invite) return;
+      invite.members.forEach(function (m) {
+        var l = document.createElement("label"), c = document.createElement("input"), t = document.createElement("span");
+        c.type = "checkbox"; c.name = "coming"; c.value = m; c.checked = true;
+        t.textContent = m;
+        l.appendChild(c); l.appendChild(t); who.appendChild(l);
       });
-    }
-    function render() {
-      box.innerHTML = "";
-      if (!results.length) { close(); return; }
-      results.forEach(function (h) {
-        var li = document.createElement("li");
-        li.setAttribute("role", "option");
-        var a = document.createElement("span"); a.className = "h-label"; a.textContent = h.label;
-        var b = document.createElement("span"); b.className = "h-members";
-        b.textContent = h.members.join(" · ") + (h.invited === "evening" ? "  —  evening" : "");
-        li.appendChild(a); li.appendChild(b);
-        li.addEventListener("mousedown", function (e) { e.preventDefault(); pick(h); });
-        box.appendChild(li);
-      });
-      box.hidden = false; input.setAttribute("aria-expanded", "true");
-    }
-    function pick(h) {
-      form.querySelector("#householdId").value = h.id;
-      form.querySelector("#names").value = h.members.join(", ");
-      var n = h.members.length, val = n >= 5 ? "5+" : String(n);
-      var r = form.querySelector('input[name=guests][value="' + val + '"]');
-      if (r) r.checked = true;
-      var day = form.querySelector('input[name=parts][value="day"]');
-      var eve = form.querySelector('input[name=parts][value="evening"]');
-      if (day && eve) { var evening = h.invited === "evening"; day.checked = !evening; eve.checked = evening; }
-      found.hidden = false; found.classList.remove("warn");
-      found.textContent = "Found you — " + h.label + " (" + (h.invited === "evening" ? "evening" : "whole day")
-        + ", party of " + n + "). Not you? Just keep typing.";
-      close();
+      var evening = invite.invited === "evening";
+      day.checked = !evening; eve.checked = evening;
     }
 
+    function find() {
+      var q = input.value.trim();
+      if (busy || !q || q === checked) return;
+      if (words(q) < 2) { say("Please type your first and last name.", true); return; }
+      if (!RSVP_API) { say("The guest list isn't connected yet.", true); return; }
+      busy = true; btn.disabled = true; btn.textContent = "Checking…";
+      fetch(RSVP_API, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({ action: "lookup", name: q })
+      })
+        .then(function (r) { return r.json(); })
+        .then(function (res) {
+          if (input.value.trim() !== q) return;          // they've changed the name since
+          // A reply without a list of matches means the script couldn't do the lookup
+          // (e.g. an old version is deployed): say so rather than "couldn't find".
+          if (!res || !res.ok || !Array.isArray(res.matches)) throw new Error("lookup unavailable");
+          checked = q;
+          var inv = res.matches[0];
+          setInvite(inv);
+          if (inv) say("We found your invitation: " + inv.label + " (" + (inv.invited === "evening" ? "evening" : "the whole day") + ").");
+          else say("We couldn't find that name on our list. Check the spelling, or just fill in your details below.", true);
+        })
+        .catch(function () {
+          setInvite(null);
+          say("We couldn't check the guest list just now. You can still fill in your details below.", true);
+        })
+        .then(function () { busy = false; btn.disabled = false; btn.textContent = btnDefault; });
+    }
+
+    btn.addEventListener("click", find);
+    input.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); find(); } });
+    input.addEventListener("blur", function () { if (words(input.value) >= 2) find(); });
     input.addEventListener("input", function () {
-      results = search(input.value); active = -1; render();
-      if (!results.length && norm(input.value).length >= 3) {
-        found.hidden = false; found.classList.add("warn");
-        found.textContent = "Can't find your invitation? No trouble — just fill in your details below.";
-      } else if (results.length) { found.hidden = true; }
+      if (input.value.trim() === checked) return;
+      checked = "";
+      if (invite) setInvite(null);
+      say("");
     });
-    input.addEventListener("keydown", function (e) {
-      if (box.hidden) return;
-      if (e.key === "ArrowDown") { e.preventDefault(); active = Math.min(active + 1, results.length - 1); highlight(); }
-      else if (e.key === "ArrowUp") { e.preventDefault(); active = Math.max(active - 1, 0); highlight(); }
-      else if (e.key === "Enter" && active >= 0) { e.preventDefault(); pick(results[active]); }
-      else if (e.key === "Escape") { close(); }
+  })();
+
+  // ---- Send the reply to the Google Sheet ----
+  (function rsvpSubmit() {
+    var form = document.getElementById("rsvpForm");
+    var btn = form.querySelector("button[type=submit]");
+    var note = document.getElementById("rsvpNote");
+    var noteDefault = note.innerHTML;
+    var btnDefault = btn.textContent;
+    var sending = false;
+
+    function fail(msg) {
+      sending = false;
+      btn.disabled = false; btn.textContent = btnDefault;
+      note.textContent = msg; note.classList.add("error");
+    }
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (sending) return;
+
+      var fd = new FormData(form);
+      var attending = fd.get("attend") === "yes";
+      var ticked = invite ? fd.getAll("coming") : [];
+      if (attending && invite && !ticked.length) {
+        fail("Please tick who's coming, or choose \u201cRegretfully declines\u201d.");
+        return;
+      }
+      // Party details only apply to people who are coming.
+      var data = {
+        name: fd.get("name"),
+        email: fd.get("email"),
+        attend: fd.get("attend"),
+        parts: attending ? fd.getAll("parts").join(", ") : "",
+        guests: attending ? (invite ? String(ticked.length) : fd.get("guests")) : "",
+        names: attending ? (invite ? ticked.join(", ") : fd.get("names")) : "",
+        notComing: invite ? invite.members.filter(function (m) { return !attending || ticked.indexOf(m) < 0; }).join(", ") : "",
+        diet: attending ? fd.get("diet") : "",
+        song: attending ? fd.get("song") : "",
+        message: fd.get("message"),
+        householdId: fd.get("householdId"),
+        website: fd.get("website")
+      };
+
+      if (!RSVP_API) {
+        fail("RSVPs aren't connected yet. Paste the Apps Script URL into RSVP_API in rsvp.html.");
+        return;
+      }
+
+      sending = true;
+      btn.disabled = true; btn.textContent = "Sending…";
+      note.innerHTML = noteDefault; note.classList.remove("error");
+
+      var ctrl = window.AbortController ? new AbortController() : null;
+      var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 30000);
+
+      // text/plain keeps this a "simple" request, which Apps Script accepts cross-origin.
+      fetch(RSVP_API, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(data),
+        signal: ctrl ? ctrl.signal : undefined
+      })
+        .then(function (r) { return r.json(); })
+        .then(function (res) {
+          clearTimeout(timer);
+          if (!res || !res.ok) throw new Error((res && res.error) || "Not saved");
+          sending = false;
+          rsvpDone();
+        })
+        .catch(function () {
+          clearTimeout(timer);
+          fail("Sorry, your reply didn't go through. Please check your connection and try again.");
+        });
     });
-    input.addEventListener("blur", function () { setTimeout(close, 120); });
   })();
 
   function rsvpDone() {
@@ -384,10 +617,36 @@
     t.style.display = "block";
     document.getElementById("thanksTitle").textContent = attend === "yes" ? "We can't wait!" : "You'll be missed";
     document.getElementById("thanksBody").textContent = attend === "yes"
-      ? (name ? "Thank you, " + name + " — we're so glad you'll be there. " : "Thank you — we're so glad you'll be there. ") + "(Demo: connect a real form to actually save this reply.)"
-      : "Thank you for letting us know — we'll raise a glass to you. (Demo: connect a real form to actually save this reply.)";
+      ? (name ? "Thank you, " + name + " — we're so glad you'll be there." : "Thank you — we're so glad you'll be there.")
+      : "Thank you for letting us know — we'll raise a glass to you.";
     t.scrollIntoView({ behavior: "smooth", block: "center" });
   }
+
+  // ---- Scroll reveal (same as index.html) ----
+  (function () {
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var els = document.querySelectorAll(".reveal");
+    if (reduce || !("IntersectionObserver" in window)) { els.forEach(function (e) { e.classList.add("in"); }); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+    }, { threshold: 0.05, rootMargin: "0px 0px -6% 0px" });
+    els.forEach(function (e) { io.observe(e); });
+  })();
+</script>
+<script>
+  // ---- Phone menu ----
+  (function () {
+    var nav = document.getElementById("nav"), btn = document.getElementById("menuBtn"), links = document.getElementById("siteNav");
+    function set(open) {
+      nav.classList.toggle("open", open);
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    }
+    btn.addEventListener("click", function () { set(!nav.classList.contains("open")); });
+    links.addEventListener("click", function (e) { if (e.target.closest("a")) set(false); });
+    document.addEventListener("click", function (e) { if (!nav.contains(e.target)) set(false); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && nav.classList.contains("open")) { set(false); btn.focus(); } });
+  })();
 </script>
 </body>
 </html>
